@@ -20,10 +20,11 @@ class DefaultController {
     
     public function affiche()
     {
-          $template = $this->twig->loadTemplate('index.twig');
-            echo $template->render(array(
-                  'moteur_name' => 'Twig'
-               )); 
+          $template = $this->twig->loadTemplate('index.html.twig');
+          //  echo $template->render(array(
+//                  'moteur_name' => 'Twig'
+//               ));  
+          echo $template->render(array());
          
        }
     
