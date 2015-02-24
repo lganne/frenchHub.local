@@ -1,0 +1,67 @@
+*, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+body { font-family: Arial, Helvetica, sans-serif; margin: 0;}
+
+/* Connexion */
+#header_crossbar { width: 100%; height: 30px; background-color: #36ABBA;padding: 3px; text-align: right; color: #fff;}
+#connection { height: 1em; overflow: hidden;}
+.login { display: block; cursor: pointer;}
+.form, .logout { display: none;}
+#lang select { background-color: #36ABBA; border: none; color: #fff;}
+#connection, #lang, #connection .form form div div { display: inline-block; vertical-align: top;}
+#connection p,#connection .form form div div input { margin: 0 3px;}
+#connection .form form div div button { padding: 0; background: none; border: none; cursor: pointer;}
+
+/* Parallax Header */
+.parallax { position:relative; height:30em; overflow:hidden;}
+.parallax img { position:absolute; max-width:100%; min-height:500px;}
+.parallax h1 { position:absolute; top:50%; left:0; right:0; color:#fff; letter-spacing:0.2em; text-align:center;}
+.parallax span { position:absolute; bottom:0; left:0; right:0; color:#fff; text-align:center; cursor: pointer;}
+h1{ color:#36ABBA; font-size:2.4em;}
+
+/* Scroll up */
+#scrollup {
+  width: 48px;
+  height: 48px;
+  background: url(https://cdn3.iconfinder.com/data/icons/iconic-1/32/arrow_up_alt1-48.png) 0 0 no-repeat;
+  text-indent: -9999px;
+  display: none;
+  background-color: #eee;
+  position: fixed;
+  bottom: 48px;
+  right: 48px;
+}
+
+/* onglets */
+.container{
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    ul.tabs{
+      margin: 0px;
+      padding: 0px;
+      list-style: none;
+    }
+    ul.tabs li{
+      background: #009ACD;
+      color: #fff;
+      display: inline-block;
+      /* padding: 10px 15px; */
+      width: 25%;
+      cursor: pointer;
+    }
+
+    ul.tabs li.current{
+      background: #ededed;
+      color: #222;
+    }
+
+    .tab-content{
+      display: none;
+      background: #ededed;
+      padding: 15px;
+    }
+
+    .tab-content.current{
+      display: inherit;
+    }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}MyFrenchHub!{% endblock %}</title>
+	{% block stylesheets %}
+                            <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
+                            <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+	{% endblock %}
+		<script src="{{ asset('//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js') }}"></script>
+</head>
+	<body>
+	
+                              
+                                <div id="header_crossbar">
+                                        <div id="connection">
+                                              
+                                                         <p class="login">Connexion</p>
+                                                            <div class="form">
+                                                                 <form action="" method="post" >
+                                                                     <label>Email</label>
+                                                                     <input type="email" name="email" >
+                                                                     <label>password</label>
+                                                                     <input type='text' name='pwd'>
+                                                                     <input type='submit' name='valider' value='valider'>
+                                                                </form>
+                                                            </div> 
+                                              
+                                                       <p class="logout">Bonjour, ! <a href="#">Deconnexion</a>
+                                                    
+                                        </div>
+                                        <div id="lang">
+                                        <select>
+                                            <option value="fr">fr</option>
+                                            <option value="en">en</option>
+                                        </select>
+                                        </div>
+                            </div>
+			<a href="#" id="scrollup">Scroll</a>
+
+			<?php echo $content ; ?>
+
+			<footer>
+			<h1>Footer</h1>
+			</footer>
+
+			
+			<script type="text/javascript" src="{{ asset('js/frenchHub.js') }}"></script>
+			
+	</body>
+
+</html>
