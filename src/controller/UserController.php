@@ -66,7 +66,7 @@ class UserController
             $_SESSION['user']=$user;
          
             $template = $this->twig->loadTemplate('Membre.html.twig');
-              echo $template->render(array( 'session'   => $user ) );
+                    echo $template->render(array( 'session'   => $user[1] ) );
           }
         else
         {
