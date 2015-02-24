@@ -21,12 +21,12 @@ class DiverService {
     
     static function codepassword($motpasse)
     {
-        $i=0;
-        while($i<30)
-        {
+//        $i=0;
+//        while($i<30)
+//        {
             $motpasse=  sha1($motpasse);
-            $i++;
-        }
+//            $i++;
+//        }
         return $motpasse;
     }
     /**

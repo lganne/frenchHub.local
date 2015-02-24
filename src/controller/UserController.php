@@ -8,12 +8,13 @@ namespace controller;
 class UserController 
 {
     protected $user;
-    protected $vue;
+    protected $twig;
     
     public function __construct()
     {
        $this->user=new \modele\UserManager() ;
-       $this->vue=new \view\UserVue();
+         $var=new \service\DiverService();
+        $this->twig=$var->twig();
     }
     
     public function inscription()
@@ -51,10 +52,7 @@ class UserController
     
     public function loginValidation()
     {
-      
-        
-
-        $log=$_POST['login'];
+         $log=$_POST['login'];
         $pass=$_POST['password'];
         $rep=$this->user->veriflog($pass,$log);
         $user=array();
@@ -66,20 +64,25 @@ class UserController
               array_push($user,$detail);
             }
             $_SESSION['user']=$user;
-             header("Location: http://artspace.local/pricing/2"); 
-            
-        }
+         
+            $template = $this->twig->loadTemplate('Membre.html.twig');
+              echo $template->render(array( 'session'   => $user ) );
+          }
         else
         {
             $mess="Il y a une erreur dans le login ou le mot de passe";
+            $template = $this->twig->loadTemplate('index.html.twig');
+            $_SESSION['user']=[];
+          echo $template->render(array('session' => NULL,'message'=>$mess));
         }
        
     }
     
     public function logout()
     {
+           $template = $this->twig->loadTemplate('index.html.twig');
         $_SESSION['user']=[];
-         header("Location: http://artspace.local/pricing/2"); 
+         echo $template->render(array('session' => NULL));
     }
     
    
