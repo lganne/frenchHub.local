@@ -1,12 +1,13 @@
 *, *:before, *:after { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
 body { font-family: Arial, Helvetica, sans-serif; margin: 0;}
+section { position: relative; padding: 20px 120px;}
 
 /* Connexion */
-#header_crossbar { width: 100%; height: 30px; background-color: #36ABBA;padding: 3px; text-align: right; color: #fff;}
+#header_crossbar { width: 100%; height: 30px; background-color: #009ACD; padding: 3px; text-align: right; color: #fff;}
 #connection { height: 1em; overflow: hidden;}
 .login { display: block; cursor: pointer;}
 .form, .logout { display: none;}
-#lang select { background-color: #36ABBA; border: none; color: #fff;}
+#lang select { background-color: #009ACD; border: none; color: #fff;}
 #connection, #lang, #connection .form form div div { display: inline-block; vertical-align: top;}
 #connection p,#connection .form form div div input { margin: 0 3px;}
 #connection .form form div div button { padding: 0; background: none; border: none; cursor: pointer;}
@@ -15,53 +16,34 @@ body { font-family: Arial, Helvetica, sans-serif; margin: 0;}
 .parallax { position:relative; height:30em; overflow:hidden;}
 .parallax img { position:absolute; max-width:100%; min-height:500px;}
 .parallax h1 { position:absolute; top:50%; left:0; right:0; color:#fff; letter-spacing:0.2em; text-align:center;}
-.parallax span { position:absolute; bottom:0; left:0; right:0; color:#fff; text-align:center; cursor: pointer;}
+.parallax a { position:absolute; bottom:0; left:0; right:0; color:#fff; text-align:center; cursor: pointer;}
 h1{ color:#36ABBA; font-size:2.4em;}
 
+/* Nav fixed */
+
+.nav { position: absolute; z-index: 9999; top: 0; left: 0; padding: 5px; background-color: #009ACD;}
+.nav:hover { ;}
+.nav, .nav ul li a { color: #fff;}
+.nav h2 { text-align: center;}
+.nav ul { padding: 5px; list-style: none;}
+.nav ul li { height: 24px; margin: 5px 0; text-align: center;}
+.nav ul li a { display: inline-block; height: 100%;}
+.nav ul li:first-child a { background: url('../img/relocation.png') no-repeat;}
+.nav ul li:nth-child(2) a { background: url('../img/house.png') no-repeat;}
+.nav ul li:nth-child(3) a { background: url('../img/administration.png') no-repeat;}
+.nav ul li:nth-child(4) a { background: url('../img/immigration.png') no-repeat;}
+.nav ul li:nth-child(5) a { background: url('../img/family.png') no-repeat;}
+.nav ul li:last-child a { background: url('../img/devis.png') no-repeat;}
+.nav ul li a { padding-left: 34px;}
+.fixed { position: fixed; top: 0; left: 0;}
+
 /* Scroll up */
-#scrollup {
-  width: 48px;
-  height: 48px;
-  background: url(https://cdn3.iconfinder.com/data/icons/iconic-1/32/arrow_up_alt1-48.png) 0 0 no-repeat;
-  text-indent: -9999px;
-  display: none;
-  background-color: #eee;
-  position: fixed;
-  bottom: 48px;
-  right: 48px;
-}
+#scrollup { position: fixed; z-index: 9999; display: none; right: 48px; bottom: 48px;}
 
 /* onglets */
-.container{
-      width: 100%;
-      margin: 0 auto;
-    }
-
-    ul.tabs{
-      margin: 0px;
-      padding: 0px;
-      list-style: none;
-    }
-    ul.tabs li{
-      background: #009ACD;
-      color: #fff;
-      display: inline-block;
-      /* padding: 10px 15px; */
-      width: 25%;
-      cursor: pointer;
-    }
-
-    ul.tabs li.current{
-      background: #ededed;
-      color: #222;
-    }
-
-    .tab-content{
-      display: none;
-      background: #ededed;
-      padding: 15px;
-    }
-
-    .tab-content.current{
-      display: inherit;
-    }
+.container{ width: 100%; margin: 0 auto;}
+ul.tabs { margin: 0px; padding: 0px; list-style: none;}
+ul.tabs li{ display: inline-block; width: 20%; height: 100px; background: #009ACD; line-height: 100px; text-align: center; color: #fff; cursor: pointer; }
+ul.tabs li.current{ background: #ededed; color: #222;}
+.tab-content{ display: none; padding: 15px; background: #ededed;}
+.tab-content.current{ display: inherit;}

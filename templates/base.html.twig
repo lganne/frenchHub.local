@@ -7,31 +7,28 @@
                    <link rel="stylesheet" type="text/css" href="css/style.css " />
                       
 	{% endblock %}
-		{#<script src="'//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')"></script>#}
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 </head>
 	<body>
 	{% block body %}
-                              
-                                <div id="header_crossbar">
-                                        <div id="connection">
-                                                 {%   if ( app.user==null) %}
-                                                         <p class="login">Connexion</p>
-                                                            <div class="form">
-                                                                 <form action="login_check" method="post" >
+        <div id="header_crossbar">
+                <div id="connection">
+                    <p class="login">Connexion</p>
+                    <div class="form">
+                        <form action="login_check" method="post" >
                                                                 
-                                                                </form>
-                                                            </div> 
-                                                   {% else %}
-                                                       <p class="logout">Bonjour, ! <a href="#">Deconnexion</a>
-                                                    {% endif %}
-                                        </div>
-                                        <div id="lang">
-                                        <select>
-                                            <option value="fr">fr</option>
-                                            <option value="en">en</option>
-                                        </select>
-                                        </div>
-                            </div>
+                        </form>
+                    </div>
+                    <p class="logout">Bonjour, Kevin ! <a href="#">Deconnexion</a>
+                </div>
+                <div id="lang">
+                    <select>
+                        <option value="fr">fr</option>
+                        <option value="en">en</option>
+                    </select>
+                </div>
+            </div>
+            
 			<a href="#" id="scrollup">Scroll</a>
 
 			{% block page %}
@@ -42,7 +39,7 @@
 			</footer>
 
 			{% block javascripts %}
-			<script type="text/javascript" src="'js/frenchHub.js'"></script>
+			<script type="text/javascript" src="js/frenchHub.js"></script>
 			{% endblock %}
 		{% endblock %}
 	</body>
