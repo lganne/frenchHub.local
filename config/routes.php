@@ -6,12 +6,10 @@ return [
         'pattern' => '\/',
         'connect' => 'controller\DefaultController:affiche'
     ],
-   
-        'UserController_inscription' => [
+           'UserController_inscription' => [
         'pattern' => '\/inscription',
         'connect' => 'controller\UserController:inscription'
-      
-    ],
+       ],
        'UserController_login' => [
         'pattern' => '\/login',
         'connect' => 'controller\UserController:login'
@@ -24,6 +22,15 @@ return [
         'pattern' => '\/logout',
         'connect' => 'controller\UserController:logout'
      ],
+      'FormController_contact' => [
+        'pattern' => '\/contact',
+        'connect' => 'controller\FormController:contact'
+     ],
+     'FormController_adhesion' => [
+        'pattern' => '\/adhesion',
+        'connect' => 'controller\FormController:adhesion'
+     ]
+       
     
        
 ];

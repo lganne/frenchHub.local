@@ -9,6 +9,7 @@ return array(
     'controller\\AdminController' => $baseDir . '/src/controller/AdminController.php',
     'controller\\DefaultController' => $baseDir . '/src/controller/DefaultController.php',
     'controller\\UserController' => $baseDir . '/src/controller/UserController.php',
+    'controller\\FormController' => $baseDir . '/src/controller/FormController.php',
     'modele\\EntiteManager' => $baseDir . '/src/modele/EntiteManager.php',
     'modele\\UserManager' => $baseDir . '/src/modele/UserManager.php',
     'service\\Config' => $baseDir . '/src/service/Config.php',

@@ -13,10 +13,8 @@ $link->query(
         . "COLLATE utf8_general_ci;"
         ) or die("pb create database blog");
 
-echo "ok database \n";
+echo "ok database \n  <br>";
 
-
-echo "Ok new user \n";
 
 mysqli_close($link);
 
@@ -38,14 +36,62 @@ $link->query("
         PRIMARY KEY (`id`)
         ) ENGINE=InnoDB AUTO_INCREMENT=1 ;
  " )or die("pb create table users");
+echo "ok users \n  <br>";
 
+// table entreprises
+$link->query("
+        CREATE TABLE `entreprises` (
+        `id` INT(10) UNSIGNED AUTO_INCREMENT,
+         `name` VARCHAR(30) NOT NULL,
+        `siren` INTEGER(10) ,
+        `siret` VARCHAR(14) ,
+        `adress` VARCHAR(100) NOT NULL,
+        `contact` VARCHAR(150) NOT NULL,
+        `fonction` VARCHAR(30) ,
+        `emailcontact` VARCHAR(250) NOT NULL,
+         `tel` VARCHAR(50),
+         `description` VARCHAR(250),  
+         `forme_ juridique` VARCHAR(100) ,
+        `date_created` DATETIME,
+         `date_modif` DATETIME,
+         PRIMARY KEY (`id`)
+        ) ENGINE=InnoDB AUTO_INCREMENT=1 ;
+ " )or die("pb create table entreprise");
 
+echo "ok entreprise \n <br>";
 
-// seed tables
-//$link->query("
-//        INSERT INTO `users` (`username`,`email`, `password`, `role`,`salt`,`token`) VALUES 
-//        ('admin','admin@yahoo.fr,admin, 'membre','seldelavie','jeton' )
-//        ")or die("pb insert data users");
+// table memberShip (adhesion)
+$link->query("
+        CREATE TABLE `memberShip` (
+        `id` INT(10) UNSIGNED AUTO_INCREMENT,
+         `entreprises_id` INT UNSIGNED,
+        `type` VARCHAR(30) ,
+        `etat` ENUM('adherent', 'resilier', 'en attente') NOT NULL DEFAULT 'en attente',
+        `lastBill` VARCHAR(50),
+        `date_lastBill` DATETIME,
+        `date_created` DATETIME,
+         `date_modif` DATETIME,
+          PRIMARY KEY (`id`),
+        CONSTRAINT `fk_memberShip_entreprises_id` FOREIGN KEY (`entreprises_id`) REFERENCES `entreprises` (`id`) ON DELETE SET NULL
+      ) ENGINE=InnoDB  AUTO_INCREMENT=1 ;"
+        ) or die("pb create table memberShip");
+
+echo "ok memberShip \n <br>";
+
+// table requestEstimate (demande de devis)
+$link->query("
+        CREATE TABLE `requestEstimate` (
+        `id` INT(10) UNSIGNED AUTO_INCREMENT,
+         `entreprises_id` INT UNSIGNED,
+        `type` VARCHAR(30) ,
+        `date_created` DATETIME,
+         `date_modif` DATETIME,
+          PRIMARY KEY (`id`),
+        FOREIGN KEY (`entreprises_id`) REFERENCES `entreprises` (`id`) 
+      ) ENGINE=InnoDB  AUTO_INCREMENT=1 ;"
+        ) or die("pb create table requestEstimate");
+
+echo "ok requestEstimate \n <br>";
 
 $link->query("INSERT INTO `frenchhub2`.`users` (`id`, `username`, `password`, `email`, `salt`, `token`, `date_created`, `date_modif`, `isActif`, `role`) 
     VALUES (NULL, 'admin', SHA1('admin'), 'admin@yahoo.fr', SHA1('seldelavie'), SHA1('jeton'), '2015-02-22 00:00:00', '2015-02-22 00:00:00', '1', 'membre');

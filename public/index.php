@@ -2,13 +2,12 @@
 
 require __DIR__ . '/../bootstrap.php';
  
-   
-
+  
 try {
     // le new route a été fait dans bootsrap
   
     $routing = $router->getRoute(URI);
-    if (empty($routing)) {
+     if (empty($routing)) {
         throw new RuntimeException("bad route");
     }
       
@@ -18,7 +17,7 @@ try {
 
     // class ReflectionClass permet de savoir comment une classe donnée est faite
     $reflController = new ReflectionClass($controllerName);
-    if (!$reflController->hasMethod($action)) {
+       if (!$reflController->hasMethod($action)) {
         throw new RuntimeException("bad route");
     }
     $controller = new $controllerName;

@@ -3,11 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/FrenchHub.local/src/controller/DefaultController.php</file>
+            <file>file:/C:/wamp/www/FrenchHub.local/script/install.php</file>
+            <file>file:/C:/wamp/www/FrenchHub.local/templates/base.html.twig</file>
             <file>file:/C:/wamp/www/FrenchHub.local/bootstrap.php</file>
-            <file>file:/C:/wamp/www/FrenchHub.local/src/service/DiverService.php</file>
-            <file>file:/C:/wamp/www/FrenchHub.local/src/controller/UserController.php</file>
+            <file>file:/C:/wamp/www/FrenchHub.local/src/controller/DefaultController.php</file>
+            <file>file:/C:/wamp/www/FrenchHub.local/src/modele/UserManager.php</file>
+            <file>file:/C:/wamp/www/FrenchHub.local/config/database.php</file>
+            <file>file:/C:/wamp/www/FrenchHub.local/vendor/composer/autoload_namespaces.php</file>
             <file>file:/C:/wamp/www/FrenchHub.local/config/routes.php</file>
+            <file>file:/C:/wamp/www/FrenchHub.local/vendor/composer/autoload_classmap.php</file>
+            <file>file:/C:/wamp/www/FrenchHub.local/src/controller/UserController.php</file>
+            <file>file:/C:/wamp/www/FrenchHub.local/composer.json</file>
+            <file>file:/C:/wamp/www/FrenchHub.local/vendor/autoload.php</file>
+            <file>file:/C:/wamp/www/FrenchHub.local/templates/Membre.html.twig</file>
         </group>
     </open-files>
 </project-private>
