@@ -11,21 +11,47 @@ class FormController extends \controller\modelController
     
   public function adhesion()
   {
-      
-      if (isset($_POST))
+       $template = $this->twig->loadTemplate('index.html.twig');
+       if (isset($_POST))
       {
           $ent=new \modele\EntrepriseManager;
           $res=$ent->insert($_POST);
+          if ($res==true)
+          {
+              $mess="Votre adhesion a bien été enregistré";
+           }
+        else
+         {
+                 $mess="un probleme est survenue lors de l'enregistrement du formulaire.<br>Veuillez recommencer";
+          }
       }
       else
       {
-          return "le formulaire est vide";
+          $mess="le formulaire est vide";
       }
-      echo  '<h1>bonjour</h1>';
+        echo $template->render(array("message2"=>$mess));
   }
   public function contact()
   {
-      echo '<h1>bonjour</h1>';
+      $template = $this->twig->loadTemplate('index.html.twig');
+       if (isset($_POST))
+      {
+          $info=new \modele\informationManager();
+          $res=$info->insert($_POST);
+          if ($res==true)
+          {
+              $mess="Votre demande a bien été enregistré";
+           }
+        else
+         {
+                 $mess="un probleme est survenue lors de l'enregistrement du formulaire.<br>Veuillez recommencer";
+          }
+      }
+      else
+      {
+          $mess="le formulaire est vide";
+      }
+        echo $template->render(array("message3"=>$mess));
   }
   
   public function verifFormEnt($data)

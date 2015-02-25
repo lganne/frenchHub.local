@@ -104,7 +104,11 @@
                                                      <label for="Tel">Tel</label> :   <input type="tel" name="tel" required>   <br>
                                                       <input type="submit" name="valider" value="valider">
                                             </form>
-
+                                            {% if (message2 !=null ) %}
+                                              <div>
+                                                    {{ message2 }}
+                                              </div>
+                                            {% endif %}
                                         
                                     </div>
                             </article>
@@ -122,6 +126,11 @@
                
                 </form>
         </article>
+             {% if (message3 !=null ) %}
+                    <div>
+                          {{ message3 }}
+                    </div>
+              {% endif %}
         
     </section>
     

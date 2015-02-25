@@ -93,6 +93,22 @@ $link->query("
 
 echo "ok requestEstimate \n <br>";
 
+// table informations
+$link->query("
+        CREATE TABLE `informations` (
+        `id` INT(10) UNSIGNED AUTO_INCREMENT,
+         `name` VARCHAR(30) NOT NULL,
+         `contact` VARCHAR(150) NOT NULL,
+        `fonction` VARCHAR(30) ,
+        `emailcontact` VARCHAR(250) NOT NULL,
+         `tel` VARCHAR(50),
+         `date_created` DATETIME,
+            PRIMARY KEY (`id`)
+        ) ENGINE=InnoDB AUTO_INCREMENT=1 ;
+ " )or die("pb create table information");
+
+echo "ok information <br>";
+
 $link->query("INSERT INTO `frenchhub2`.`users` (`id`, `username`, `password`, `email`, `salt`, `token`, `date_created`, `date_modif`, `isActif`, `role`) 
     VALUES (NULL, 'admin', SHA1('admin'), 'admin@yahoo.fr', SHA1('seldelavie'), SHA1('jeton'), '2015-02-22 00:00:00', '2015-02-22 00:00:00', '1', 'membre');
          ")or die("pb insert data users");
