@@ -51,7 +51,7 @@ $link->query("
         `emailcontact` VARCHAR(250) NOT NULL,
          `tel` VARCHAR(50),
          `description` VARCHAR(250),  
-         `forme_ juridique` VARCHAR(100) ,
+         `juridique` VARCHAR(100) ,
         `date_created` DATETIME,
          `date_modif` DATETIME,
          PRIMARY KEY (`id`)

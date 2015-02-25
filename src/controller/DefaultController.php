@@ -6,17 +6,11 @@ namespace controller;
  *
  * @author lganne
  */
-class DefaultController {
+class DefaultController extends \controller\modelController
+{
     
   protected $entite;
-  protected $twig;
 
-     public function __construct() 
-    {
-        
-         $var=new \service\DiverService();
-        $this->twig=$var->twig();
-    }
     
     public function affiche()
     {

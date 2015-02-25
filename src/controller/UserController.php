@@ -5,16 +5,16 @@ namespace controller;
  *
  * @author lganne
  */
-class UserController 
+class UserController extends \controller\modelController
 {
     protected $user;
-    protected $twig;
+    
     
     public function __construct()
     {
+         parent::__construct();
        $this->user=new \modele\UserManager() ;
-         $var=new \service\DiverService();
-        $this->twig=$var->twig();
+      
     }
     
     public function inscription()
