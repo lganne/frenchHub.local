@@ -19,6 +19,12 @@ class FormController extends \controller\modelController
           if ($res==true)
           {
               $mess="Votre adhesion a bien été enregistré";
+//                  $var=new \service\DiverService();
+//              $pdw=$var->generateRandomString(10);
+//              $data=array("username"=>$_POST['contact'],"password"=>$pdw,"email"=>$_POST['email']);
+//              $user=new \modele\UserManager();
+            //  $rep=$user->save($data);
+           //   var_dump($rep);
            }
         else
          {
@@ -41,6 +47,7 @@ class FormController extends \controller\modelController
           if ($res==true)
           {
               $mess="Votre demande a bien été enregistré";
+           
            }
         else
          {

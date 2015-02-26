@@ -20,23 +20,7 @@ mysqli_close($link);
 
 $link=mysqli_connect('localhost', 'root', '', 'frenchHub2') or die("pb connexion");
 
-// table users
-$link->query("
-        CREATE TABLE `users` (
-        `id` INT(10) UNSIGNED AUTO_INCREMENT,
-        `username` VARCHAR(30) NOT NULL,
-        `password` VARCHAR(100) NOT NULL,
-        `email` VARCHAR(150) NOT NULL,
-        `salt` VARCHAR(30) NOT NULL,
-        `token` VARCHAR(50) NOT NULL,  
-        `date_created` DATETIME,
-         `date_modif` DATETIME,
-         `isActif` BOOLEAN,
-         `role` ENUM('administrator', 'editor', 'membre') NOT NULL DEFAULT 'membre',
-        PRIMARY KEY (`id`)
-        ) ENGINE=InnoDB AUTO_INCREMENT=1 ;
- " )or die("pb create table users");
-echo "ok users \n  <br>";
+
 
 // table entreprises
 $link->query("
@@ -59,6 +43,26 @@ $link->query("
  " )or die("pb create table entreprise");
 
 echo "ok entreprise \n <br>";
+
+// table users
+$link->query("
+        CREATE TABLE `users` (
+        `id` INT(10) UNSIGNED AUTO_INCREMENT,
+          `entreprises_id` INT UNSIGNED,
+        `username` VARCHAR(30) NOT NULL,
+        `password` VARCHAR(100) NOT NULL,
+        `email` VARCHAR(150) NOT NULL,
+        `salt` VARCHAR(30) NOT NULL,
+        `token` VARCHAR(50) NOT NULL,  
+        `date_created` DATETIME,
+         `date_modif` DATETIME,
+         `isActif` BOOLEAN,
+         `role` ENUM('administrator', 'editor', 'membre','entreprise') NOT NULL DEFAULT 'membre',
+        PRIMARY KEY (`id`),
+          FOREIGN KEY (`entreprises_id`) REFERENCES `entreprises` (`id`) 
+        ) ENGINE=InnoDB AUTO_INCREMENT=1 ;
+ " )or die("pb create table users");
+echo "ok users \n  <br>";
 
 // table memberShip (adhesion)
 $link->query("

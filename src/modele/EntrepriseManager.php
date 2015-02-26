@@ -1,5 +1,6 @@
 <?php
 namespace modele;
+
 /**
  * Description of EntrepriseManager
  *

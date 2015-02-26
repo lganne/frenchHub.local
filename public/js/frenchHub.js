@@ -34,6 +34,23 @@ $(document).ready(function(){
         }
     });
 
+    /* Nav slide */
+    $(".open").click(function(){
+        $(".contenu").animate({
+            width: '260px'
+        });
+        $(this).hide();
+        $('.close').show();
+    });
+
+    $(".close").click(function(){
+        $(".contenu").animate({
+            width: '120px'
+        });
+        $(this).hide();
+        $('.open').show();
+    });
+
     /* Login */
     $('.login').click(function(e){
         $('.login').slideToggle();
@@ -41,6 +58,15 @@ $(document).ready(function(){
     });
 
     /* Onglets */
+    $('.member').click(function(){
+
+        $('ul.tabs li').removeClass('current');
+        $('.tab-content').removeClass('current');
+
+        $('#member').addClass('current');
+        $('#tab-5').addClass('current');
+    });
+    
     $('ul.tabs li').click(function(){
         var tab_id = $(this).attr('data-tab');
 

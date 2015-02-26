@@ -21,21 +21,26 @@ h1{ color:#36ABBA; font-size:2.4em;}
 
 /* Nav fixed */
 
-.nav { position: absolute; z-index: 9999; top: 0; left: 0; padding: 5px; background-color: #009ACD;}
-.nav:hover { ;}
+.nav { position: absolute; z-index: 9999; top: 0; left: 0;}
 .nav, .nav ul li a { color: #fff;}
-.nav h2 { text-align: center;}
+.contenu { width: 120px; height: 300px; padding: 5px; background-color: #009ACD; overflow: hidden;}
+.nav div { display: inline-block; vertical-align: top;}
 .nav ul { padding: 5px; list-style: none;}
-.nav ul li { height: 24px; margin: 5px 0; text-align: center;}
+.nav ul li { height: 24px; margin: 5px 0;}
 .nav ul li a { display: inline-block; height: 100%;}
-.nav ul li:first-child a { background: url('../img/relocation.png') no-repeat;}
-.nav ul li:nth-child(2) a { background: url('../img/house.png') no-repeat;}
-.nav ul li:nth-child(3) a { background: url('../img/administration.png') no-repeat;}
-.nav ul li:nth-child(4) a { background: url('../img/immigration.png') no-repeat;}
-.nav ul li:nth-child(5) a { background: url('../img/family.png') no-repeat;}
-.nav ul li:last-child a { background: url('../img/devis.png') no-repeat;}
-.nav ul li a { padding-left: 34px;}
+.picto h2 { text-align: center;}
+.picto ul li { text-align: center;}
+.picto ul li:first-child a { background: url('../img/relocation.png') no-repeat;}
+.picto ul li:nth-child(2) a { background: url('../img/house.png') no-repeat;}
+.picto ul li:nth-child(3) a { background: url('../img/administration.png') no-repeat;}
+.picto ul li:nth-child(4) a { background: url('../img/immigration.png') no-repeat;}
+.picto ul li:nth-child(5) a { background: url('../img/family.png') no-repeat;}
+.picto ul li:last-child a { background: url('../img/devis.png') no-repeat;}
+.picto ul li a { padding-left: 34px;}
 .fixed { position: fixed; top: 0; left: 0;}
+#slide { width: 20px; height: 300px; padding: 5px; background-color: #ccc;}
+#slide { text-align: center; color: #fff; cursor: pointer;}
+#slide .close { display: none;}
 
 /* Scroll up */
 #scrollup { position: fixed; z-index: 9999; display: none; right: 48px; bottom: 48px;}

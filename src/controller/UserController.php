@@ -21,16 +21,16 @@ class UserController extends \controller\modelController
     {
         $this->vue->form();
     }
-    public function enregistrement()
+    public function enregistrement($data)
     {
-           if (!empty($_POST['login']) && !empty($_POST['mail']) && !empty($_POST['password'])  )
+           if (!empty($data['name']) && !empty($data['email']) && !empty($data['password'])  )
           {
               
                $var=new \service\DiverService();
                $salt=$var->generateRandomString(30);
                $token=$var->generateRandomString(50);
                // on rajoute le salt au mot de passe
-               $password=$salt.$_POST['password'].$salt;
+               $password=$salt.$data['password'].$salt;
                // on crypte le mot de passe
                $pwd=$var->codepassword($password);
                $role='visitor';
@@ -39,10 +39,11 @@ class UserController extends \controller\modelController
                {
                    $role=$_POST['role'];
                }
-               $data=array('username'=>$_POST['login'],'password'=>$pwd,'email'=>$_POST['mail'],'salt'=>$salt,'token'=>$token,'role'=>$role);
-               $this->user->save($data);
+               $donne=array('username'=>$data['login'],'password'=>$pwd,'email'=>$data['mail'],'salt'=>$salt,'token'=>$token,'role'=>$role);
+               $rep=$this->user->save($donne);
            }
-           $this->login();
+           return $rep;
+         //  $this->login();
     }
     
     public function login()

@@ -12,6 +12,7 @@
 	<body>
 	{% block body %}
         <div id="header_crossbar">
+            <a href="#member" class="member">Abonnez-vous</a>
                 <div id="connection">
                     
                   {% if(session==nul) %}
@@ -43,19 +44,19 @@
                 </div>
             </div>
             
-			<a href="#" id="scrollup">Scroll</a>
+                    <a href="#header_crossbar" id="scrollup">Scroll</a>
 
-			{% block page %}
-			{% endblock%}
+                    {% block page %}
+                    {% endblock%}
 
-			<footer>
-			<h1>Footer</h1>
-			</footer>
+                    <footer>
+                    <h1>Footer</h1>
+                    </footer>
 
-			{% block javascripts %}
-			<script type="text/javascript" src="js/frenchHub.js"></script>
-			{% endblock %}
-		{% endblock %}
+                    {% block javascripts %}
+                    <script type="text/javascript" src="js/frenchHub.js"></script>
+                    {% endblock %}
+        {% endblock %}
 	</body>
 
 </html>
