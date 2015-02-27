@@ -28,6 +28,6 @@ class EntrepriseController extends modelController
     public function homeEntreprise()
     {
        $template = $this->twig->loadTemplate('Entreprise.html.twig');
-         echo $template->render(array( 'session'   => $_SESSION['user'][3] ) );
+         echo $template->render(array( 'session'   => $_SESSION['user'][1] ) );
     }
 }

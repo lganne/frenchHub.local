@@ -29,7 +29,7 @@ class MembreController  extends modelController
     public function homeMembre()
     {
        $template = $this->twig->loadTemplate('Membre.html.twig');
-         echo $template->render(array( 'session'   => $_SESSION['user'][3] ) );
+         echo $template->render(array( 'session'   => $_SESSION['user'][1] ) );
     }
 }
 

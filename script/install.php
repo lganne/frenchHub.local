@@ -122,7 +122,7 @@ $link->query("INSERT INTO `frenchhub2`.`users` (`id`, `entreprises_id`, `usernam
         VALUES (NULL, '1', 'entreprise', '23dfe5c957cad2f7fce71d865d3db05ad3621b99', ''EvGg8gCO3EtLJ7km2EMkiIVRmgmGzN', '', '2015-02-27 00:00:00', '2015-02-27 00:00:00', '1', 'entreprise');");
     
 $link->query("INSERT INTO `frenchhub2`.`users` (`id`, `entreprises_id`, `username`, `password`, `email`, `salt`, `token`, `date_created`, `date_modif`, `isActif`, `role`)"
-        . " VALUES (NULL, '1', 'membre', '7f347eb4972f19df2bffa50a28b36be26fb9c9c1','', 'zZSqSeYdpe1PZ0AZXYNUa8eiYXZpco',  '', '2015-02-27 00:00:00', '2015-02-27 00:00:00', '1', 'membre');");
+        . " VALUES (NULL, '1', 'membre', '7f347eb4972f19df2bffa50a28b36be26fb9c9c1','', 'zZSqSeYdpe1PZ0AZXYNUa8eiYXZpco',  '', '2015-02-27 00:00:00', '2015-02-27 00:00:00', '1', 'entreprise');");
 
 $link->query("INSERT INTO `frenchhub2`.`users` (`id`, `username`, `password`, `email`, `salt`, `token`, `date_created`, `date_modif`, `isActif`, `role`) 
     VALUES (NULL, 'admin', SHA1('c354bf69b321fd4c676f4ee42054d5adminc354bf69b321fd4c676f4ee42054d5'), 'admin@yahoo.fr', SHA1('seldelavie'), SHA1('jeton'), '2015-02-22 00:00:00', '2015-02-22 00:00:00', '1', 'membre');
