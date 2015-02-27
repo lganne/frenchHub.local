@@ -3,12 +3,12 @@ body { font-family: Arial, Helvetica, sans-serif; margin: 0;}
 section { position: relative; padding: 20px 120px;}
 
 /* Connexion */
-#header_crossbar { width: 100%; height: 30px; background-color: #009ACD; padding: 3px; text-align: right; color: #fff;}
+#header_crossbar { width: 300px; height: 30px; background-color: #f6f2e9; padding: 3px; text-align: right; color: #615e59;}
 #connection { height: 1em; overflow: hidden;}
 .login { display: block; cursor: pointer;}
 .form, .logout { display: none;}
-#lang select { background-color: #009ACD; border: none; color: #fff;}
-#connection, #lang, #connection .form form div div { display: inline-block; vertical-align: top;}
+#lang select { background-color: #f6f2e9; border: none; color: #615e59;}
+#connection, #lang, #search, #connection .form form div div { display: inline-block; vertical-align: top;}
 #connection p,#connection .form form div div input { margin: 0 3px;}
 #connection .form form div div button { padding: 0; background: none; border: none; cursor: pointer;}
 
