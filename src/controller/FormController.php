@@ -7,7 +7,13 @@ namespace controller;
  */
 class FormController extends \controller\modelController
 {
+  protected  $paysfr;
+    public function __construct() {
+        parent::__construct();
+        $pays=new \modele\PaysManager();
+        $this->paysfr=$pays->nomPays('nom_fr_fr');
         
+    }
   public function adhesion()
   {
        $template = $this->twig->loadTemplate('index.html.twig');
@@ -49,6 +55,7 @@ class FormController extends \controller\modelController
   }
   public function contact()
   {
+        
       $template = $this->twig->loadTemplate('index.html.twig');
        if (isset($_POST))
       {
@@ -80,9 +87,12 @@ class FormController extends \controller\modelController
   
   public function devis()
   {
-         $template = $this->twig->loadTemplate('Detail/Devis.html.twig');
-        echo $template->render(array());
+    //  $tabPays=$this->pays->nomPays('nom_fr_fr');
+       $template = $this->twig->loadTemplate('Detail/Devis.html.twig');
+      
+        echo $template->render(array('nomPays'=>$this->paysfr));
   }
+  
   
   public function devisEnregistrement()
   {

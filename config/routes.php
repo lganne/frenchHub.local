@@ -37,6 +37,14 @@ return [
     'FormController_devisEnregistrement' => [
         'pattern' => '\/devisEnregistrement',
         'connect' => 'controller\FormController:devisEnregistrement'
+     ],
+    'EntrepriseController_homeEntreprise' => [
+        'pattern' => '\/homeEntreprise',
+        'connect' => 'controller\EntrepriseController:homeEntreprise'
+     ],
+     'MembreController_homeMembre' => [
+        'pattern' => '\/homeMembre',
+        'connect' => 'controller\MembreController:homeMembre'
      ]
        
     
