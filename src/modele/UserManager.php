@@ -12,7 +12,8 @@ public function save($tabDonne)
 {
     
      $sql=sprintf("insert into ".$this->table.
-             " (username,password,email,salt,token,date_created,date_modif,role) values ('%s','%s','%s','%s','%s',NOW(),NOW(),'%s')",
+             " (entreprises_id,username,password,email,salt,token,date_created,date_modif,role) values ('%d','%s','%s','%s','%s','%s',NOW(),NOW(),'%s')",
+                            $tabDonne['ident'],
                            $tabDonne['username'],
                             $tabDonne['password'],
                             $tabDonne['email'],
@@ -45,7 +46,8 @@ public function save($tabDonne)
         if (!empty($data))
       //  $motPasse=$data->salt.$pass.$data->salt;
         {
-            $motPasse=$pass;
+             $motPasse=$data->salt.$pass.$data->salt;
+         //   $motPasse=$pass;
             $verifPass=\service\DiverService::codepassword($motPasse);
             If ($verifPass==$data->password)
             {

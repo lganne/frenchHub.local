@@ -21,7 +21,6 @@ mysqli_close($link);
 $link=mysqli_connect('localhost', 'root', '', 'frenchHub2') or die("pb connexion");
 
 
-
 // table entreprises
 $link->query("
         CREATE TABLE `entreprises` (
@@ -29,7 +28,9 @@ $link->query("
          `name` VARCHAR(30) NOT NULL,
         `siren` INTEGER(10) ,
         `siret` VARCHAR(14) ,
-        `adress` VARCHAR(100) NOT NULL,
+        `adress` VARCHAR(250) NOT NULL,
+        `Ville`  VARCHAR(150) NOT NULL,
+         `Pays`  VARCHAR(150) NOT NULL,
         `contact` VARCHAR(150) NOT NULL,
         `fonction` VARCHAR(30) ,
         `emailcontact` VARCHAR(250) NOT NULL,
@@ -57,7 +58,7 @@ $link->query("
         `date_created` DATETIME,
          `date_modif` DATETIME,
          `isActif` BOOLEAN,
-         `role` ENUM('administrator', 'editor', 'membre','entreprise') NOT NULL DEFAULT 'membre',
+         `role` ENUM('administrator', 'membre','entreprise') NOT NULL DEFAULT 'membre',
         PRIMARY KEY (`id`),
           FOREIGN KEY (`entreprises_id`) REFERENCES `entreprises` (`id`) 
         ) ENGINE=InnoDB AUTO_INCREMENT=1 ;
@@ -105,6 +106,7 @@ $link->query("
          `contact` VARCHAR(150) NOT NULL,
         `fonction` VARCHAR(30) ,
         `emailcontact` VARCHAR(250) NOT NULL,
+        `Pays`  VARCHAR(150) NOT NULL,
          `tel` VARCHAR(50),
          `date_created` DATETIME,
             PRIMARY KEY (`id`)
@@ -113,8 +115,17 @@ $link->query("
 
 echo "ok information <br>";
 
+$link->query("INSERT INTO `frenchhub2`.`entreprises` (`id`, `name`, `siren`, `siret`, `adress`, `Ville`, `Pays`, `contact`, `fonction`, `emailcontact`, `tel`, `description`, `juridique`, `date_created`, `date_modif`) 
+    VALUES (NULL, 'samsung', NULL, NULL, '', '', 'coree', 'admin', 'rh', 'rh@yahoo.fr', NULL, NULL, NULL, NULL, NULL)");
+
+$link->query("INSERT INTO `frenchhub2`.`users` (`id`, `entreprises_id`, `username`, `password`, `email`, `salt`, `token`, `date_created`, `date_modif`, `isActif`, `role`) 
+        VALUES (NULL, '1', 'entreprise', '23dfe5c957cad2f7fce71d865d3db05ad3621b99', ''EvGg8gCO3EtLJ7km2EMkiIVRmgmGzN', '', '2015-02-27 00:00:00', '2015-02-27 00:00:00', '1', 'entreprise');");
+    
+$link->query("INSERT INTO `frenchhub2`.`users` (`id`, `entreprises_id`, `username`, `password`, `email`, `salt`, `token`, `date_created`, `date_modif`, `isActif`, `role`)"
+        . " VALUES (NULL, '1', 'membre', '7f347eb4972f19df2bffa50a28b36be26fb9c9c1','', 'zZSqSeYdpe1PZ0AZXYNUa8eiYXZpco',  '', '2015-02-27 00:00:00', '2015-02-27 00:00:00', '1', 'membre');");
+
 $link->query("INSERT INTO `frenchhub2`.`users` (`id`, `username`, `password`, `email`, `salt`, `token`, `date_created`, `date_modif`, `isActif`, `role`) 
-    VALUES (NULL, 'admin', SHA1('admin'), 'admin@yahoo.fr', SHA1('seldelavie'), SHA1('jeton'), '2015-02-22 00:00:00', '2015-02-22 00:00:00', '1', 'membre');
+    VALUES (NULL, 'admin', SHA1('c354bf69b321fd4c676f4ee42054d5adminc354bf69b321fd4c676f4ee42054d5'), 'admin@yahoo.fr', SHA1('seldelavie'), SHA1('jeton'), '2015-02-22 00:00:00', '2015-02-22 00:00:00', '1', 'membre');
          ")or die("pb insert data users");
 
 mysqli_close($link);

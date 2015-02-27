@@ -29,6 +29,14 @@ return [
      'FormController_adhesion' => [
         'pattern' => '\/adhesion',
         'connect' => 'controller\FormController:adhesion'
+     ],
+     'FormController_devis' => [
+        'pattern' => '\/devis',
+        'connect' => 'controller\FormController:devis'
+     ],
+    'FormController_devisEnregistrement' => [
+        'pattern' => '\/devisEnregistrement',
+        'connect' => 'controller\FormController:devisEnregistrement'
      ]
        
     

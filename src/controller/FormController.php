@@ -7,8 +7,7 @@ namespace controller;
  */
 class FormController extends \controller\modelController
 {
-    
-    
+        
   public function adhesion()
   {
        $template = $this->twig->loadTemplate('index.html.twig');
@@ -16,15 +15,26 @@ class FormController extends \controller\modelController
       {
           $ent=new \modele\EntrepriseManager;
           $res=$ent->insert($_POST);
-          if ($res==true)
+         
+       // $res contient l'id de l'entreprise qu'on vient d'enregistrer si faux =0
+          if ($res!=0)
           {
-              $mess="Votre adhesion a bien été enregistré";
-//                  $var=new \service\DiverService();
-//              $pdw=$var->generateRandomString(10);
-//              $data=array("username"=>$_POST['contact'],"password"=>$pdw,"email"=>$_POST['email']);
-//              $user=new \modele\UserManager();
-            //  $rep=$user->save($data);
-           //   var_dump($rep);
+              $mess="<p>Votre adhesion a bien été enregistré </p>";
+                  $var=new \service\DiverService();
+                 $motPass= //  $var->generateRandomString(8);
+                 $salt=$var->generateRandomString(30);
+               $token=$var->generateRandomString(50);
+               // on rajoute le salt au mot de passe
+               $password=$salt.$motPass.$salt;
+               // on crypte le mot de passe
+               $pwd=$var->codepassword($password);
+               $role='entreprise';
+               $donne=array('ident'=>$res,'username'=>$_POST['contact'],'password'=>$pwd,'email'=>$_POST['email'],'salt'=>$salt,'token'=>$token,'role'=>$role);
+               $user=new \modele\UserManager();
+               $rep=$user->save($donne);
+               $mess.="<p>votre login est ".$_POST['contact']."/n votre mot de passe est ".$motPass
+                       ."<br> Vous allez recevoir un mail de confirmation de vos indentifiant ainsi que votre facture</p> ";
+                       
            }
         else
          {
@@ -65,6 +75,17 @@ class FormController extends \controller\modelController
   {
       $mess="";
    //   if($data[])
+      
+  }
+  
+  public function devis()
+  {
+         $template = $this->twig->loadTemplate('Detail/Devis.html.twig');
+        echo $template->render(array());
+  }
+  
+  public function devisEnregistrement()
+  {
       
   }
 }
