@@ -8,14 +8,14 @@
                         <h2> INFORMATION GENERAL </h2>
                                <label for='societe'>Dénomination :</label>  <input type='text' name='societe' required><br>
                                <label for="adress">Adress</label> :   <input type="text" name="adress" required >    <br>
-                               <label for="pays">pays</label> :   <input type="text" name="pays" required >    <br>
                                <label for="pays">pays</label> :   
                                <select name="select">
-                                                    <option value="value1">France</option> 
-                                                    <option value="value2" selected>Valeur 2</option>
-                                                    <option value="value3">Valeur 3</option>
-                                                  </select>
+                                            {% for pays in nomPays %}
+                                                             <option value="value1">{{pays.nom_fr_fr}}</option> 
+                                            {% endfor%}
+                                  </select>
                                 <label for="siren">Siren</label> :   <input type="text" name="siren" >   
+                              
                                 <label for="siret">Siret</label> :   <input type="number" name="siret" >   <br>
                                  <label for="description">Activité</label> : <textarea rows="3" cols="50" name="description" > </textarea>  <br>
                                  <label for="forme">Forme juridique</label> :   <input type="text" name="forme" > <br>  

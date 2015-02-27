@@ -46,10 +46,10 @@ class UserController extends \controller\modelController
          //  $this->login();
     }
     
-    public function login()
-    {
-        $this->vue->formLogin();
-    }
+//    public function login()
+//    {
+//        $this->vue->formLogin();
+//    }
     
     public function loginValidation()
     {
@@ -66,8 +66,18 @@ class UserController extends \controller\modelController
             }
             $_SESSION['user']=$user;
          
-            $template = $this->twig->loadTemplate('Membre.html.twig');
-                    echo $template->render(array( 'session'   => $user[1] ) );
+           // $template = $this->twig->loadTemplate('Membre.html.twig');
+            //        echo $template->render(array( 'session'   => $user[1] ) );
+          
+            if ($user[3]=="entreprise")
+            {  
+                header('location:/homeEntreprise');
+                
+            }
+            else
+            {
+                   header('location:/homeMembre');
+            }
           }
         else
         {
