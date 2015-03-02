@@ -33,11 +33,11 @@ nav,
 nav.menu-open { left: 0px;}
 .menu-push { left: 250px;}
 .menu-btn-active { display: none;}
-.menu-btn, .menu-btn-active { position: fixed; top: 25px; color: #fff0d9; font-size: 3em; cursor: pointer}
+.menu-btn, .menu-btn-active { position: fixed; top: 25px; z-index: 9999; color: #fff0d9; font-size: 3em; cursor: pointer}
 .menu { width: auto; height: auto;}
 .menu a { text-decoration: none; color: #686560;}
 .menu > li > a { background-color: #fff0d9; border-bottom: 1px solid #33373d; width: 100%;height: 3em; line-height: 3em; text-indent: 3em; display: block;position: relative;transition: all 500ms;}
-.menu ul li a { background-color: rgba(255,240,217,0.4); border-bottom: 1px solid #efeff0; width: 100%; height: 2.50em; line-height: 2.50em; text-indent: 2.50em; display: block; position: relative; font-size: 0.9em; transition: all 500ms;}
+.menu ul li a { background-color: rgba(255,240,217,0.4); border-bottom: 1px solid #efeff0; width: 100%; padding-left: 2.50em; line-height: 2.50em; display: block; position: relative; font-size: 0.9em; transition: all 500ms;}
 .menu > li > a:hover, .menu > li > a.active { background-color: #cfa783;}
 .menu > li > ul li:hover a { color: #32373D;}
 .active{ color:#f36666;}
@@ -46,7 +46,7 @@ nav.menu-open { left: 0px;}
 .menu_active > li > a:hover, .menu_active > li > a.active { background-color: rgba(243,102,102,1);}
 
 /* connection bar */
-#header_crossbar { position: absolute; top: 0; right: 0; padding: 5px 10px; background: #eee;}
+#header_crossbar { position: absolute; top: 0; right: 0; z-index: 9999; padding: 5px 10px; background: #eee;}
 #header_crossbar > a, #search, #lang { display: inline-block;}
 #header_crossbar > a { height: 25px; padding: 0 8px; line-height: 25px; text-decoration: none; color: #686560;}
 #search input[name=search] { padding-left: 5px; border: none; border-radius: 20px; -webkit-box-shadow: inset 2px 2px 1px 0px #c0c0c0; box-shadow: inset 2px 2px 1px 0px #c0c0c0; filter:progid:DXImageTransform.Microsoft.Shadow(color=#c0c0c0, Direction=134, Strength=1);}
