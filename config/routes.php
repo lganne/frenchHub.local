@@ -1,11 +1,25 @@
 <?php
 
 return [
-    
-    'DefaultController_affiche' => [
+    'DefaultController_home' => [
         'pattern' => '\/',
+        'connect' => 'controller\DefaultController:home'
+    ],
+    'DefaultController_affiche' => [
+        'pattern' => '\/accueil',
         'connect' => 'controller\DefaultController:affiche'
     ],
+    'DefaultController_relocation' => [
+        'pattern' => '\/relocation\/(?P<titre>[a-zA-Z0-9\-_\.*]+)',
+        'connect' => 'controller\DefaultController:relocation',
+          'params' =>'titre'
+    ],
+    'DefaultController_formation' => [
+        'pattern' => '\/formation\/(?P<titre>[a-zA-Z0-9\-_\.*]+[1-9][0-9]*)',
+        'connect' => 'controller\DefaultController:formation',
+          'params' =>'titre'
+    ],
+    
            'UserController_inscription' => [
         'pattern' => '\/inscription',
         'connect' => 'controller\UserController:inscription'
@@ -22,10 +36,20 @@ return [
         'pattern' => '\/logout',
         'connect' => 'controller\UserController:logout'
      ],
+     'FormController_recontacter' => [
+        'pattern' => '\/recontacter',
+        'connect' => 'controller\FormController:recontacter'
+     ],
+    
       'FormController_contact' => [
         'pattern' => '\/contact',
         'connect' => 'controller\FormController:contact'
      ],
+    'FormController_inscription' => [
+        'pattern' => '\/sinscrire',
+        'connect' => 'controller\FormController:inscription'
+     ],
+    
      'FormController_adhesion' => [
         'pattern' => '\/adhesion',
         'connect' => 'controller\FormController:adhesion'

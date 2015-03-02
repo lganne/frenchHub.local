@@ -8,17 +8,21 @@ try {
     // le new route a été fait dans bootsrap
   
     $routing = $router->getRoute(URI);
+    
+    
     if (empty($routing)) {
+        
         throw new RuntimeException("bad route");
     }
-      
     
+          
     $controllerName = $routing['controller'];  // nom du controller recupere dans la route
     $action = $routing['action']; // methode du controlleur a apppeler
-
+    
     // class ReflectionClass permet de savoir comment une classe donnée est faite
     $reflController = new ReflectionClass($controllerName);
     if (!$reflController->hasMethod($action)) {
+     
         throw new RuntimeException("bad route");
     }
     $controller = new $controllerName;

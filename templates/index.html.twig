@@ -8,7 +8,7 @@
             <div class="logo">
                 <img src="img/logo-beige-grand.png" alt="Logo de MyFrenchHub">
             </div>
-            <a href="#" class="sign_up"><span>Devenez<br /><strong>membre!</strong></span></a>
+            <a href="/sinscrire" class="sign_up"><span>Devenez<br /><strong>membre!</strong></span></a>
             <a href="#relocation" class="relocation">Relocation</a>
             <a href="#formation" class="formation">Formation</a>
             <a href="#community" class="community">Communauté</a>
@@ -21,88 +21,18 @@
     </header>
     <section id="relocation" class="content" data-id="active_content">
         <h1>SECTION 1</h1>
-        <form action="/adhesion" method="post">
-            <label for='societe'>Dénomination :</label>  <input type='text' name='societe' required><br>
-            <label for="adress">Adress</label> :   <input type="text" name="adress" required >    <br>
-            <label for="pays">pays</label> :   
-            <select name="select">
-                {% for pays in nomPays %}
-                    <option value="value1">{{pays.nom_fr_fr}}</option> 
-                {% endfor%}
-            </select>
-               
-            <label for="siren">Siren</label> :   <input type="text" name="siren" >   
-            <label for="siret">Siret</label> :   <input type="number" name="siret" >   <br>
-            <label for="description">Description</label> : <textarea rows="3" cols="50" name="description" > </textarea>  <br>
-            <label for="forme">Forme juridique</label> :   <input type="text" name="forme" > <br>  
-            <label for="contact">Contact principal</label> :   <input type="text" name="contact" required >   <br>
-            <label for="fonction">Fonction</label> :   <input type="text" name="fonction" required>  <br> 
-            <label for="email">Email</label> :   <input type="email" name="email"  required><br>   
-            <label for="Tel">Tel</label> :   <input type="tel" name="tel" required>   <br>
-            <input type="submit" name="valider" value="valider">
-        </form>
-        {% if (message2 !=null ) %}
-          <div>
-                {{ message2 }}
-          </div>
-        {% endif %}
+        
 
     </section>
     <section id="formation" class="content">
-        <h1>SECTION 2</h1>
-        <form action="/adhesion" method="post">
-            <label for='societe'>Dénomination :</label>  <input type='text' name='societe' required><br>
-            <label for="adress">Adress</label> :   <input type="text" name="adress" required >    <br>
-            <label for="pays">pays</label> :   
-            <select name="select">
-                {% for pays in nomPays %}
-                    <option value="value1">{{pays.nom_fr_fr}}</option> 
-                {% endfor%}
-            </select>
-               
-            <label for="siren">Siren</label> :   <input type="text" name="siren" >   
-            <label for="siret">Siret</label> :   <input type="number" name="siret" >   <br>
-            <label for="description">Description</label> : <textarea rows="3" cols="50" name="description" > </textarea>  <br>
-            <label for="forme">Forme juridique</label> :   <input type="text" name="forme" > <br>  
-            <label for="contact">Contact principal</label> :   <input type="text" name="contact" required >   <br>
-            <label for="fonction">Fonction</label> :   <input type="text" name="fonction" required>  <br> 
-            <label for="email">Email</label> :   <input type="email" name="email"  required><br>   
-            <label for="Tel">Tel</label> :   <input type="tel" name="tel" required>   <br>
-            <input type="submit" name="valider" value="valider">
-        </form>
-        {% if (message2 !=null ) %}
-          <div>
-                {{ message2 }}
-          </div>
-        {% endif %}
+      
 
     </section>
     <section id="community" class="content" data-id="active_content">
         <h1>SECTION 3</h1>
-        <button type="button" name="contact">être recontacté(e)</button>
-                <form method='post' action='/contact'>
-                    <label for='societe'>Dénomination :</label>  <input type='text' name='societe' required><br>
-                    <label for="contact">Contact principal</label> :   <input type="text" name="contact" required>   <br>
-                    <label for="fonction">Fonction</label> :   <input type="text" name="fonction" required>  <br> 
-                    <label for="email">Email</label> :   <input type="email" name="email" required >   <br>
-                    <label for="pays">pays</label> :   
-                        <select name="select">
-                            {% for pays in nomPays %}
-                                            <option value="value1">{{pays.nom_fr_fr}}</option> 
-                            {% endfor%}
-                        </select><br>
-                    <label for="Tel">Tel</label> :   <input type="tel" name="tel" required >   <br>
-                    <input type="submit" name="valider" value="valider">
-               
-                </form>
-        </article>
-        {% if (message3 !=null ) %}
-            <div>
-                {{ message3 }}
-            </div>
-        {% endif %}
+        
     
-        <a href="/devis">Demande de devis</a>
+        
     </section>
         
 {% endblock %}

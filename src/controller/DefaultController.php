@@ -19,6 +19,14 @@ class DefaultController extends \controller\modelController
         
     }
     
+    public function home()
+    {
+          $template = $this->twig->loadTemplate('home.html.twig');
+    
+          echo $template->render(array());
+         
+       }
+    
     public function affiche()
     {
           $template = $this->twig->loadTemplate('index.html.twig');
@@ -26,6 +34,21 @@ class DefaultController extends \controller\modelController
           echo $template->render(array('nomPays'=>$this->paysfr));
          
        }
+       
+       public function relocation($titre)
+       {
+            $template = $this->twig->loadTemplate('detail/Relocation.html.twig');
     
+          echo $template->render(array('titre'=>$titre));
+         
+       }
+     public function formation($titre)
+       {
+         
+            $template = $this->twig->loadTemplate('detail/Formation.html.twig');
+    
+          echo $template->render(array('titre'=>$titre));
+         
+       }
     
 }

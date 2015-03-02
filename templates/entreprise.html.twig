@@ -3,7 +3,7 @@
         {% block stylesheets %}
             {{parent()}}|  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css " /> 
         {% endblock %}
-{% block page %}
+{% block body %}
     
     {% for item in donnee %}
         <h2>espace  {{item.name|upper}} </h2>

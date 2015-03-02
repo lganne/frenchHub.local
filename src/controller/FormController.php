@@ -14,6 +14,15 @@ class FormController extends \controller\modelController
         $this->paysfr=$pays->nomPays('nom_fr_fr');
         
     }
+    
+    // formulaire d'inscription
+    
+    public function inscription()
+    {
+          $template = $this->twig->loadTemplate('inscription.html.twig');
+          echo $template->render(array("message2"=>NULL));
+    }
+    
   public function adhesion()
   {
        $template = $this->twig->loadTemplate('index.html.twig');
@@ -53,6 +62,15 @@ class FormController extends \controller\modelController
       }
         echo $template->render(array("message2"=>$mess));
   }
+  
+  
+  
+  public function recontacter()
+  {
+        $template = $this->twig->loadTemplate('Detail/recontacter.html.twig');
+        echo $template->render(array('message3'=>NULL));
+  }
+  
   public function contact()
   {
         
