@@ -24,8 +24,9 @@
 html, body, header, #relocation, #formation, #community { width: 100%; height: 100%;}
 body { font-family: verdana, sans-serif;}
 .container { position: relative; left: 0; overflow-x: hidden;}
-header { position: relative; background: url(../img/fond-home.jpg) no-repeat center fixed; background-size: cover; -webkit-background-size: cover;}
+header { position: relative;/*  background: url(../img/fond-home.jpg) no-repeat center fixed; background-size: cover; -webkit-background-size: cover; */}
 
+#menu { width: 100%; height: 100%; background: url(../img/fond-home-bis.jpg) no-repeat center fixed; background-size: cover; -webkit-background-size: cover;}
 /* Menu */
 nav { position: fixed; top: 0; left: -250px; z-index: 1000; width: 250px; height: 100%; overflow: auto; font-size: 1em;}
 nav,
