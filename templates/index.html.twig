@@ -1,158 +1,90 @@
 {% extends 'base.html.twig' %}
 
 {% block page %}
-  
-    <header class="parallax">
-		<img src='https://ununsplash.imgix.net/reserve/JaI1BywIT5Or8Jfmci1E_zakopane.jpg?q=75&fm=jpg&s=e154bf6c152ea66bee076a0e19455a8c'/>
-		<h1>MyFrenchHub</h1>
-		<a href="#content">Scroll<br />\/</a>
-	</header>
+    <section id="relocation">
+        <h1>SECTION 1</h1>
+        <form action="/adhesion" method="post">
+            <label for='societe'>Dénomination :</label>  <input type='text' name='societe' required><br>
+            <label for="adress">Adress</label> :   <input type="text" name="adress" required >    <br>
+            <label for="pays">pays</label> :   
+            <select name="select">
+                {% for pays in nomPays %}
+                    <option value="value1">{{pays.nom_fr_fr}}</option> 
+                {% endfor%}
+            </select>
+               
+            <label for="siren">Siren</label> :   <input type="text" name="siren" >   
+            <label for="siret">Siret</label> :   <input type="number" name="siret" >   <br>
+            <label for="description">Description</label> : <textarea rows="3" cols="50" name="description" > </textarea>  <br>
+            <label for="forme">Forme juridique</label> :   <input type="text" name="forme" > <br>  
+            <label for="contact">Contact principal</label> :   <input type="text" name="contact" required >   <br>
+            <label for="fonction">Fonction</label> :   <input type="text" name="fonction" required>  <br> 
+            <label for="email">Email</label> :   <input type="email" name="email"  required><br>   
+            <label for="Tel">Tel</label> :   <input type="tel" name="tel" required>   <br>
+            <input type="submit" name="valider" value="valider">
+        </form>
+        {% if (message2 !=null ) %}
+          <div>
+                {{ message2 }}
+          </div>
+        {% endif %}
 
-	<section id="content">
-		<h1>Content</h1>
+    </section>
+    <section id="formation">
+        <h1>SECTION 2</h1>
+        <form action="/adhesion" method="post">
+            <label for='societe'>Dénomination :</label>  <input type='text' name='societe' required><br>
+            <label for="adress">Adress</label> :   <input type="text" name="adress" required >    <br>
+            <label for="pays">pays</label> :   
+            <select name="select">
+                {% for pays in nomPays %}
+                    <option value="value1">{{pays.nom_fr_fr}}</option> 
+                {% endfor%}
+            </select>
+               
+            <label for="siren">Siren</label> :   <input type="text" name="siren" >   
+            <label for="siret">Siret</label> :   <input type="number" name="siret" >   <br>
+            <label for="description">Description</label> : <textarea rows="3" cols="50" name="description" > </textarea>  <br>
+            <label for="forme">Forme juridique</label> :   <input type="text" name="forme" > <br>  
+            <label for="contact">Contact principal</label> :   <input type="text" name="contact" required >   <br>
+            <label for="fonction">Fonction</label> :   <input type="text" name="fonction" required>  <br> 
+            <label for="email">Email</label> :   <input type="email" name="email"  required><br>   
+            <label for="Tel">Tel</label> :   <input type="tel" name="tel" required>   <br>
+            <input type="submit" name="valider" value="valider">
+        </form>
+        {% if (message2 !=null ) %}
+          <div>
+                {{ message2 }}
+          </div>
+        {% endif %}
 
-		<nav class="nav">
-			<div class="contenu">
-				<div class="picto">
-                                    <h2>Nos<br />services</h2>
-                                    <ul>
-                                            <li><a href="#Assistance Dpt/Arr"></a></li>
-                                            <li><a href="#Logement"></a></li>
-                                            <li><a href="#Administration"></a></li>
-                                            <li><a href="#Immigration"></a></li>
-                                            <li><a href="#Famille"></a></li>
-                                            <li><a href="#Devis"></a></li>
-                                    </ul>
-                            </div>
-                            <div class="text">
-                                    <ul>
-                                            <li><a href="#Assistance Dpt/Arr">Assistance Dpt/Arr</a></li>
-                                            <li><a href="#Logement">Logement</a></li>
-                                            <li><a href="#Administration">Administration</a></li>
-                                            <li><a href="#Immigration">Immigration</a></li>
-                                            <li><a href="#Famille">Famille</a></li>
-                                            <li><a href="#Devis">Devis</a></li>
-                                    </ul>
-                            </div>
-                    </div><!--
-                    --><div id="slide">
-                            <span class="open">></span>
-                            <span class="close"><</span>
-                    </div>
-		</nav>
-                <article>
-                    <h1>Problematiques</h1>
-                    <p>Lorem ipsum In incididunt est magna Excepteur officia. Lorem ipsum Mollit aliqua nisi deserunt ea dolore ut et. Lorem ipsum Id eiusmod commodo aliqua anim aute laboris exercitation ut Ut voluptate nisi. Lorem ipsum Elit dolor dolor proident adipisicing fugiat nostrud culpa. Lorem ipsum Nulla officia non ullamco dolor velit magna enim. Lorem ipsum Cupidatat nulla elit eu enim ex dolor proident. Lorem ipsum Ex non reprehenderit consequat culpa Excepteur voluptate magna Duis et in id. Lorem ipsum Nisi sit pariatur anim cillum veniam do ullamco nostrud aliqua. Lorem ipsum Velit enim Excepteur aliquip consequat elit aliquip. Lorem ipsum Qui nostrud officia sint Ut dolor dolor id reprehenderit exercitation tempor.</p>
-                    <h2>Intro</h2>
-                    <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ab consequatur fugiat delectus sint in velit quo possimus, ullam aspernatur ipsa natus tenetur nulla distinctio doloremque totam. Earum enim sed dolorum, exercitationem temporibus quaerat eos, accusantium amet facilis facere eaque commodi optio quidem rem minima nisi laborum quae animi nostrum aut voluptates veniam. Cum neque quam fuga sapiente quidem eum necessitatibus nulla, cupiditate a, repudiandae iusto in dolor eaque commodi nostrum consequuntur dolores velit eligendi dolorem quae. Distinctio quae, cumque aliquid quos consequuntur perspiciatis voluptates, laboriosam velit qui et aut sint esse nemo voluptatibus, dolore veritatis natus facilis commodi sed. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis tempore, harum consequatur optio laboriosam nihil sint voluptatem ducimus porro quae expedita alias consectetur explicabo cumque maxime facere praesentium! Ad illo quibusdam omnis suscipit qui eos autem est laborum ducimus! Tenetur?
-                    </p>
-            </article>
-            <article>
-                    <h1>Solutions</h1>
-                    <p>Lorem ipsum Voluptate aute nostrud irure exercitation anim cillum mollit proident anim fugiat. Lorem ipsum Proident minim cupidatat laborum ea aliqua cillum pariatur Duis dolore anim reprehenderit ut. Lorem ipsum Pariatur qui amet veniam ex nisi labore Excepteur Duis ex qui ut. Lorem ipsum Exercitation sit laborum elit Excepteur occaecat.</p>
-                    <h2>Intro</h2>
-                    <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ab consequatur fugiat delectus sint in velit quo possimus, ullam aspernatur ipsa natus tenetur nulla distinctio doloremque totam. Earum enim sed dolorum, exercitationem temporibus quaerat eos, accusantium amet facilis facere eaque commodi optio quidem rem minima nisi laborum quae animi nostrum aut voluptates veniam. Cum neque quam fuga sapiente quidem eum necessitatibus nulla, cupiditate a, repudiandae iusto in dolor eaque commodi nostrum consequuntur dolores velit eligendi dolorem quae. Distinctio quae, cumque aliquid quos consequuntur perspiciatis voluptates, laboriosam velit qui et aut sint esse nemo voluptatibus, dolore veritatis natus facilis commodi sed. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis tempore, harum consequatur optio laboriosam nihil sint voluptatem ducimus porro quae expedita alias consectetur explicabo cumque maxime facere praesentium! Ad illo quibusdam omnis suscipit qui eos autem est laborum ducimus! Tenetur?
-                    </p>
-                    <a href="#container">Scroll<br />\/</a>
-            </article>
-
-                            <article id="container" class="container">
-                            <ul class="tabs">
-                                    <li class="tab-link current" data-tab="tab-1">Qui sommes nous ?</li><!-- 
-                                     --><li class="tab-link" data-tab="tab-2">Nos formations RH</li><!-- 
-                                     --><li class="tab-link" data-tab="tab-3">Nos partenaires</li><!-- 
-                                     --><li class="tab-link" data-tab="tab-4">Communauté</li><!-- 
-                                     --><li id="member" class="tab-link" data-tab="tab-5">Contact</li>
-                            </ul>
-
-                            <div id="tab-1" class="tab-content current">
-                                    <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ab consequatur fugiat delectus sint in velit quo possimus, ullam aspernatur ipsa natus tenetur nulla distinctio doloremque totam. Earum enim sed dolorum, exercitationem temporibus quaerat eos, accusantium amet facilis facere eaque commodi optio quidem rem minima nisi laborum quae animi nostrum aut voluptates veniam. Cum neque quam fuga sapiente quidem eum necessitatibus nulla, cupiditate a, repudiandae iusto in dolor eaque commodi nostrum consequuntur dolores velit eligendi dolorem quae. Distinctio quae, cumque aliquid quos consequuntur perspiciatis voluptates, laboriosam velit qui et aut sint esse nemo voluptatibus, dolore veritatis natus facilis commodi sed. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis tempore, harum consequatur optio laboriosam nihil sint voluptatem ducimus porro quae expedita alias consectetur explicabo cumque maxime facere praesentium! Ad illo quibusdam omnis suscipit qui eos autem est laborum ducimus! Tenetur?
-                                    </p>
-                            </div>
-                            <div id="tab-2" class="tab-content">
-                                     <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ab consequatur fugiat delectus sint in velit quo possimus, ullam aspernatur ipsa natus tenetur nulla distinctio doloremque totam. Earum enim sed dolorum, exercitationem temporibus quaerat eos, accusantium amet facilis facere eaque commodi optio quidem rem minima nisi laborum quae animi nostrum aut voluptates veniam. Cum neque quam fuga sapiente quidem eum necessitatibus nulla, cupiditate a, repudiandae iusto in dolor eaque commodi nostrum consequuntur dolores velit eligendi dolorem quae. Distinctio quae, cumque aliquid quos consequuntur perspiciatis voluptates, laboriosam velit qui et aut sint esse nemo voluptatibus, dolore veritatis natus facilis commodi sed. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis tempore, harum consequatur optio laboriosam nihil sint voluptatem ducimus porro quae expedita alias consectetur explicabo cumque maxime facere praesentium! Ad illo quibusdam omnis suscipit qui eos autem est laborum ducimus! Tenetur?
-                                    </p>
-                                    <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ab consequatur fugiat delectus sint in velit quo possimus, ullam aspernatur ipsa natus tenetur nulla distinctio doloremque totam. Earum enim sed dolorum, exercitationem temporibus quaerat eos, accusantium amet facilis facere eaque commodi optio quidem rem minima nisi laborum quae animi nostrum aut voluptates veniam. Cum neque quam fuga sapiente quidem eum necessitatibus nulla, cupiditate a, repudiandae iusto in dolor eaque commodi nostrum consequuntur dolores velit eligendi dolorem quae. Distinctio quae, cumque aliquid quos consequuntur perspiciatis voluptates, laboriosam velit qui et aut sint esse nemo voluptatibus, dolore veritatis natus facilis commodi sed. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis tempore, harum consequatur optio laboriosam nihil sint voluptatem ducimus porro quae expedita alias consectetur explicabo cumque maxime facere praesentium! Ad illo quibusdam omnis suscipit qui eos autem est laborum ducimus! Tenetur?
-                                    </p>
-                            </div>
-                            <div id="tab-3" class="tab-content">
-                                    <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ab consequatur fugiat delectus sint in velit quo possimus, ullam aspernatur ipsa natus tenetur nulla distinctio doloremque totam. Earum enim sed dolorum, exercitationem temporibus quaerat eos, accusantium amet facilis facere eaque commodi optio quidem rem minima nisi laborum quae animi nostrum aut voluptates veniam. Cum neque quam fuga sapiente quidem eum necessitatibus nulla, cupiditate a, repudiandae iusto in dolor eaque commodi nostrum consequuntur dolores velit eligendi dolorem quae. Distinctio quae, cumque aliquid quos consequuntur perspiciatis voluptates, laboriosam velit qui et aut sint esse nemo voluptatibus, dolore veritatis natus facilis commodi sed. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis tempore, harum consequatur optio laboriosam nihil sint voluptatem ducimus porro quae expedita alias consectetur explicabo cumque maxime facere praesentium! Ad illo quibusdam omnis suscipit qui eos autem est laborum ducimus! Tenetur?
-                                    </p>
-                            </div>
-                            <div id="tab-4" class="tab-content">
-                                    <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ab consequatur fugiat delectus sint in velit quo possimus, ullam aspernatur ipsa natus tenetur nulla distinctio doloremque totam. Earum enim sed dolorum, exercitationem temporibus quaerat eos, accusantium amet facilis facere eaque commodi optio quidem rem minima nisi laborum quae animi nostrum aut voluptates veniam. Cum neque quam fuga sapiente quidem eum necessitatibus nulla, cupiditate a, repudiandae iusto in dolor eaque commodi nostrum consequuntur dolores velit eligendi dolorem quae. Distinctio quae, cumque aliquid quos consequuntur perspiciatis voluptates, laboriosam velit qui et aut sint esse nemo voluptatibus, dolore veritatis natus facilis commodi sed. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis tempore, harum consequatur optio laboriosam nihil sint voluptatem ducimus porro quae expedita alias consectetur explicabo cumque maxime facere praesentium! Ad illo quibusdam omnis suscipit qui eos autem est laborum ducimus! Tenetur?
-                                    </p><p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ab consequatur fugiat delectus sint in velit quo possimus, ullam aspernatur ipsa natus tenetur nulla distinctio doloremque totam. Earum enim sed dolorum, exercitationem temporibus quaerat eos, accusantium amet facilis facere eaque commodi optio quidem rem minima nisi laborum quae animi nostrum aut voluptates veniam. Cum neque quam fuga sapiente quidem eum necessitatibus nulla, cupiditate a, repudiandae iusto in dolor eaque commodi nostrum consequuntur dolores velit eligendi dolorem quae. Distinctio quae, cumque aliquid quos consequuntur perspiciatis voluptates, laboriosam velit qui et aut sint esse nemo voluptatibus, dolore veritatis natus facilis commodi sed. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis tempore, harum consequatur optio laboriosam nihil sint voluptatem ducimus porro quae expedita alias consectetur explicabo cumque maxime facere praesentium! Ad illo quibusdam omnis suscipit qui eos autem est laborum ducimus! Tenetur?
-                                    </p><p>
-                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ab consequatur fugiat delectus sint in velit quo possimus, ullam aspernatur ipsa natus tenetur nulla distinctio doloremque totam. Earum enim sed dolorum, exercitationem temporibus quaerat eos, accusantium amet facilis facere eaque commodi optio quidem rem minima nisi laborum quae animi nostrum aut voluptates veniam. Cum neque quam fuga sapiente quidem eum necessitatibus nulla, cupiditate a, repudiandae iusto in dolor eaque commodi nostrum consequuntur dolores velit eligendi dolorem quae. Distinctio quae, cumque aliquid quos consequuntur perspiciatis voluptates, laboriosam velit qui et aut sint esse nemo voluptatibus, dolore veritatis natus facilis commodi sed. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis tempore, harum consequatur optio laboriosam nihil sint voluptatem ducimus porro quae expedita alias consectetur explicabo cumque maxime facere praesentium! Ad illo quibusdam omnis suscipit qui eos autem est laborum ducimus! Tenetur?
-                                    </p>
-                            </div>
-                                    <div id="tab-5" class="tab-content">
-                                          <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem ab consequatur fugiat delectus sint in velit quo possimus, ullam aspernatur ipsa natus tenetur nulla distinctio doloremque totam. Earum enim sed dolorum, exercitationem temporibus quaerat eos, accusantium amet facilis facere eaque commodi optio quidem rem minima nisi laborum quae animi nostrum aut voluptates veniam. Cum neque quam fuga sapiente quidem eum necessitatibus nulla, cupiditate a, repudiandae iusto in dolor eaque commodi nostrum consequuntur dolores velit eligendi dolorem quae. Distinctio quae, cumque aliquid quos consequuntur perspiciatis voluptates, laboriosam velit qui et aut sint esse nemo voluptatibus, dolore veritatis natus facilis commodi sed. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis tempore, harum consequatur optio laboriosam nihil sint voluptatem ducimus porro quae expedita alias consectetur explicabo cumque maxime facere praesentium! Ad illo quibusdam omnis suscipit qui eos autem est laborum ducimus! Tenetur?
-                                            </p>
-                                            <form action="/adhesion" method="post">
-                                                <label for='societe'>Dénomination :</label>  <input type='text' name='societe' required><br>
-                                                <label for="adress">Adress</label> :   <input type="text" name="adress" required >    <br>
-                                                  <label for="pays">pays</label> :   
-                                                <select name="select">
-                                                             {% for pays in nomPays %}
-                                                                              <option value="value1">{{pays.nom_fr_fr}}</option> 
-                                                             {% endfor%}
-                                                   </select>
-                                                   
-                                                 <label for="siren">Siren</label> :   <input type="text" name="siren" >   
-                                                 <label for="siret">Siret</label> :   <input type="number" name="siret" >   <br>
-                                                  <label for="description">Description</label> : <textarea rows="3" cols="50" name="description" > </textarea>  <br>
-                                                  <label for="forme">Forme juridique</label> :   <input type="text" name="forme" > <br>  
-                                                   <label for="contact">Contact principal</label> :   <input type="text" name="contact" required >   <br>
-                                                    <label for="fonction">Fonction</label> :   <input type="text" name="fonction" required>  <br> 
-                                                    <label for="email">Email</label> :   <input type="email" name="email"  required><br>   
-                                                     <label for="Tel">Tel</label> :   <input type="tel" name="tel" required>   <br>
-                                                      <input type="submit" name="valider" value="valider">
-                                            </form>
-                                            {% if (message2 !=null ) %}
-                                              <div>
-                                                    {{ message2 }}
-                                              </div>
-                                            {% endif %}
-                                        
-                                    </div>
-                            </article>
-	</section>
-    <section>
-        <article>
-            <button type="button" name="contact">être recontacté(e)</button>
+    </section>
+    <section id="community">
+        <h1>SECTION 3</h1>
+        <button type="button" name="contact">être recontacté(e)</button>
                 <form method='post' action='/contact'>
-                             <label for='societe'>Dénomination :</label>  <input type='text' name='societe' required><br>
-                               <label for="contact">Contact principal</label> :   <input type="text" name="contact" required>   <br>
-                                <label for="fonction">Fonction</label> :   <input type="text" name="fonction" required>  <br> 
-                                <label for="email">Email</label> :   <input type="email" name="email" required >   <br>
-                                 <label for="pays">pays</label> :   
-                                                <select name="select">
-                                                             {% for pays in nomPays %}
-                                                                              <option value="value1">{{pays.nom_fr_fr}}</option> 
-                                                             {% endfor%}
-                                                </select><br>
-                                 <label for="Tel">Tel</label> :   <input type="tel" name="tel" required >   <br>
-                                  <input type="submit" name="valider" value="valider">
+                    <label for='societe'>Dénomination :</label>  <input type='text' name='societe' required><br>
+                    <label for="contact">Contact principal</label> :   <input type="text" name="contact" required>   <br>
+                    <label for="fonction">Fonction</label> :   <input type="text" name="fonction" required>  <br> 
+                    <label for="email">Email</label> :   <input type="email" name="email" required >   <br>
+                    <label for="pays">pays</label> :   
+                        <select name="select">
+                            {% for pays in nomPays %}
+                                            <option value="value1">{{pays.nom_fr_fr}}</option> 
+                            {% endfor%}
+                        </select><br>
+                    <label for="Tel">Tel</label> :   <input type="tel" name="tel" required >   <br>
+                    <input type="submit" name="valider" value="valider">
                
                 </form>
         </article>
-             {% if (message3 !=null ) %}
-                    <div>
-                          {{ message3 }}
-                    </div>
-              {% endif %}
-        
-              <a href="/devis">Demande de devis</a>
+        {% if (message3 !=null ) %}
+            <div>
+                {{ message3 }}
+            </div>
+        {% endif %}
+    
+        <a href="/devis">Demande de devis</a>
     </section>
     
 {% endblock %}
