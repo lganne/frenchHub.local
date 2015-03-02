@@ -45,11 +45,29 @@ $link->query("
 
 echo "ok entreprise \n <br>";
 
+
+//tables salariers
+$link->query("
+        CREATE TABLE `employee` (
+        `id` INT(10) UNSIGNED AUTO_INCREMENT,
+        `entreprises_id` INT UNSIGNED,
+        `name` VARCHAR(30) NOT NULL,
+        `firstname` VARCHAR(30) NOT NULL,
+         `birth` date,
+         `fonction` VARCHAR(30) ,
+        `email` VARCHAR(250) NOT NULL,
+         PRIMARY KEY (`id`),
+          FOREIGN KEY (`entreprises_id`) REFERENCES `entreprises` (`id`) 
+        ) ENGINE=InnoDB AUTO_INCREMENT=1 ;
+ " )or die("pb create table users");
+
+echo "ok employee <br>";
 // table users
 $link->query("
         CREATE TABLE `users` (
         `id` INT(10) UNSIGNED AUTO_INCREMENT,
           `entreprises_id` INT UNSIGNED,
+             `employee_id` INT UNSIGNED,
         `username` VARCHAR(30) NOT NULL,
         `password` VARCHAR(100) NOT NULL,
         `email` VARCHAR(150) NOT NULL,
@@ -60,7 +78,8 @@ $link->query("
          `isActif` BOOLEAN,
          `role` ENUM('administrator', 'membre','entreprise') NOT NULL DEFAULT 'membre',
         PRIMARY KEY (`id`),
-          FOREIGN KEY (`entreprises_id`) REFERENCES `entreprises` (`id`) 
+          FOREIGN KEY (`entreprises_id`) REFERENCES `entreprises` (`id`),
+          FOREIGN KEY (`employee_id`) REFERENCES `employee` (`id`)
         ) ENGINE=InnoDB AUTO_INCREMENT=1 ;
  " )or die("pb create table users");
 echo "ok users \n  <br>";

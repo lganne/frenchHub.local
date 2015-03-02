@@ -14,7 +14,7 @@ class MembreController  extends modelController
       $rep=\service\DiverService::verifUser($_SESSION['user']);
       if( $rep==true)
       {
-          if ($_SESSION['user'][3]!="membre")
+          if ($_SESSION['user'][5]!="membre")
           {
                header('Location: /');
           }

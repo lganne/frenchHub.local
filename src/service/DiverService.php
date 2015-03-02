@@ -39,9 +39,10 @@ class DiverService {
     {
         $user=new \modele\UserManager();
         $result=$user->find($tabSession[0]);
+          
          foreach ($result as $unResult)
         {
-                if($unResult->username==$tabSession[1]  && $unResult->token==$tabSession[2] && $unResult->role==$tabSession[3] )
+                if($unResult->username==$tabSession[1]  && $unResult->token==$tabSession[4] && $unResult->role==$tabSession[5] && $unResult->isActif==1)
                 {
                     return true;
                 }
@@ -51,6 +52,7 @@ class DiverService {
                 }
         }
     }
+    
          static function twig ()
          {
              include_once  __DIR__ . '/../../twig/lib/Twig/Autoloader.php';

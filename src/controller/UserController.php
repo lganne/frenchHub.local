@@ -57,7 +57,8 @@ class UserController extends \controller\modelController
         $pass=$_POST['password'];
         $rep=$this->user->veriflog($pass,$log);
         $user=array();
-        
+        var_dump($rep);
+      // die();
         if ($rep['reponse']==true)
         {
             foreach ($rep['donnee'] as $detail)
@@ -65,12 +66,10 @@ class UserController extends \controller\modelController
               array_push($user,$detail);
             }
             $_SESSION['user']=$user;
-         
-           // $template = $this->twig->loadTemplate('Membre.html.twig');
-            //        echo $template->render(array( 'session'   => $user[1] ) );
-          
-            if ($user[3]=="entreprise")
+    
+             if ($user[5]=="entreprise")
             {  
+               
                 header('location:/homeEntreprise');
                 
             }

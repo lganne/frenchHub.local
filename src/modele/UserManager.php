@@ -44,16 +44,16 @@ public function save($tabDonne)
         $query->execute(array('login'=>$login));
         $data=$query->fetch(\PDO::FETCH_OBJ);
         if (!empty($data))
-      //  $motPasse=$data->salt.$pass.$data->salt;
         {
-             $motPasse=$data->salt.$pass.$data->salt;
-         //   $motPasse=$pass;
-            $verifPass=\service\DiverService::codepassword($motPasse);
-            If ($verifPass==$data->password)
+             $motPasse=  sha1($data->salt.$pass.$data->salt);
+         //     $verifPass=\service\DiverService::codepassword($motPasse);
+            If ($motPasse==$data->password)
             {
                 $rep=true;
             }
-            $donnee=array("id"=>$data->id,"login"=>$data->username,"token"=>$data->token,"role"=>$data->role);
+           
+            $donnee=array("id"=>$data->id,"login"=>$data->username,"entreprises_id"=>$data->entreprises_id,
+                "isActif"=>$data->isActif,"token"=>$data->token,"role"=>$data->role);
             return array('reponse'=>$rep,'donnee'=>$donnee);
         }
         else
