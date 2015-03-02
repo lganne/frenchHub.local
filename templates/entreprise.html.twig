@@ -1,6 +1,68 @@
 {# empty Twig template #}
 {% extends 'base.html.twig' %}
-
+        {% block stylesheets %}
+            {{parent()}}|  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css " /> 
+        {% endblock %}
 {% block page %}
-    <h2>espace Entreprise</h2>
+    
+    {% for item in donnee %}
+        <h2>espace  {{item.name|upper}} </h2>
+    
+    <div class="col-md-1"></div>
+        <div class="col-md-4">
+            
+          <div class="form-group">
+                      <label for='societe'>Dénomination :</label>  <input type='text' name='societe'  value="{{item.name}}"  class="form-control" required>
+            </div>
+                    <div class="form-group">
+                        <label for="adress">Adresse</label> :   <input type="text" name="adress" value="{{item.adress}}" class="form-control" required >   
+                    </div>
+                    <div class="form-group">
+                        <label for="ville">Ville:</label>  <input type="text"  name="ville" value="{{item.Ville}}"  class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="pays">Pays :</label>  <input type="text"  name="pays" value="{{item.Pays}}"  class="form-control">
+                    </div>
+                                          
+                          <div class="form-group">
+                               <label for="siren">Siren</label> :   <input type="text" name="siren" value="{{item.siren}}" class="form-control" >   
+                          </div>
+                              <div class="form-group">
+                                  <label for="siret">Siret</label> :   <input type="number" name="siret"  value="{{item.siret}}" class="form-control"  > 
+                              </div>
+                          <div class="form-group">
+                             <label for="description">Activité</label> : <input type="text"  name="description"  value="{{item.description}}"class="form-control" > 
+                          </div>
+                         <div class="form-group">
+                              <label for="contact">Contact principal</label> :   <input type="text" name="contact"  value="{{item.contact}}" class="form-control" required >   
+                        </div>
+                        <div class="form-group">
+                               <label for="fonction">Fonction</label> :   <input type="text" name="fonction"  value="{{item.fonction}}" class="form-control" required> 
+                        </div>
+                       <div class="form-group">
+                             <label for="email">Email</label> :   <input type="email" name="email"  value="{{item.emailContact}}" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Tel">Tel</label> :   <input type="tel" name="tel"   value="{{item.tel}}" class="form-control"required>   
+                        </div>
+                    <label for="pays"class="col-xs-8 control-label">Nombres de salariés concernées :</label> 
+                    <div class="col-xs-4 selectContainer">
+                        <select name="select" class="form-control">
+                            <option value="value1">0 à 50</option> 
+                            <option value="value1">50 à 250</option> 
+                            <option value="value1">plus de 250</option> 
+                        </select>
+                    </div>
+                    
+                   </div>
+                </div>     
+                {% endfor %}         
+                <div class="col-md-1"></div>
+                <div class="col-md-4"> 
+                    <h2>Liste des salariés</h2>
+                    
+                    <h2>Ajouter un salarie</h2>
+                </div>
+           
+                          
     {% endblock %}

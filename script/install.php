@@ -45,11 +45,29 @@ $link->query("
 
 echo "ok entreprise \n <br>";
 
+
+//tables salariers
+$link->query("
+        CREATE TABLE `employee` (
+        `id` INT(10) UNSIGNED AUTO_INCREMENT,
+        `entreprises_id` INT UNSIGNED,
+        `name` VARCHAR(30) NOT NULL,
+        `firstname` VARCHAR(30) NOT NULL,
+         `birth` date,
+         `fonction` VARCHAR(30) ,
+        `email` VARCHAR(250) NOT NULL,
+         PRIMARY KEY (`id`),
+          FOREIGN KEY (`entreprises_id`) REFERENCES `entreprises` (`id`) 
+        ) ENGINE=InnoDB AUTO_INCREMENT=1 ;
+ " )or die("pb create table users");
+
+echo "ok employee <br>";
 // table users
 $link->query("
         CREATE TABLE `users` (
         `id` INT(10) UNSIGNED AUTO_INCREMENT,
           `entreprises_id` INT UNSIGNED,
+             `employee_id` INT UNSIGNED,
         `username` VARCHAR(30) NOT NULL,
         `password` VARCHAR(100) NOT NULL,
         `email` VARCHAR(150) NOT NULL,
@@ -60,7 +78,8 @@ $link->query("
          `isActif` BOOLEAN,
          `role` ENUM('administrator', 'membre','entreprise') NOT NULL DEFAULT 'membre',
         PRIMARY KEY (`id`),
-          FOREIGN KEY (`entreprises_id`) REFERENCES `entreprises` (`id`) 
+          FOREIGN KEY (`entreprises_id`) REFERENCES `entreprises` (`id`),
+          FOREIGN KEY (`employee_id`) REFERENCES `employee` (`id`)
         ) ENGINE=InnoDB AUTO_INCREMENT=1 ;
  " )or die("pb create table users");
 echo "ok users \n  <br>";
@@ -87,12 +106,31 @@ echo "ok memberShip \n <br>";
 $link->query("
         CREATE TABLE `requestEstimate` (
         `id` INT(10) UNSIGNED AUTO_INCREMENT,
-         `entreprises_id` INT UNSIGNED,
-        `type` VARCHAR(30) ,
+        `name` VARCHAR(30) NOT NULL,
+         `adress` VARCHAR(250) NOT NULL,
+          `pays` VARCHAR(100) NOT NULL,
+        `siren` INTEGER(10) ,
+        `siret` VARCHAR(14) ,
+        `Activity` VARCHAR(250),  
+         `contact` VARCHAR(150) NOT NULL,
+        `fonction` VARCHAR(30) ,
+        `emailcontact` VARCHAR(250) NOT NULL,
+         `tel` VARCHAR(50),
+         `salary` INTEGER(10) ,
+        `assistance` BOOL NOT NULL DEFAULT '0', 
+         `optionAssistance` VARCHAR(10) ,
+          `immigration` BOOL NOT NULL DEFAULT '0', 
+         `optionImmigration` VARCHAR(10) ,
+          `logement` BOOL NOT NULL DEFAULT '0', 
+         `optionLogement` VARCHAR(10) ,
+          `administration` BOOL DEFAULT '0', 
+         `optionAdministration` VARCHAR(10) ,
+          `Famille` BOOL NOT NULL DEFAULT '0', 
+         `optionFamille` VARCHAR(10) ,
+         `comment` VARCHAR(100) ,
         `date_created` DATETIME,
          `date_modif` DATETIME,
-          PRIMARY KEY (`id`),
-        FOREIGN KEY (`entreprises_id`) REFERENCES `entreprises` (`id`) 
+          PRIMARY KEY (`id`)
       ) ENGINE=InnoDB  AUTO_INCREMENT=1 ;"
         ) or die("pb create table requestEstimate");
 
@@ -129,5 +167,6 @@ $link->query("INSERT INTO `frenchhub2`.`users` (`id`, `username`, `password`, `e
          ")or die("pb insert data users");
 
 mysqli_close($link);
+
 
 echo "ok tout est bon";

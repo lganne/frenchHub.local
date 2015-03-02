@@ -7,27 +7,35 @@ namespace controller;
  */
 class EntrepriseController extends modelController
 {
+        protected $ent;
+        
     public function __construct() 
   {
+        
          parent::__construct();
       $rep=\service\DiverService::verifUser($_SESSION['user']);
       if( $rep==true)
       {
-          if ($_SESSION['user'][3]!="entreprise")
+     
+          if ($_SESSION['user'][5]==NULL)
           {
                header('Location: /');
-          }
-                
+               }
       }
       else
       {
           header('Location: /');
       }
       
-   }
+      $this->ent=new \modele\EntrepriseManager();
+      }
+   
     public function homeEntreprise()
     {
        $template = $this->twig->loadTemplate('Entreprise.html.twig');
-         echo $template->render(array( 'session'   => $_SESSION['user'][1] ) );
+     
+       $res=$this->ent->find($_SESSION['user'][2]);
+             
+         echo $template->render(array( 'session'   => $_SESSION['user'][1] , "donnee"=>$res) );
     }
 }
