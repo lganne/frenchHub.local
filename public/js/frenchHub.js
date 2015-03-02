@@ -33,10 +33,12 @@ $(document).ready(function () {
         $(".content").each(function(){
         if($(window).scrollTop() >= $(this).first().offset().top){
             if ($(this).attr('data-id') == 'active_content') {
-                $('a').addClass('active');
+                $('.menu-btn').addClass('active');
+                $('.menu').addClass('menu_active');
             }
             else{
-                $('a').removeClass('active');
+                $('.menu-btn').removeClass('active');
+                $('.menu').removeClass('menu_active');
             }           
         }
         });

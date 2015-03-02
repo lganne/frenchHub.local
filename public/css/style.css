@@ -41,6 +41,9 @@ nav.menu-open { left: 0px;}
 .menu > li > a:hover, .menu > li > a.active { background-color: #cfa783;}
 .menu > li > ul li:hover a { color: #32373D;}
 .active{ color:#f36666;}
+.menu_active > li > a { background-color: rgba(243,102,102,0.8);}
+.menu_active ul li a { background-color: rgba(243,102,102,0.4);}
+.menu_active > li > a:hover, .menu_active > li > a.active { background-color: rgba(243,102,102,1);}
 
 /* connection bar */
 #header_crossbar { position: absolute; top: 0; right: 0; padding: 5px 10px; background: #eee;}
