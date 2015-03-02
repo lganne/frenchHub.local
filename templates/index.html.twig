@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block page %}
-    <section id="relocation">
+    <section id="relocation" class="content" data-id="active_content">
         <h1>SECTION 1</h1>
         <form action="/adhesion" method="post">
             <label for='societe'>Dénomination :</label>  <input type='text' name='societe' required><br>
@@ -30,7 +30,7 @@
         {% endif %}
 
     </section>
-    <section id="formation">
+    <section id="formation" class="content">
         <h1>SECTION 2</h1>
         <form action="/adhesion" method="post">
             <label for='societe'>Dénomination :</label>  <input type='text' name='societe' required><br>
@@ -59,7 +59,7 @@
         {% endif %}
 
     </section>
-    <section id="community">
+    <section id="community" class="content" data-id="active_content">
         <h1>SECTION 3</h1>
         <button type="button" name="contact">être recontacté(e)</button>
                 <form method='post' action='/contact'>

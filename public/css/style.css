@@ -40,6 +40,7 @@ nav.menu-open { left: 0px;}
 .menu ul li a { background-color: rgba(255,240,217,0.4); border-bottom: 1px solid #efeff0; width: 100%; height: 2.50em; line-height: 2.50em; text-indent: 2.50em; display: block; position: relative; font-size: 0.9em; transition: all 500ms;}
 .menu > li > a:hover, .menu > li > a.active { background-color: #cfa783;}
 .menu > li > ul li:hover a { color: #32373D;}
+.active{ color:#f36666;}
 
 /* connection bar */
 #header_crossbar { position: absolute; top: 0; right: 0; padding: 5px 10px; background: #eee;}

@@ -29,6 +29,17 @@ $(document).ready(function () {
         }else{
             $('#scroll_up').fadeIn();
         }
+
+        $(".content").each(function(){
+        if($(window).scrollTop() >= $(this).first().offset().top){
+            if ($(this).attr('data-id') == 'active_content') {
+                $('a').addClass('active');
+            }
+            else{
+                $('a').removeClass('active');
+            }           
+        }
+        });
     });
 
     $('a.menu-btn').click(function(){
