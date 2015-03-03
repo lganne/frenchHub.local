@@ -27,17 +27,19 @@ $link->query("
         `id` INT(10) UNSIGNED AUTO_INCREMENT,
          `name` VARCHAR(30) NOT NULL,
         `siren` INTEGER(10) ,
-        `siret` VARCHAR(14) ,
-        `adress` VARCHAR(250) NOT NULL,
+         `adress` VARCHAR(250) NOT NULL,
+         `cp` VARCHAR(20) NOT NULL,
         `Ville`  VARCHAR(150) NOT NULL,
          `Pays`  VARCHAR(150) NOT NULL,
-        `contact` VARCHAR(150) NOT NULL,
+         `civilite` BOOLEAN,
+         `contactNom` VARCHAR(150) NOT NULL,
+          `contactPrenom` VARCHAR(50) NOT NULL,
         `fonction` VARCHAR(30) ,
         `emailcontact` VARCHAR(250) NOT NULL,
          `tel` VARCHAR(50),
-         `description` VARCHAR(250),  
-         `juridique` VARCHAR(100) ,
-        `date_created` DATETIME,
+         `activity` VARCHAR(250),  
+         `NbreSalarier` integer,
+         `date_created` DATETIME,
          `date_modif` DATETIME,
          PRIMARY KEY (`id`)
         ) ENGINE=InnoDB AUTO_INCREMENT=1 ;
@@ -45,7 +47,38 @@ $link->query("
 
 echo "ok entreprise \n <br>";
 
+// table newsLetter
+$link->query("
+        CREATE TABLE `newsLetter` (
+        `id` INT(10) UNSIGNED AUTO_INCREMENT,
+         `entreprises_id` INT UNSIGNED,
+          `logement` BOOLEAN,
+        `immigration` BOOLEAN,
+         `competitivite` BOOLEAN,
+        `fiscalite` BOOLEAN,
+        `integration` BOOLEAN,
+        `marque` BOOLEAN,
+          PRIMARY KEY (`id`),
+           CONSTRAINT `fk_newsLetter_entreprises_id` FOREIGN KEY (`entreprises_id`) REFERENCES `entreprises` (`id`) ON DELETE SET NULL
+        ) ENGINE=InnoDB AUTO_INCREMENT=1 ;
+ " )or die("pb create table newsletter");
 
+// table formule d'abonnement 
+$link->query("
+        CREATE TABLE `subscription` (
+        `id` INT(10) UNSIGNED AUTO_INCREMENT,
+         `entreprises_id` INT UNSIGNED,
+          `formule1` BOOLEAN,
+        `formule2` BOOLEAN,
+         `formule3` BOOLEAN,
+        `formule4` BOOLEAN,
+        `date_created` DATETIME,
+        PRIMARY KEY (`id`),
+         CONSTRAINT `fk_subscription _entreprises_id` FOREIGN KEY (`entreprises_id`) REFERENCES `entreprises` (`id`) ON DELETE SET NULL
+        ) ENGINE=InnoDB AUTO_INCREMENT=1 ;
+ " )or die("pb create table subscription ");
+
+echo "ok subscription  \n <br>";
 //tables salariers
 $link->query("
         CREATE TABLE `employee` (
@@ -153,11 +186,11 @@ $link->query("
 
 echo "ok information <br>";
 
-$link->query("INSERT INTO `frenchhub2`.`entreprises` (`id`, `name`, `siren`, `siret`, `adress`, `Ville`, `Pays`, `contact`, `fonction`, `emailcontact`, `tel`, `description`, `juridique`, `date_created`, `date_modif`) 
-    VALUES (NULL, 'samsung', NULL, NULL, '', '', 'coree', 'admin', 'rh', 'rh@yahoo.fr', NULL, NULL, NULL, NULL, NULL)");
+$link->query("INSERT INTO `frenchhub2`.`entreprises` (`id`, `name`, `siren`,  `adress`, `Ville`, `Pays`, `contactNom`, `fonction`, `emailcontact`, `tel`, `activity`,  `date_created`, `date_modif`) 
+    VALUES (NULL, 'samsung', NULL,  '', '', 'coree', 'admin', 'rh', 'rh@yahoo.fr', NULL, NULL,  NULL, NULL);");
 
 $link->query("INSERT INTO `frenchhub2`.`users` (`id`, `entreprises_id`, `username`, `password`, `email`, `salt`, `token`, `date_created`, `date_modif`, `isActif`, `role`) 
-        VALUES (NULL, '1', 'entreprise', '23dfe5c957cad2f7fce71d865d3db05ad3621b99', ''EvGg8gCO3EtLJ7km2EMkiIVRmgmGzN', '', '2015-02-27 00:00:00', '2015-02-27 00:00:00', '1', 'entreprise');");
+        VALUES (NULL, '1', 'entreprise', '23dfe5c957cad2f7fce71d865d3db05ad3621b99','','EvGg8gCO3EtLJ7km2EMkiIVRmgmGzN', '', '2015-02-27 00:00:00', '2015-02-27 00:00:00', '1', 'entreprise');");
     
 $link->query("INSERT INTO `frenchhub2`.`users` (`id`, `entreprises_id`, `username`, `password`, `email`, `salt`, `token`, `date_created`, `date_modif`, `isActif`, `role`)"
         . " VALUES (NULL, '1', 'membre', '7f347eb4972f19df2bffa50a28b36be26fb9c9c1','', 'zZSqSeYdpe1PZ0AZXYNUa8eiYXZpco',  '', '2015-02-27 00:00:00', '2015-02-27 00:00:00', '1', 'entreprise');");
