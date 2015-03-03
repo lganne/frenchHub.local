@@ -12,21 +12,26 @@ class EntrepriseManager extends \modele\EntiteManager {
     
    public function insert($data)
    {
+       
       $sql=sprintf("insert into ".$this->table.
-             " (name,siren,siret,adress,pays,contact,fonction,emailContact,tel,description,juridique,date_created,date_modif)"
-               . " values ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s',NOW(),NOW())",
+             " (name,siren,adress,cp,ville,pays,civilite,contactNom,contactPrenom,fonction,emailContact,tel,activity,NbreSalarier,date_created,date_modif)"
+               . " values ('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s',NOW(),NOW())",
                            $data['societe'],
                             $data['siren'],
-                           $data['siret'],
                             $data['adress'],
+                            $data['cp'],
+                            $data['ville'],
                             $data['pays'],
-                             $data['contact'],
+                            $data['civilite'],
+                             $data['nom'],
+                             $data['prenom'],
                             $data['fonction'],
                             $data['email'],
                             $data['tel'],
-                             $data['description'],
-                             $data['forme']
+                             $data['activite'],
+                             $data['salarier']
                  );
+       
                   $req=$this->pdo->query($sql);
                   if ($req!=null)
                   {

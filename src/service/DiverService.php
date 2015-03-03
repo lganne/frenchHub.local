@@ -69,5 +69,25 @@ class DiverService {
                 return $twig;
          }
        
-    
+    public function generationLogin($role,$nom,$email,$res)
+    {
+                  $motPass= $this->generateRandomString(8);
+                 $salt=$this->generateRandomString(30);
+               $token=$this->generateRandomString(50);
+                $password=$salt.$motPass.$salt;
+               // on crypte le mot de passe
+               $pwd=$this->codepassword($password);
+            //   $role='entreprise';
+               $donne=array('ident'=>$res,'username'=>$nom,'password'=>$pwd,'email'=>$email,'salt'=>$salt,'token'=>$token,'role'=>$role);
+               $user=new \modele\UserManager();
+               $rep=$user->save($donne);
+               if ($rep!=null)
+               {
+                   return $motPass;
+               }
+               else
+               {
+                   return false;
+               }
+    }
 }
