@@ -38,4 +38,13 @@ class EntrepriseController extends modelController
              
          echo $template->render(array( 'session'   => $_SESSION['user'][1] , "donnee"=>$res) );
     }
+    
+      public function ajoutSalarie()
+        {
+            $salarie=new \modele\EmployeeManager();
+            
+ var_dump($_POST);
+ 
+       $salarie->insert($_POST);
+        }
 }
