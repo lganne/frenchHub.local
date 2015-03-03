@@ -31,7 +31,7 @@ $(document).ready(function () {
         }
 
         $(".content").each(function(){
-        if($(window).scrollTop() >= $(this).first().offset().top){
+        if($(window).scrollTop() >= $(this).first().offset().top -50){
             if ($(this).attr('data-id') == 'active_content') {
                 $('.menu-btn').addClass('active');
                 $('.menu').addClass('menu_active');
