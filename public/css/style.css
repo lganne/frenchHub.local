@@ -59,20 +59,19 @@ nav.menu-open { left: 0px;}
 #login_content input[type=submit]:hover { color: #686560;}
 
 /* bubble */
-.logo, .sign_up, .relocation, .formation, .community { position: absolute; display: block; background-color: #fff; border-radius: 50%; text-align: center; text-decoration: none; font-size: 1.2em; color: #686560; transition: all 500ms;}
-.logo:hover, .sign_up:hover, .relocation:hover, .formation:hover, .community:hover { background-color: rgba(255,255,255,0.9);}
-.logo { top: 12%; left: 27%; width: 200px; height: 200px; line-height: 200px;}
-.logo img { max-width: 80%; vertical-align: middle;}
-.sign_up { top: 10%; right: 15%; width: 250px; height: 250px; line-height: 250px;}
-.sign_up span { vertical-align:middle; display:inline-block; line-height:normal;}
+.sign_up, .services, .mobility, .community {display: block; position: absolute; text-align: center; text-decoration: none; font-size: 1.2em; color: #686560; transition: all 500ms;}
+.services, .mobility, .community { top: 60%; width: 200px; height: 200px; line-height: 200px; border-radius: 50%; background-color: rgba(255,255,255,0.5);}
+.services:hover, .mobility:hover, .community:hover { background-color: rgba(255,255,255,1);}
+.sign_up span, .services span, .mobility span, .community span { vertical-align:middle; display:inline-block; line-height:normal;}
+.sign_up { top: 10%; left: 12%; width: 300px; height: 300px; line-height: 200px;
+} 
 .sign_up strong { text-transform: uppercase; color: #f3686b;}
-.relocation { top: 41%; right: 38%;}
-.formation { bottom: 13%; left: 34%;}
-.community { top: 40%; left: 12%;}
-.relocation, .formation, .community { width: 150px; height: 150px; line-height: 150px;}
+.services { left: 15%;}
+.mobility { left: 45%;}
+.community { left: 75%;}
 
 /* teaser */
-.teaser { position: absolute; bottom: 13%; right: 5%; font-family: 'y2k_neophyteregular', verdana, sans-serif; font-size: 5em; text-align: right; color: #fff;}
+.teaser { position: absolute; top: 12%; right: 12%; font-family: 'y2k_neophyteregular', verdana, sans-serif; font-size: 4em; text-align: right; color: #fff;}
 .teaser strong { text-transform: uppercase; color: #fff0da;}
 
 /* scroll */
