@@ -17,7 +17,7 @@
 </head>
 	<body class="container">
         <nav>
-            <ul class="menu">
+            <ul class="menu change_color">
                 <li class="item1"><a href="/accueil">Accueil</a>
                 </li>
                 <li class="item2"><a href="/relocation">Relocation</a>
@@ -45,8 +45,8 @@
             </ul>
 
         </nav>
-        <a class="menu-btn">&#9776;</a>
-        <a class="menu-btn-active">X</a>
+        <a class="menu-btn change_color">&#9776;</a>
+        <a class="menu-btn-active change_color">X</a>
         <div id="header_crossbar">       
             {% if(session==nul) %}
                 <a href="#">Connexion<span>▼</span></a>
@@ -85,9 +85,9 @@
         {% endblock %}
 
 		<!-- scroll top -->
-        <a href="#top" id="scroll_up">Scroll</a>
+        <a href="#top" id="scroll_up" class=" change_color">^</a>
 
-		<footer class="content">
+		<footer class="content" id="footer">
 		<h1>Footer</h1>
 		</footer>
 

@@ -33,12 +33,10 @@ $(document).ready(function () {
         $(".content").each(function(){
         if($(window).scrollTop() >= $(this).first().offset().top -50){
             if ($(this).attr('data-id') == 'active_content') {
-                $('.menu-btn').addClass('active');
-                $('.menu').addClass('menu_active');
+                $('.change_color').addClass('active');
             }
             else{
-                $('.menu-btn').removeClass('active');
-                $('.menu').removeClass('menu_active');
+                $('.change_color').removeClass('active');
             }           
         }
         });
