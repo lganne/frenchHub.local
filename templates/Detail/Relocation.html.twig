@@ -8,10 +8,11 @@
 
 {% block body %}
 
- <section id="{{ titre }}" class="content" data-id="active_content">
+<section id="{{ titre }}" class="content details standard" data-id="active_content">
     <a href="/accueil" id="logo_top"><img src="../img/logo-french.png" alt="Logo de MyFrenchHub"></a>
-    <div>
-        <h2 class="{{ titre}}">Mission de recherche de logement temporaire ou permanent</h2>
+    <h1><a href="/accueil" class="return"><</a>{{ titre }}</h1>
+    <div class="details_content">
+        <h2 class="{{ titre }}">Mission de recherche de logement temporaire ou permanent</h2>
         <ul>
             <li>Nous étudions avec vous votre projet en tenant compte de tous vos critères. </li>
             <li>Nous vous informons sur tous les documents nécessaires à la présentation de votre dossier de candidature. </li>
@@ -22,7 +23,10 @@
             <li>Nous vous représentons à l’état des lieux d’entrée et prenons pour vous les différents contrats inhérents à la location d’un bien : EDF, assurance... Nous vous assistons si nécessaire à l’ouverture d’un compte bancaire.</li>
         <ul>
     </div>
-    <a href="/devis">Demande de devis</a>
+    <div class="devis">
+        <p>Devis</p>
+        <a href="/devis">Demander</a>
+    </div>
 </section>
 
 {% endblock %}

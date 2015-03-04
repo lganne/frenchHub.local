@@ -1,84 +1,84 @@
+
 {# empty Twig template #}
 {% extends 'base.html.twig' %}
 
 {% block body %}
-       <div id="petitlogo">
-        <a href="/accueil" ><img src="img/logo-beige-grand.png" alt="Logo de MyFrenchHub"></a>
-        </div> 
-    
-     <section >
-         
-         <article id="presentation">
-             <h1>La mobilité en toute tranquilité !</h1>
-         <p >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget porttitor augue. 
-             Praesent consectetur id odio et ultricies. 
-             Praesent in velit lacinia, congue risus ac, viverra sapien. 
-             Donec ante ex, tempus non tortor ac, venenatis ullamcorper justo. 
-             Aliquam a dapibus nisl. Curabitur vel orci sem. 
-             Cras tempor quam vel fringilla suscipit. Nam maximus nunc ac elit molestie, ut elementum augue egestas. 
-             Vivamus scelerisque bibendum odio nec euismod. Donec hendrerit tincidunt elementum. 
-             Nulla nulla dolor, consectetur et magna non, blandit accumsan mi. Vivamus egestas lorem ut porta bibendum. 
-         </p>
-         </article>
-         <div id="formule" >
-             <h3>Devenez membre de MyFrenchHub <br> à partir de 199€ /an</h3><br>
-          <form action="/adhesion" method="post">
-                  de 1 à 50 salariés  199€<input type="checkbox" name="option" value="1">  <br>
-                  de 50 à 249 salariés   399€<input type="checkbox" name="option" value="2">  <br>
-                  de 250 à 1000 salariés  599€<input type="checkbox" name="option" value="3"> <br>
-                    plus de 1000 salariés  1099€<input type="checkbox" name="option" value="4"> <br>
-         </div>
-     </section>
-    
-    <section  id="formEnt">
-       
-            <label for='societe'>Nom entreprise :</label>  <input type='text' name='societe' required><br>
-            <label for="activite">domaine d'activitée</label> : <input type='text' name='activite' ><br> 
-             <label for="salarier">Nombres de salariés :</label> 
+
+    <section id="sign_up" class="content standard" data-id="active_content">
+        <a href="/accueil" id="logo_top"><img src="../img/logo-french.png" alt="Logo de MyFrenchHub"></a>
+        <h1><a href="/accueil" class="return"><</a>La mobilité en toute tranquilité !</h1>
+        <div id="sign_up_content">
+            <h2>Abonnez-vous et bénéficiez de tous les avantages My French Hub !</h2>
+            <p>Des efforts et des investissements importants sont consentis afin d’assurer à sa structure une politique d’attractivité des talents et d’ouverture à l’international qui impacte directement votre image de marque et la performance de votre structure</p>
+            <p>Derrière la mobilité internationale, se trouvent des Hommes et des Femmes à forte valeur ajoutée, elle nécessite des services dédiés et des process d’accueil et d’intégration performants.</p>
+            <p>La mobilité internationale et l’accueil de talents étrangers présentent aussi des risques qu’il faut évaluer, limiter et accompagner afin de générer un retour sur investissement optimum.</p>
+            <p>Les Entreprises, et tous types de structures ouvertes à l’international,  doivent optimiser les coûts tout en assurant aux collaborateurs étrangers -ou de retour en France- des conditions de travail favorables leur permettant de mener à bien leur mission et d’atteindre leurs objectifs qui sont aussi … les vôtres !</p>
+        </div><!--
+     --><div id="formule" >
+            <h3>Devenez membre de MyFrenchHub</h3>
+            <p> à partir de 199€ /an</p>
+            <form action="/adhesion" method="post">
+                <div>
+                    <label for="option_1">1 à 50 salariés</label><input type="checkbox" name="option" id="option_1" value="1" /><span>199€ / an</span>
+                </div>
+                <div>
+                    <label for="option_2">50 à 249 salariés</label><input type="checkbox" name="option" id="option_2" value="2" /><span>399€ / an</span>
+                </div>
+                <div>
+                    <label for="option_3">250 à 1000 salariés</label><input type="checkbox" name="option" id="option_3" value="3" /><span>599€ / an</span>
+                </div>
+                <div>
+                    <label for="option_4">Plus de 1000 salariés</label><input type="checkbox" name="option" id="option_4" value="4" /><span>1099€ / an</span>
+                </div>
+        </div>
+    </section>
+    <section>
+        <div id="entr">
+            <label for='societe'>Nom entreprise*</label><input type='text' name='societe' required>
+            <label for="activite">Domaine d'activitée*</label><input type='text' name='activite' > 
+            <label for="salarier">Nombres de salariés concernées*</label> 
             <select name="salarier">
-                                                    <option value="1">1 à 49</option> 
-                                                    <option value="2">50 à 249</option> 
-                                                     <option value="3"> 250 à 1000</option> 
-                                                     <option value="4"> plus de 1000</option>
-            </select> <br>
-            <label for="adress">Adresse</label> :   <input type="text" name="adress" required >    <br>
-            <label for="codepostal">Code postal</label> :   <input type="text" name="cp" >  <br>
-            <label for="ville">Ville</label> :   <input type="text" name="ville" required >  <br>
-            <label for="pays">pays</label> :   
+                <option value="1">1 à 49</option> 
+                <option value="2">50 à 249</option> 
+                <option value="3"> 250 à 1000</option> 
+                <option value="4"> plus de 1000</option>
+            </select>
+            <label for="adress">Adresse*</label><input type="text" name="adress" required >
+            <label for="codepostal">Code postal*</label><input type="text" name="cp" >
+            <label for="ville">Ville*</label><input type="text" name="ville" required >
+            <label for="pays">Pays*</label>  
             <select name="pays">
                 {% for pays in nomPays %}
                     <option value="{{pays.nom_fr_fr}}">{{pays.nom_fr_fr}}</option> 
                 {% endfor%}
             </select>
-              <label for="siren">Siren</label> :   <input type="text" name="siren" id="siren">   <br>
-              <h4>Contact principal</h4><br>
-             <label for="titre1">Mr :</label>
-             <input type="radio" name="civilite"  value="0"/><br>
-               <label for="titre2">Mme :</label>
-               <input type="radio" name="civilite" value="1"/><br>
-            <label for="nom">nom</label> :   <input type="text" name="nom" required >   <br>
-             <label for="prenom">prénom</label> :   <input type="text" name="prenom" >   <br>
-            <label for="fonction">Fonction</label> :   <input type="text" name="fonction" required>  <br> 
-            <label for="email">Email</label> :   <input type="email" name="email"  required><br>   
-            <label for="Tel">Tel</label> :   <input type="tel" name="tel" required>   <br>
-            
-            
-            <label for="newsLetter">Je voudrais recevoir la news Letter de MyFrenchHub </label>
-            <input type="checkbox" name="newsLetter" value="gen">  <br>
-            <p>En plus de la newsLetter generale, vous pouvez choisir des themes sur lequel vous voulez recevoir plus d'information </p>
-                Logement<input type="checkbox" name="news1" value="1">  <br>
-                  Immigration<input type="checkbox" name="news2" value="2">  <br>
-                  pole de compétitivité<input type="checkbox" name="news3" value="3"> <br>
-                 Fiscalité<input type="checkbox" name="news4" value="4"> <br>
-                 intégration<input type="checkbox" name="news5" value="5"> <br>
-                 La marque blanche<input type="checkbox" name="news6" value="6"> <br>
-            <input type="submit" name="valider" value="valider">
+            <label for="siren">Siren*</label><input type="text" name="siren" id="siren">   <br>
+        </div>
+        </div id="contact">
+            <p>Civilité*<p><label for="titre1">Mr</label><input type="radio" name="civilite"  value="0"/>
+            <label for="titre2">Mme</label><input type="radio" name="civilite" value="1"/>
+            <label for="nom">Nom*</label><input type="text" name="nom" required >
+            <label for="prenom">Prénom*</label><input type="text" name="prenom" >
+            <label for="fonction">Fonction*</label><input type="text" name="fonction" required>
+            <label for="email">Email*</label><input type="email" name="email"  required>
+            <label for="Tel">Tel*</label><input type="tel" name="tel" required>
+        </div>            
+        <label for="newsLetter">Je voudrais recevoir la news Letter de MyFrenchHub</label><input type="checkbox" name="newsLetter" value="gen">
+        <div id="theme">
+            <h3>Les thèmes</h3>
+            <p>En supplément de la newsletter générale, vous pouvez choisir des thèmes sur lesquels vous aimeriez recevoir plus d’informations</p>
+            <input type="checkbox" name="news1" value="1" id="logement"><label for="logement">Logement
+            <input type="checkbox" name="news2" value="2" id="immigration"><label for="immigration">Immigration
+            <input type="checkbox" name="news3" value="3" id="competitivite"><label for="competitivite">Pole de compétitivité
+            <input type="checkbox" name="news4" value="4" id="fiscalite"><label for="fiscalite">Fiscalité
+            <input type="checkbox" name="news5" value="5" id="integration"><label for="integration">Intégration
+            <input type="checkbox" name="news6" value="6" id="marque"><label for="marque">La marque blanche
+        </div>
+        <input type="submit" name="valider" value="valider">
         </form>
         {% if (message2 !=null ) %}
-          <p>
-                {{ message2 }}
-          </p>
+          <p>{{ message2 }}</p>
         {% endif %}
     </section>
-    
-    {% endblock %}
+
+{% endblock %}
