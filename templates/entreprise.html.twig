@@ -1,9 +1,6 @@
 {# empty Twig template #}
 {% extends 'base.html.twig' %}
-        {% block stylesheets %}
-            {{parent()}}| 
-
-        {% endblock %}
+        
 {% block body %}
     
       {% if( message is not empty)  %}
@@ -88,11 +85,11 @@
                     <table>
                         <thead>
                              
-                                <tr><th>Nom</th><th>Prenom</th><th>e mail</th><th>Fonction</th></tr>
+                            <tr><th></th><th>Nom</th><th>Prenom</th><th>e mail</th><th>Fonction</th></tr>
                         </thead>
                         <tbody>
                             {% for Sal in listeSal %}
-                                   <tr><<td> {{ Sal.name}}</td><td>{{ Sal.firstname}}</td><td>{{ Sal.email}}</td><td>{{ Sal.fonction}}</td></tr>
+                                <tr><td> {{ Sal.name}}</td><td>{{ Sal.firstname}}</td><td>{{ Sal.email}}</td><td>{{ Sal.fonction}}</td></tr>
                                {% endfor %}
                         </tbody>
                         
@@ -101,7 +98,8 @@
                     <h2>Ajouter un salarié</h2>
                     <form action="/ajoutSalarie" method="post">
                           {% for item in donnee %}
-                        <input type="text" name="ident" value='{{item.id}}'  hidden>
+                                <input type="text" name="ident" value='{{item.id}}'  hidden>
+                           
                         {% endfor %}
                             <label for="Nom"> Nom </label> <input type="text" name="Nom"  >   <br>
                        
