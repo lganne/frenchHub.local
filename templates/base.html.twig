@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>{% block title %}MyFrenchHub!{% endblock %}</title>
+    <link rel="icon" type="image/ico" href="img/picto/favicon.ico" />
 	{% block stylesheets %}
        <link rel="stylesheet" type="text/css" href="css/style.css " />          
 	{% endblock %}
@@ -88,32 +89,41 @@
         {% endblock %}
 
 		<footer class="content" id="footer">
-    		<ul id="footer_info">
-                <li><h3>Informations</h3></li>
-                <li><a href="">bla bla bla</a></li>
-                <li><a href="">bla bla bla</a></li>
-                <li><a href="">bla bla bla</a></li>
-            </ul><!--
-         --><ul id="footer_mention">
-                <li><h3>Mentions légales</h3></li>
-                <li><a href="">bla bla bla</a></li>
-                <li><a href="">bla bla bla</a></li>
-                <li><a href="">bla bla bla</a></li>
-            </ul><!--
-         --><ul id="footer_society">
-                <li><h3>Notre société</h3></li>
-                <li><a href="">bla bla bla</a></li>
-                <li><a href="">bla bla bla</a></li>
-                <li><a href="">bla bla bla</a></li>
-            </ul>
+    		<div id="footer_info">
+                <h3>Informations</h3>
+                <ul>
+                    <li><a href="#">Qui sommes-nous</a></li>
+                    <li><a href="#">Infos pratique</a></li>
+                    <li><a href="#">CGV</a></li>
+                </ul>
+            </div><!--
+         --><div id="footer_mention">
+                <h3>Mentions légales</h3>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Plan du site</a></li>
+                    <li><a href="#">Besoin d'aide</a></li>
+                </ul>
+            </div><!--
+         --><div id="footer_society"x>
+                <h3>Notre société</h3>
+                <ul>
+                    <li><a href="#">Nous contacter</a></li>
+                    <li><a href="#">My French cl'Hub</a></li>
+                    <li><a href="#">Nos formations RH</a></li>
+                </ul>
+            </div>
             <div id="footer_newsletter">
                 <h3>Newsletter</h3>
-                <p>bla bla bla</p>
-                <a href="">Inscrivez-vous</a>
+                <p>Recevez l'actu du French Hub</p>
+                <form action="#">
+                    <input type="mail" value="@mail">
+                    <input type="submit" value="ok" />
+                </form>
             </div><!--
          --><div id="footer_hub">
                 <h3>Rejoignez-nous</h3>
-                <p>bla bla bla</p>
+                <p>French Hub sur les réseaux sociaux</p>
                 <ul>
                     <li><a href="">Facebook</a></li>
                     <li><a href="">Twitter</a></li>
@@ -123,11 +133,11 @@
             <div id="footer_partner">
                 <h3>Nos partenaires</h3>
                 <ul>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
-                    <li><a href=""></a></li>
+                    <li><a href="#">HEC</a></li>
+                    <li><a href="#">RF</a></li>
+                    <li><a href="#">Amex</a></li>
+                    <li><a href="#">Fig</a></li>
+                    <li><a href="#">Etd</a></li>
                 </ul>
             </div>
 		</footer>

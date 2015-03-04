@@ -37,7 +37,7 @@ a { text-decoration: none;}
 /* Menu */
 .menu-btn-active { display: none;}
 .menu-btn, .menu-btn-active { position: fixed; top: 25px; z-index: 9999; color: #fff0d9; font-size: 3em; cursor: pointer}
-nav { position: fixed; top: 0; left: -250px; z-index: 1000; width: 250px; height: 100%; overflow: auto; font-size: 1em;}
+nav { position: fixed; top: 0; left: -250px; z-index: 1000; width: 250px; height: 100%; background-color: rgba(255,240,217,0.4); overflow: auto; font-size: 1em;}
 nav,
 .container { -webkit-transition: all 0.3s ease; -moz-transition: all 0.3s ease; transition: all 0.3s ease;}
 nav.menu-open { left: 0px;}
@@ -49,6 +49,7 @@ nav img { display: block; margin: 0 auto;}
 .menu ul li a { background-color: rgba(255,240,217,0.4); border-bottom: 1px solid #efeff0; width: 100%; padding-left: 2.50em; line-height: 2.50em; display: block; position: relative; font-size: 0.9em; transition: all 500ms;}
 .menu > li > a:hover, .menu > li > a.active { background-color: #cfa783;}
 .menu > li > ul li:hover a { color: #32373D;}
+
 .active { color: #c5bca3;}
 .active > li > a { background-color: rgba(197,188,163,0.8);}
 .active ul li a { background-color: rgba(197,188,163,0.4);}
@@ -68,12 +69,14 @@ nav img { display: block; margin: 0 auto;}
 #login_content input[type=submit]:hover { color: #32373D;}
 
 /* bubble */
-.sign_up, .services, .mobility, .community {display: block; position: absolute; text-align: center; text-decoration: none; font-size: 1.2em; color: #686560; text-transform: uppercase; transition: all 500ms;}
+.sign_up, .services, .mobility, .community { display: block; position: absolute; text-align: center; text-decoration: none; font-size: 1.2em; color: #686560; text-transform: uppercase; transition: all 500ms;}
 .services, .mobility, .community { top: 60%; width: 200px; height: 200px; line-height: 200px; border-radius: 50%; background-color: rgba(255,255,255,0.5);}
 .services:hover, .mobility:hover, .community:hover { background-color: rgba(255,255,255,1);}
 .sign_up span, .services span, .mobility span, .community span { vertical-align:middle; display:inline-block; line-height:normal;}
-.sign_up { top: 10%; left: 12%; width: 300px; height: 300px; line-height: 200px;
-} 
+.sign_up { top: 9%; left: 11%; width: 276px; height: 275px; background: url(../img/logo-french-bulle.png) no-repeat; line-height: 200px;
+}
+.sign_up:after { position: absolute; content: ""; background: url(../img/picto/home/picto-membre.png) no-repeat; bottom: 80px; right: 20px; width: 72px; height: 81px;}
+.sign_up span { vertical-align: bottom;}
 .sign_up strong { text-transform: uppercase; color: #f1696b;}
 .services { left: 15%;}
 .mobility { left: 45%;}
@@ -86,7 +89,7 @@ header h1 strong { text-transform: uppercase; color: #ffefd8;}
 /* scroll */
 header .scroll_down { background: url(../img/picto/fleche-scroll-blanche.png) no-repeat;}
 section .scroll_down, #scroll_up { background: url(../img/picto/fleche-scroll.png) no-repeat;}
-#scroll_up, .scroll_down { bottom: 10px; width: 53px; height: 16px; text-indent: -9999px;}
+#scroll_up, .scroll_down { bottom: 0; width: 53px; height: 16px; text-indent: -9999px;}
 #scroll_up { display: none; position: fixed; right: 10px; width: 64px; transform: rotate(180deg);}
 .scroll_down { position: absolute; left: 50%;}
 
@@ -95,7 +98,6 @@ section .scroll_down, #scroll_up { background: url(../img/picto/fleche-scroll.pn
 #mobility, #community { background-color: #fff;}
 #mobility h2 { color: #c5bca3;}
 #services { background-color: #c5bca3;}
-footer { background-color: green; height: 20%;}
 
 /* HOME */
 #services > div, #mobility > div, #community > div, #services ul, #mobility ul { display: inline-block; vertical-align: top; max-height: 100%; padding: 20px;}
@@ -112,20 +114,35 @@ footer { background-color: green; height: 20%;}
 #services ul li:nth-child(3) { background: url(../img/picto/home_services/picto-marque-employeur.png) no-repeat;}
 #services ul li:nth-child(4) { background: url(../img/picto/home_services/picto-engagement.png) no-repeat;}
 #mobility, footer { background-color: #c5bca3;}
-#mobility h1, #mobility p, footer h1, footer p { color: #302f2f;}
-#mobility h2, #mobility a, footer h2, footer a { color: #fff8e7;}
+#mobility h1, #mobility p, footer h1, footer h2, footer h3, footer p { color: #302f2f;}
+#mobility h2, #mobility a, footer h2, footer li, footer a { color: #fff8e7;}
 #mobility ul li:nth-child(1) { background: url(../img/picto/home_mobility/picto-assistance.png) no-repeat;}
 #mobility ul li:nth-child(2) { background: url(../img/picto/home_mobility/picto-logement.png) no-repeat;}
 #mobility ul li:nth-child(3) { background: url(../img/picto/home_mobility/picto-administratif.png) no-repeat;}
 #mobility ul li:nth-child(4) { background: url(../img/picto/home_mobility/picto-immigre.png) no-repeat;}
 #mobility ul li:nth-child(5) { background: url(../img/picto/home_mobility/picto-famille.png) no-repeat;}
 #community img { display: inline-block; max-width: 60%;}
-#footer_info, #footer_mention, #footer_society, #footer_newsletter, #footer_hub, #footer_partner { display: inline-block; vertical-align: top; height: 33.33%; text-align: center;}
-#footer_info, #footer_mention, #footer_society {width: 33.33%;}
-#footer_newsletter, #footer_hub { width: 50%;}
+#footer_info, #footer_mention, #footer_society, #footer_newsletter, #footer_hub, #footer_partner { display: inline-block; vertical-align: top; height: 33%; padding: 20px; text-align: center;}
+#footer_info, #footer_mention, #footer_society { width: 33.33%;}
+#footer_mention ul { border-left: 1px solid #fff8e7; border-right: 1px solid #fff8e7;}
+#footer_info ul, #footer_mention ul, #footer_society ul { padding: 10px 40px; list-style: initial;}
+#footer_info li, #footer_mention li, #footer_society li { margin: 10px 0; text-align: left;}
+#footer_newsletter, #footer_hub { width: 40%; margin: 20px 5%; padding: 20px; border: 3px solid #fff8e7; border-radius: 20px;}
+#footer_newsletter p, #footer_hub p { margin: 10px;}
+#footer_newsletter input[type="mail"] { margin-top: 20px; padding: 5px 3px; border: none; border-radius: 5px;}
+#footer_newsletter input[type="submit"] { background-color: inherit; border: none; color: #fff8e7; cursor: pointer;}
+#footer_hub ul li { display: inline-block; height: 54px; text-indent: -9999px;}
+#footer_hub ul li:nth-child(1) { width: 30px; background: url(../img/picto/sprite-reseaux.png) no-repeat top left;}
+#footer_hub ul li:nth-child(2) { width: 37px; margin: 0 50px; background: url(../img/picto/sprite-reseaux.png) no-repeat 47% top;}
+#footer_hub ul li:nth-child(3) { width: 45px; background: url(../img/picto/sprite-reseaux.png) no-repeat 98% top;}
 #footer_partner { width: 100%;}
-#footer_partner ul li { display: inline-block; margin: 10px;}
-#footer_partner ul li a { display: block; width: 100px; height: 100px; border-radius: 50%; background-color: #fff;}
+#footer_partner ul li { display: inline-block; margin: 10px 5%; vertical-align: middle;}
+#footer_partner ul li a { display: block; text-indent: -9999px;}
+#footer_partner ul li:nth-child(1) a { width: 96px; height: 65px; background: url(../img/picto/partenaires/logo-hec.png) no-repeat;}
+#footer_partner ul li:nth-child(2) a { width: 85px; height: 51px; background: url(../img/picto/partenaires/logo-gouv.png) no-repeat;}
+#footer_partner ul li:nth-child(3) a { width: 61px; height: 62px; background: url(../img/picto/partenaires/logo-american.png) no-repeat;}
+#footer_partner ul li:nth-child(4) a { width: 63px; height: 63px; background: url(../img/picto/partenaires/logo-figaro.png) no-repeat;}
+#footer_partner ul li:nth-child(5) a { width: 93px; height: 30px; background: url(../img/picto/partenaires/logo-etudiant.png) no-repeat;}
 
 /* DETAILS */
 section #logo_top { display: block; width: 120px; height: 85px; margin: 0 auto;}
