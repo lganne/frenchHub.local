@@ -72,15 +72,16 @@ nav img { display: block; margin: 0 auto;}
 .sign_up, .services, .mobility, .community { display: block; position: absolute; text-align: center; text-decoration: none; font-size: 1.2em; color: #686560; text-transform: uppercase; transition: all 500ms;}
 .services, .mobility, .community { top: 60%; width: 200px; height: 200px; line-height: 200px; border-radius: 50%; background-color: rgba(255,255,255,0.5);}
 .services:hover, .mobility:hover, .community:hover { background-color: rgba(255,255,255,1);}
-.sign_up span, .services span, .mobility span, .community span { vertical-align:middle; display:inline-block; line-height:normal;}
+.sign_up span, .services span, .mobility span, .community span { vertical-align:bottom; display:inline-block; line-height:normal;}
+.services span, .mobility span, .community span { padding-bottom: 50px;}
 .sign_up { top: 9%; left: 11%; width: 276px; height: 275px; background: url(../img/logo-french-bulle.png) no-repeat; line-height: 200px;
 }
 .sign_up:after { position: absolute; content: ""; background: url(../img/picto/home/picto-membre.png) no-repeat; bottom: 80px; right: 20px; width: 72px; height: 81px;}
 .sign_up span { vertical-align: bottom;}
 .sign_up strong { text-transform: uppercase; color: #f1696b;}
-.services { left: 15%;}
-.mobility { left: 45%;}
-.community { left: 75%;}
+.services { left: 15%; background-image: url(../img/picto/home/picto-audit.png); background-repeat: no-repeat; background-position: 50% 25%}
+.mobility { left: 45%; background-image: url(../img/picto/home/picto-mobilite.png); background-repeat: no-repeat; background-position: 50% 25%}
+.community { left: 75%; background-image: url(../img/picto/home/picto-french-clhub.png); background-repeat: no-repeat; background-position: 50% 25%}
 
 /* teaser */
 header h1 { position: absolute; top: 12%; right: 12%; font-family: 'y2k_neophyteregular', verdana, sans-serif; font-size: 4em; text-transform: inherit; text-align: right; color: #fff;}
@@ -145,7 +146,15 @@ section .scroll_down, #scroll_up { background: url(../img/picto/fleche-scroll.pn
 #footer_partner ul li:nth-child(5) a { width: 93px; height: 30px; background: url(../img/picto/partenaires/logo-etudiant.png) no-repeat;}
 
 /* DETAILS */
-section #logo_top { display: block; width: 120px; height: 85px; margin: 0 auto;}
+.details #logo_top { display: block; width: 120px; height: 85px; margin: 0 auto;}
+.details h1, .details h2 { text-align: center;}
+.details h1 { position: relative; margin: 30px;}
+.details .return { position: absolute; display: block; top: 0; left: 0; width: 16px; height: 27px; background: url(../img/picto/fleche-retour.png) no-repeat; text-indent: -9999px;}
+.details .details_content { width: 80%; margin: 0 auto; padding: 20px; border: 1px solid #f1696b; border-radius: 20px;}
+.details h2 { background: url(../img/picto/partenaires/logo-etudiant.png) no-repeat; color: #f1696b;}
+.details .devis { width: 100%; text-align: right;}
+.details .devis p { margin: 20px 0;}
+.details .devis a { padding: 10px 20px; border-radius: 5px; background-color: #f1696b; color: #fff;}
 
 /* SIGN_UP PAGE */
 #formule, #presentation
