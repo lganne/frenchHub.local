@@ -172,10 +172,10 @@ class FormController extends \controller\modelController
        $retour=$estimate->insert($data);
        if ($retour !=false)
        {
-           $mess="Votre demande de vis à bien été enregistrer, il vous seras envoyer dans les 24 heures";
+           $mess="Votre demande de devis à bien été enregistré, il vous sera envoyée dans les 24 heures";
        }else
        {
-           $mess=" Un probleme inattendus est survenus lors de l'enregistrement de votre demande. celle ci n'a pu être enregistrer";
+           $mess=" Un probleme inattendus est survenus lors de l'enregistrement de votre demande. celle ci n'a pu être enregistrée";
        }
              sortie:
        echo $template->render(array('nomPays'=>$this->paysfr,'mess'=>$mess));
