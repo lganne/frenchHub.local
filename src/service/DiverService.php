@@ -69,7 +69,7 @@ class DiverService {
                 return $twig;
          }
        
-    public function generationLogin($role,$nom,$email,$res)
+    public function generationLogin($role,$nom,$email,$ident,$idSalarier=NULL)
     {
                   $motPass= $this->generateRandomString(8);
                  $salt=$this->generateRandomString(30);
@@ -77,17 +77,32 @@ class DiverService {
                 $password=$salt.$motPass.$salt;
                // on crypte le mot de passe
                $pwd=$this->codepassword($password);
-            //   $role='entreprise';
-               $donne=array('ident'=>$res,'username'=>$nom,'password'=>$pwd,'email'=>$email,'salt'=>$salt,'token'=>$token,'role'=>$role);
-               $user=new \modele\UserManager();
-               $rep=$user->save($donne);
+                $user=new \modele\UserManager();
+                $nom=$this->existeLog($nom, $user);
+                 
+                 $donne=array('ident'=>$ident,'idSalarier'=>$idSalarier,'username'=>$nom,'password'=>$pwd,'email'=>$email,'salt'=>$salt,'token'=>$token,'role'=>$role);    
+                 $rep=$user->save($donne);
                if ($rep!=null)
                {
-                   return $motPass;
+                   return array('username'=>$nom,'motpass'=>$motPass);
                }
                else
                {
                    return false;
                }
+    }
+    
+    public function existeLog($nom,$user)
+    {
+         $existe=$user->query1arg("username", $nom);
+               // on verif que l'username n'existe pas deja, si oui on en créer un nouveau en rajoutant une incrementation au nom
+               $i=2;
+               while (!empty($existe))
+               {
+                   $nom=$nom.$i;
+                    $existe=$user->query1arg("username", $nom);
+                    $i++;
+               }   
+               return $nom;
     }
 }

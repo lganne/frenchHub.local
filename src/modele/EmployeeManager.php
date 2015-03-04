@@ -21,7 +21,16 @@ class EmployeeManager extends EntiteManager
                  $data['email']);
         
         $req=$this->pdo->query($sql);
-        return $req;
+         if ($req!=null)
+                  {
+                      $reponse= $this->pdo->lastInsertId();
+                  }
+                  else
+                  {
+                      $reponse=false;
+                  }
+                    
+                   return $reponse;
    }
     
 }

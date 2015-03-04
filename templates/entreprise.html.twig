@@ -90,10 +90,15 @@
                         <label for="fonction">Fonction </label> :   <input type="text" name="fonction" > <br>
                         
                         <label for="email">Email </label> :   <input type="email" name="email" ><br>
+                        
+                          {% if( message is not empty)  %}
+                                   <span>Le login pour ce salarié est : {{message['username']}} et le mot de passe est : {{message['motpass']}}</span><br>
+                              
+                           {% endif %}
                           <input type="submit" name="valider" value="valider">
                     </form>
                     
-              
+                      
         </section>
                           
     {% endblock %}

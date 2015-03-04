@@ -12,8 +12,9 @@ public function save($tabDonne)
 {
     
      $sql=sprintf("insert into ".$this->table.
-             " (entreprises_id,username,password,email,salt,token,date_created,date_modif,role) values ('%d','%s','%s','%s','%s','%s',NOW(),NOW(),'%s')",
+             " (entreprises_id,employee_id,username,password,email,salt,token,date_created,date_modif,role) values ('%d','%d','%s','%s','%s','%s','%s',NOW(),NOW(),'%s')",
                             $tabDonne['ident'],
+                            $tabDonne['idSalarier'],
                            $tabDonne['username'],
                             $tabDonne['password'],
                             $tabDonne['email'],
@@ -24,10 +25,10 @@ public function save($tabDonne)
                    return  $req=$this->pdo->query($sql);
 }
 
-    public function query($password)
+    public function query1arg($nom,$password)
     {
         $results = [];
-        $query = sprintf("SELECT * FROM `users` WHERE password='%s'", $password);
+        $query = sprintf("SELECT * FROM `users` WHERE $nom='%s'", $password);
 
         $stmt = $this->pdo->query($query);
         while ($data = $stmt->fetch(\PDO::FETCH_OBJ)) {

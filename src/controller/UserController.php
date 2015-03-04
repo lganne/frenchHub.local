@@ -57,8 +57,7 @@ class UserController extends \controller\modelController
         $pass=$_POST['password'];
         $rep=$this->user->veriflog($pass,$log);
         $user=array();
-        var_dump($rep);
-      // die();
+      
         if ($rep['reponse']==true)
         {
             foreach ($rep['donnee'] as $detail)
