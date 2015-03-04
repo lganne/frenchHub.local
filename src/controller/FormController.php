@@ -146,6 +146,38 @@ class FormController extends \controller\modelController
   
   public function devisEnregistrement()
   {
-      
+        $template = $this->twig->loadTemplate('Detail/Devis.html.twig');
+        $mess=null;
+      if(empty($_POST))
+      {
+          $mess="Le formulaire est vide.recommencez";
+          goto sortie;
+      }
+      $data=[] ;  
+      $option="";
+      foreach($_POST as $key => $value)
+      {
+          if(substr($key,0,6)  != "option")
+          {
+               $data[$key]=$value;
+           }
+           else 
+           {
+                $option.=$value.",";
+            }
+        }
+        $data['option']=$option;
+        
+      $estimate=new \modele\EstimateManager();
+       $retour=$estimate->insert($data);
+       if ($retour !=false)
+       {
+           $mess="Votre demande de vis à bien été enregistrer, il vous seras envoyer dans les 24 heures";
+       }else
+       {
+           $mess=" Un probleme inattendus est survenus lors de l'enregistrement de votre demande. celle ci n'a pu être enregistrer";
+       }
+             sortie:
+       echo $template->render(array('nomPays'=>$this->paysfr,'mess'=>$mess));
   }
 }

@@ -1,14 +1,15 @@
 {# empty Twig template #}
 {% extends 'base.html.twig' %}
 
-
-
 {% block body %}
      <div id="petitlogo">
         <a href="/accueil" ><img src="img/logo-beige-grand.png" alt="Logo de MyFrenchHub"></a>
         </div> 
     <section id="formEnt" class="content">
         <br>
+        {% if(mess !=null) %}
+            <span> {{mess}}</span>
+        {% endif%}
          <form action="/devisEnregistrement" method="post" role="form">
   
                         <h2> INFORMATION GENERAL </h2>
@@ -16,7 +17,7 @@
                         <label for='societe'>Nom de l'entreprise :</label>  <input type='text' name='societe'  required><br>
                         <label for="activité">Domaine d'activité </label> : <input type="text"  name="activite"  > <br>
                         <label for="adress">Adresse</label> :   <input type="text" name="adress" required >  <br>
-                        <label for="code postal">Code postal</label> :   <input type="text" name="cp" required >  <br>
+                        <label for="code postal">Code postal</label> :   <input type="text" name="cp" >  <br>
                         <label for="ville">Ville</label> :   <input type="text" name="ville" required >  <br>
                                      <label for="pays">Pays :</label> 
                                      <select name="pays" >
@@ -27,51 +28,50 @@
                                       <label for="siren">Siren</label> :   <input type="text" name="siren" class="form-control" >   <br><br>
                                       
                                       <h2> Contact </h2>
+                                                <label for="opt1">Mr</label><input required type="radio" name="civilite" value="0"  /><br>
+                                             <label for="opt2">Mme</label> <input required type="radio" name="civilite" value="1" />
                                             <label for="nom">Nom</label> :   <input type="text" name="contactNom"    required >   <br>
                                             <label for="prenom">prenom</label> :   <input type="text" name="contactPrenom"   required> <br>
                                            <label for="fonction">Fonction</label> :   <input type="text" name="fonction"    required> <br>
                                             <label for="Tel">Tel</label> :   <input type="tel" name="tel"   required>  <br>
                                             <label for="email">Email</label> :   <input type="email" name="email"   required><br>
                                              <label for="salarier"class="col-xs-8 control-label">Nombres de salariés :</label> <br>
-                                            <select name="select" >
+                                            <select name="salarier" >
                                                     <option value="1">1 à 49</option> 
                                                     <option value="2">50 à 249</option> 
                                                      <option value="3">250 à 1000</option> 
-                                                      <option value="3">plus de 1000</option> 
+                                                      <option value="4">plus de 1000</option> 
                                               </select><br><br>
                                
                            <h2>ASSISTANCE AU DEPART / ARRIVEE</h2>
                             
-                               <input type="checkbox" name="option1" value="voyage"> Voyage d'orientation, reconnaissance<br>
-                            <input type="checkbox" name="option2" value="demenagement" > Coordination du déménagement<br>
-                            <input type="checkbox" name="option3" value="Assistance">Assistance au départ<br><br>
+                             <input type="checkbox" name="option1" value="1"> Voyage d'orientation, reconnaissance<br>
+                            <input type="checkbox" name="option2" value="2" > Coordination du déménagement<br>
+                            <input type="checkbox" name="option3" value="3">Assistance au départ<br><br>
                             
                             <h2>IMMIGRATION</h2>
-                           <input type="checkbox" name="option4" value="Travail"> Autorisation de travail<br>
-                            <input type="checkbox" name="option5" value="TitreSejour" > Titre de séjour<br>
-                            <input type="checkbox" name="option6" value="mineur">Circulation mineur etranger<br><br>
+                           <input type="checkbox" name="option4" value="4"> Autorisation de travail<br>
+                            <input type="checkbox" name="option5" value="5" > Titre de séjour<br>
+                            <input type="checkbox" name="option6" value="6">Circulation mineur etranger<br><br>
                             
                              <h2>LOGEMENT</h2>
-                           <input type="checkbox" name="option7" value="temporaire"> logement temporaire<br>
-                            <input type="checkbox" name="option8" value="permanent" > logement permanent<br><br>
+                           <input type="checkbox" name="option7" value="7"> logement temporaire<br>
+                            <input type="checkbox" name="option8" value="8" > logement permanent<br><br>
                         
                              <h2>ADMINISTRATIF</h2>
-                           <input type="checkbox" name="option9" value="banque"> Banque/Assurance<br>
-                            <input type="checkbox" name="option10" value="vehicule" > Permis de conduire/véhicule<br>
-                            <input type="checkbox" name="option11" value="protection">Protection sociale<br>
-                             <input type="checkbox" name="option12" value="fiscale">Problématiques fiscales<br><br>
+                           <input type="checkbox" name="option9" value="9"> Banque/Assurance<br>
+                            <input type="checkbox" name="option10" value="10" > Permis de conduire/véhicule<br>
+                            <input type="checkbox" name="option11" value="11">Protection sociale<br>
+                             <input type="checkbox" name="option12" value="12">Problématiques fiscales<br><br>
                              
                              <h2>FAMILLE</h2>
-                           <input type="checkbox" name="option13" value="conjoint"> Conjoint<br>
-                            <input type="checkbox" name="option14" value="enfant"> Enfants<br>
+                           <input type="checkbox" name="option13" value="13"> Conjoint<br>
+                            <input type="checkbox" name="option14" value="14"> Enfants<br>
                             
                              <label for="description">Commentaire</label> : <textarea rows="3" cols="50" name="commentaire" > </textarea><br>  <br>
                               <button type="submit"  name="valider" >Valider</button>
                             
-             
-                                        
-         </form>
+                   </form>
     </section>                       
-   
  
  {% endblock %}
