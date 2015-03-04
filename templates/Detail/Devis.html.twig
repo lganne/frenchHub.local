@@ -1,113 +1,77 @@
 {# empty Twig template #}
-{#{% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{% block page %}#} 
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>{% block title %}MyFrenchHub!{% endblock %}</title>
-	{% block stylesheets %}
-                   
-                         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css " /> 
-	{% endblock %}
-	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-</head>
-  <body >
- {#                  <img src="img/logo-beige-grand.png" alt="Logo de MyFrenchHub">#}
 
-<div class="col-md-1"></div>
-        <div class="col-md-4">
+
+{% block body %}
+     <div id="petitlogo">
+        <a href="/accueil" ><img src="img/logo-beige-grand.png" alt="Logo de MyFrenchHub"></a>
+        </div> 
+    <section id="formEnt" class="content">
+        <br>
          <form action="/devisEnregistrement" method="post" role="form">
   
                         <h2> INFORMATION GENERAL </h2>
-                                <div class="form-group">
-                                    <label for='societe'>Dénomination :</label>  <input type='text' name='societe' class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="adress">Adresse</label> :   <input type="text" name="adress" class="form-control" required >   
-                                </div>
-                                <div class="form-group">
-                                    <label for="pays"class="col-xs-2 control-label">Pays :</label> 
-                                    <div class="col-xs-10 selectContainer">
-                                       <select name="select" class="form-control">
+                               
+                        <label for='societe'>Nom de l'entreprise :</label>  <input type='text' name='societe'  required><br>
+                        <label for="activité">Domaine d'activité </label> : <input type="text"  name="activite"  > <br>
+                        <label for="adress">Adresse</label> :   <input type="text" name="adress" required >  <br>
+                        <label for="code postal">Code postal</label> :   <input type="text" name="cp" required >  <br>
+                        <label for="ville">Ville</label> :   <input type="text" name="ville" required >  <br>
+                                     <label for="pays">Pays :</label> 
+                                     <select name="pays" >
                                                     {% for pays in nomPays %}
-                                                                     <option value="value1">{{pays.nom_fr_fr}}</option> 
+                                                                     <option value="{{pays.nom_fr_fr}}">{{pays.nom_fr_fr}}</option> 
                                                     {% endfor%}
-                                       </select> 
-                                    </div>
-                                </div><br><br>
-                                      <div class="form-group">
-                                      <label for="siren">Siren</label> :   <input type="text" name="siren" class="form-control" >   
-                                      </div>
-                                          <div class="form-group">
-                                         <label for="siret">Siret</label> :   <input type="number" name="siret"class="form-control"  > 
-                                          </div>
-                                      <div class="form-group">
-                                         <label for="description">Activité</label> : <input type="text"  name="description" class="form-control" > 
-                                      </div>
-                                    <div class="form-group">
-                                             <label for="forme">Forme juridique</label> :   <input type="text" name="forme" class="form-control" >
-                                    </div>
-                                    <div class="form-group">
-                                          <label for="contact">Contact principal</label> :   <input type="text" name="contact"   class="form-control" required >   
-                                    </div>
-                                    <div class="form-group">
-                                           <label for="fonction">Fonction</label> :   <input type="text" name="fonction"   class="form-control" required> 
-                                    </div>
-                                   <div class="form-group">
-                                         <label for="email">Email</label> :   <input type="email" name="email"   class="form-control" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="Tel">Tel</label> :   <input type="tel" name="tel"   class="form-control"required>   
-                                    </div>
-                                <label for="salarier"class="col-xs-8 control-label">Nombres de salariés concernées :</label> 
-                                 <div class="col-xs-4 selectContainer">
-                                    <select name="select" class="form-control">
-                                                    <option value="value1">0 à 50</option> 
-                                                    <option value="value1">50 à 250</option> 
-                                                     <option value="value1">plus de 250</option> 
-                                    </select>
-                                 </div>
-                                            
-                                                     
-             </div>
-             <div class="col-md-1"></div>
-            <div class="col-md-4">
+                                     </select> <br>
+                                      <label for="siren">Siren</label> :   <input type="text" name="siren" class="form-control" >   <br><br>
+                                      
+                                      <h2> Contact </h2>
+                                            <label for="nom">Nom</label> :   <input type="text" name="contactNom"    required >   <br>
+                                            <label for="prenom">prenom</label> :   <input type="text" name="contactPrenom"   required> <br>
+                                           <label for="fonction">Fonction</label> :   <input type="text" name="fonction"    required> <br>
+                                            <label for="Tel">Tel</label> :   <input type="tel" name="tel"   required>  <br>
+                                            <label for="email">Email</label> :   <input type="email" name="email"   required><br>
+                                             <label for="salarier"class="col-xs-8 control-label">Nombres de salariés :</label> <br>
+                                            <select name="select" >
+                                                    <option value="1">1 à 49</option> 
+                                                    <option value="2">50 à 249</option> 
+                                                     <option value="3">250 à 1000</option> 
+                                                      <option value="3">plus de 1000</option> 
+                                              </select><br><br>
+                               
                            <h2>ASSISTANCE AU DEPART / ARRIVEE</h2>
                             
                                <input type="checkbox" name="option1" value="voyage"> Voyage d'orientation, reconnaissance<br>
                             <input type="checkbox" name="option2" value="demenagement" > Coordination du déménagement<br>
-                            <input type="checkbox" name="option3" value="Assistance">Assistance au départ<br>
+                            <input type="checkbox" name="option3" value="Assistance">Assistance au départ<br><br>
                             
                             <h2>IMMIGRATION</h2>
                            <input type="checkbox" name="option4" value="Travail"> Autorisation de travail<br>
-                            <input type="checkbox" name="option5" value="TitreSejour" checked> Titre de séjour<br>
-                            <input type="checkbox" name="option6" value="mineur">Circulation mineur etranger<br>
+                            <input type="checkbox" name="option5" value="TitreSejour" > Titre de séjour<br>
+                            <input type="checkbox" name="option6" value="mineur">Circulation mineur etranger<br><br>
                             
                              <h2>LOGEMENT</h2>
                            <input type="checkbox" name="option7" value="temporaire"> logement temporaire<br>
-                            <input type="checkbox" name="option8" value="permanent" > logement permanent<br>
+                            <input type="checkbox" name="option8" value="permanent" > logement permanent<br><br>
                         
                              <h2>ADMINISTRATIF</h2>
                            <input type="checkbox" name="option9" value="banque"> Banque/Assurance<br>
                             <input type="checkbox" name="option10" value="vehicule" > Permis de conduire/véhicule<br>
                             <input type="checkbox" name="option11" value="protection">Protection sociale<br>
-                             <input type="checkbox" name="option12" value="fiscale">Problématiques fiscales<br>
+                             <input type="checkbox" name="option12" value="fiscale">Problématiques fiscales<br><br>
                              
                              <h2>FAMILLE</h2>
                            <input type="checkbox" name="option13" value="conjoint"> Conjoint<br>
                             <input type="checkbox" name="option14" value="enfant"> Enfants<br>
                             
-                             <label for="description">Commentaire</label> : <textarea rows="3" cols="50" name="commentaire" > </textarea>  <br>
-                            <div class="form-group">
-                                   <button type="submit" class="btn  btn-success" name="valider" >Valider</button>
-                            </div>
-             </div>
+                             <label for="description">Commentaire</label> : <textarea rows="3" cols="50" name="commentaire" > </textarea><br>  <br>
+                              <button type="submit"  name="valider" >Valider</button>
+                            
+             
                                         
          </form>
-                                 
+    </section>                       
    
-  </body>
-</html>
-{#    {% endblock %}#}
+ 
+ {% endblock %}
