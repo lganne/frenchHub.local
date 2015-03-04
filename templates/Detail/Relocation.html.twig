@@ -1,27 +1,35 @@
 {# empty Twig template #}
+
 {% extends 'base.html.twig' %}
+
 {% block stylesheets %}
-       <link rel="stylesheet" type="text/css" href="../../css/style.css " />       
-      
+    <link rel="stylesheet" type="text/css" href="../../css/style.css " />             
 {% endblock %}
+
 {% block body %}
- <section id="relocation" class="content" data-id="active_content">
-    <h2>{{ titre}}</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Quisque elementum nulla commodo posuere faucibus. <br>
-                Morbi ante risus, malesuada nec efficitur vitae, dignissim sit amet nunc. 
-                Cras at purus hendrerit, hendrerit ipsum eu, laoreet tortor. <br>
-                Sed condimentum sapien a tempor elementum. Suspendisse nisi est, tempus et sagittis eget, ornare ac urna. 
-                Nunc aliquam ornare orci, eu ultricies sapien interdum ac. <br>
-                Praesent et elementum dui. Sed efficitur porta augue, tempus consectetur nulla.
-                Fusce et venenatis diam. <br>
-                Etiam non interdum quam. Vivamus fermentum ligula lacinia nunc porttitor, nec hendrerit tellus convallis. 
-            </p>
-     <a href="/devis">Demande de devis</a>
-     </section>
-    {% endblock %}
-    {% block javascripts %}
-         <script type="text/javascript" src="../../js/jquery-1.11.2.min.js"></script>
-         <script type="text/javascript" src="../../js/frenchHub.js"></script>
+
+ <section id="{{ titre }}" class="content" data-id="active_content">
+    <a href="/accueil" id="logo_top"><img src="../img/logo-french.png" alt="Logo de MyFrenchHub"></a>
+    <div>
+        <h2 class="{{ titre}}">Mission de recherche de logement temporaire ou permanent</h2>
+        <ul>
+            <li>Nous étudions avec vous votre projet en tenant compte de tous vos critères. </li>
+            <li>Nous vous informons sur tous les documents nécessaires à la présentation de votre dossier de candidature. </li>
+            <li>Selon un planning défini à votre convenance, nous organisons les visites sur une journée ou 2 demi-journées, après avoir recherché sur le marché les meilleurs options possibles.</li>
+            <li>Nous vous emmenons en voiture particulière à toutes les visites et vous aidons à prendre la bonne décision.</li>
+        <ul>
+            <li>Une fois votre choix validé, nous nous occupons de la présentation de votre dossier auprès des agences immobilières ou propriétaires. Nous négocions et validons le bail et vous assistons à la signature.</li>
+            <li>Nous vous représentons à l’état des lieux d’entrée et prenons pour vous les différents contrats inhérents à la location d’un bien : EDF, assurance... Nous vous assistons si nécessaire à l’ouverture d’un compte bancaire.</li>
+        <ul>
+    </div>
+    <a href="/devis">Demande de devis</a>
+    </section>
+
+{% endblock %}
+
+{% block javascripts %}
+
+    <script type="text/javascript" src="../../js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../js/frenchHub.js"></script>
+
 {% endblock %}

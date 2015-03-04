@@ -17,23 +17,25 @@
 </head>
 	<body class="container">
         <nav>
+            <img src="../img/logo-french.png" alt="Logo de MyFrenchHub">
             <ul class="menu change_color">
                 <li class="item1"><a href="/accueil">Accueil</a>
                 </li>
-                <li class="item2"><a href="/relocation">Relocation</a>
+                <li class="item2"><a href="#services">Audit et conseils</a>
+                    <ul>
+                        <li class="subitem1"><a href="/formation/Formation1">&#187; Politique de mobilité et besoins</a></li>
+                        <li class="subitem2"><a href="/formation/Formation2">&#187; Assistance intégration</a></li>
+                        <li class="subitem3"><a href="/formation/Formation3">&#187; Marque employeur</a></li>
+                        <li class="subitem4"><a href="/formation/Formation3">&#187; Engagement qualité</a></li>
+                    </ul>
+                </li>
+                <li class="item3"><a href="#mobility">Mobilité internationale</a>
                     <ul>
                         <li class="subitem1"><a href="/relocation/assistance">&#187; Assistance Départ et Arrivé</a></li>
                         <li class="subitem2"><a href="/relocation/logement">&#187; Logement</a></li>
                         <li class="subitem3"><a href="/relocation/administration">&#187; Administration</a></li>
                         <li class="subitem4"><a href="/relocation/immigration">&#187; Immigration</a></li>
                         <li class="subitem5"><a href="/relocation/famille">&#187; Famille</a></li>
-                    </ul>
-                </li>
-                <li class="item3"><a href="/formation">Formations</a>
-                    <ul>
-                        <li class="subitem1"><a href="/formation/Formation1">&#187; Formation 1</a></li>
-                        <li class="subitem2"><a href="/formation/Formation2">&#187; Formation 2</a></li>
-                        <li class="subitem3"><a href="/formation/Formation3">&#187; Formation 3</a></li>
                     </ul>
                 </li>
                 <li class="item4"><a href="#community">Hub</a>
@@ -84,12 +86,53 @@
     	{% block body %}
         {% endblock %}
 
-		<!-- scroll top -->
-        <a href="#top" id="scroll_up" class=" change_color">^</a>
-
 		<footer class="content" id="footer">
-		<h1>Footer</h1>
+    		<ul id="footer_info">
+                <li><h3>Informations</h3></li>
+                <li><a href="">bla bla bla</a></li>
+                <li><a href="">bla bla bla</a></li>
+                <li><a href="">bla bla bla</a></li>
+            </ul><!--
+         --><ul id="footer_mention">
+                <li><h3>Mentions légales</h3></li>
+                <li><a href="">bla bla bla</a></li>
+                <li><a href="">bla bla bla</a></li>
+                <li><a href="">bla bla bla</a></li>
+            </ul><!--
+         --><ul id="footer_society">
+                <li><h3>Notre société</h3></li>
+                <li><a href="">bla bla bla</a></li>
+                <li><a href="">bla bla bla</a></li>
+                <li><a href="">bla bla bla</a></li>
+            </ul>
+            <div id="footer_newsletter">
+                <h3>Newsletter</h3>
+                <p>bla bla bla</p>
+                <a href="">Inscrivez-vous</a>
+            </div><!--
+         --><div id="footer_hub">
+                <h3>Rejoignez-nous</h3>
+                <p>bla bla bla</p>
+                <ul>
+                    <li><a href="">Facebook</a></li>
+                    <li><a href="">Twitter</a></li>
+                    <li><a href="">Linkedin</a></li>
+                </ul>
+            </div>
+            <div id="footer_partner">
+                <h3>Nos partenaires</h3>
+                <ul>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                    <li><a href=""></a></li>
+                </ul>
+            </div>
 		</footer>
+
+        <!-- scroll top -->
+        <a href="#top" id="scroll_up" class=" change_color">^</a>
 
 		{% block javascripts %}
 		  <script type="text/javascript" src="js/frenchHub.js"></script>
