@@ -146,10 +146,11 @@ section .scroll_down, #scroll_up { background: url(../img/picto/fleche-scroll.pn
 #footer_partner ul li:nth-child(5) a { width: 93px; height: 30px; background: url(../img/picto/partenaires/logo-etudiant.png) no-repeat;}
 
 /* DETAILS */
-.details #logo_top { display: block; width: 120px; height: 85px; margin: 0 auto;}
-.details h1, .details h2 { text-align: center;}
-.details h1 { position: relative; margin: 30px;}
-.details .return { position: absolute; display: block; top: 0; left: 0; width: 16px; height: 27px; background: url(../img/picto/fleche-retour.png) no-repeat; text-indent: -9999px;}
+.standard #logo_top { display: block; width: 120px; height: 85px; margin: 0 auto;}
+.standard h1, .standard h2 { text-align: center;}
+.standard h1 { position: relative; margin: 30px;}
+.standard .return { position: absolute; display: block; top: 0; left: 0; width: 16px; height: 27px; background: url(../img/picto/fleche-retour.png) no-repeat; text-indent: -9999px;}
+
 .details .details_content { width: 80%; margin: 0 auto; padding: 20px; border: 1px solid #f1696b; border-radius: 20px;}
 .details h2 { background: url(../img/picto/partenaires/logo-etudiant.png) no-repeat; color: #f1696b;}
 .details .devis { width: 100%; text-align: right;}
@@ -157,113 +158,13 @@ section .scroll_down, #scroll_up { background: url(../img/picto/fleche-scroll.pn
 .details .devis a { padding: 10px 20px; border-radius: 5px; background-color: #f1696b; color: #fff;}
 
 /* SIGN_UP PAGE */
-#formule, #presentation
-{
-    width:40%;
-    display: inline-block;
-    padding:3%;
-}
-
-#presentation p
-{
-    border: solid 1px #262626;
-    padding:5%;
-}
-
-#petitlogo
-{
-    width:200px;
-    margin:auto;
-}
-
-#petitlogo img
-{
-    max-width: 80%;
-}
-
-.formname { 
-  /*text-align:center;*/
-  font-size: 1.5em;
-  font-weight:bold;
--webkit-margin-before: 0.67em;
--webkit-margin-after: 0.67em;
-  font-family:sans-serif;
-  color:#666;
-  border-bottom: 1px solid lightgray;
-  padding-bottom:20px;
-  width:80%;
-  margin:auto;
-}
-
-*:focus {
-    outline: 0;
-}
-
-form {
-display: block;
-margin-top: 0em;
-  
-}
-
-
-
-/* input, textarea,option {
-
-  font-weight: 90;
-  width: 70%;
-  margin: 8px 0;
-  text-indent: 1em;
-  padding: 10px 0;
-  border-radius: 3px;
-  border: 1px solid lightgray;
-} */
-input[type="radio"]{
-    margin:0;
-    padding:1px;
-    
-}
-
-
-
-/* input[type="submit"] {
-     width: 10%;
-  font-weight: bold;
-    background-color: #3e87ec;
-  color: white;
-  border: 0px solid #3079ed;
-  transition:all 0.5s;
-}
-
-input[type="submit"]:hover {
-  background-color: #2963b3;
-  color: white;
-} */
-
-#container{  
-  width:250px;
-  border: 1px solid lightgray;
-  padding:10px;
-    background-color:#fff;
-
-  
-}
-
-a{
-  color: #427fed;
-cursor: pointer;  
-  text-decoration:none;
-  
-}
-#formEnt{
-    width:80%;
-     margin: auto;
-    padding: 2%;
-}
-
-#siren
-{
-    width: 200px;
-}
-
-
-//>>>>>>> 33529e80d3c92512a0f890fea6a8293810ffab07
+section input { padding: 10px 15px; border: 1px solid #7d7d7d;  background: none; border-radius: 5px; -webkit-box-shadow: inset 2px 2px 1px 0px #c0c0c0; box-shadow: inset 2px 2px 1px 0px #c0c0c0; filter:progid:DXImageTransform.Microsoft.Shadow(color=#c0c0c0, Direction=134, Strength=1);}
+#sign_up_content, #formule, #entr, #contact { display: inline-block; vertical-align: top; width: 50%; padding: 50px;}
+#sign_up_content h2 { color: #f1696b;}
+#sign_up_content p { margin-top: 20px;}
+#formule h3, #formule p { text-align: center;}
+#formule p { margin: 20px 0 60px;}
+#formule div { width: 100%; height: 30px; line-height: 30px; margin: 40px 0;}
+#formule label { display: inline-block; width: 150px; height: 100%; padding: 0 10px; border: 1px solid #7d7d7d; border-radius: 5px;}
+#formule span { margin: 0 20px 0 80px;}
+#formule input { float: right; margin-top: 11px;}
