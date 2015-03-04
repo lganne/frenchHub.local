@@ -31,14 +31,12 @@ class EntrepriseController extends modelController
     public function homeEntreprise()
     {
         $template = $this->twig->loadTemplate('Entreprise.html.twig');
-     
        $res=$this->ent->find($_SESSION['user'][2]);
-      
-        $mess=(!empty($_SESSION['message']))? $_SESSION['message'][0]:"";
-          var_dump($mess);
-       
-        $_SESSION['message']=[];
-         echo $template->render(array( 'session'   => $_SESSION['user'][1] , "donnee"=>$res,"message"=>$mess));
+       $mess=(!empty($_SESSION['message']))? $_SESSION['message'][0]:"";
+        $sal=new \modele\EmployeeManager();
+         $listeSal= $sal->ListeEnt($_SESSION['user'][2]);
+         $_SESSION['message']=[];
+         echo $template->render(array( 'session'   => $_SESSION['user'][1] , "donnee"=>$res,"message"=>$mess,"listeSal"=>$listeSal));
     }
     
       public function ajoutSalarie()

@@ -6,6 +6,14 @@
         {% endblock %}
 {% block body %}
     
+      {% if( message is not empty)  %}
+                <span>Le nouveau salarié a bien été enregistré<br>
+                             Le login : {{message.username}} <br>
+                              le mot de passe est : {{message.motpass}}
+                </span><br>
+                              
+         {% endif %}
+    
     <div id="petitlogo">
         <a href="/accueil" ><img src="img/logo-beige-grand.png" alt="Logo de MyFrenchHub"></a>
         </div> 
@@ -75,9 +83,21 @@
                   
                      {% endfor %}    
         </form>
-          </section>   
-          <section  id="mobility" class="content">
-                    <h2>Liste des salariés</h2>
+       
+                       <h2>Liste des salariés</h2>
+                    <table>
+                        <thead>
+                             
+                                <tr><th>Nom</th><th>Prenom</th><th>e mail</th><th>Fonction</th></tr>
+                        </thead>
+                        <tbody>
+                            {% for Sal in listeSal %}
+                                   <tr><<td> {{ Sal.name}}</td><td>{{ Sal.firstname}}</td><td>{{ Sal.email}}</td><td>{{ Sal.fonction}}</td></tr>
+                               {% endfor %}
+                        </tbody>
+                        
+                    </table>
+                    
                     <h2>Ajouter un salarié</h2>
                     <form action="/ajoutSalarie" method="post">
                           {% for item in donnee %}
@@ -91,10 +111,7 @@
                         
                         <label for="email">Email </label> :   <input type="email" name="email" ><br>
                         
-                          {% if( message is not empty)  %}
-                                   <span>Le login pour ce salarié est : {{message['username']}} et le mot de passe est : {{message['motpass']}}</span><br>
-                              
-                           {% endif %}
+                        
                           <input type="submit" name="valider" value="valider">
                     </form>
                     

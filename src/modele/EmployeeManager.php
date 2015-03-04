@@ -32,5 +32,19 @@ class EmployeeManager extends EntiteManager
                     
                    return $reponse;
    }
+   
+   public function ListeEnt($ident)
+   {
+       $sql=sprintf("select * from ".$this->table.
+             " where entreprises_id=%d ",$ident);
+         
+        $results=[];
+        $req=$this->pdo->query($sql);
+         while ($data = $req->fetch(\PDO::FETCH_OBJ)) {
+            $results[] = $data;
+            
+        }
+        return $results;
+   }
     
 }

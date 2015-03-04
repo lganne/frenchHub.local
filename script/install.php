@@ -99,7 +99,7 @@ $link->query("
         CREATE TABLE `users` (
         `id` INT(10) UNSIGNED AUTO_INCREMENT,
           `entreprises_id` INT UNSIGNED,
-             `employee_id` INT UNSIGNED,
+          `employee_id` INT UNSIGNED,
         `username` VARCHAR(30) UNIQUE,
         `password` VARCHAR(100) NOT NULL,
         `email` VARCHAR(150) NOT NULL,
@@ -185,8 +185,8 @@ $link->query("
 
 echo "ok information <br>";
 
-$link->query("INSERT INTO `frenchhub2`.`entreprises` (`id`, `name`, `siren`,  `adress`, `Ville`, `Pays`, `contactNom`, `fonction`, `emailcontact`, `tel`, `activity`,  `date_created`, `date_modif`) 
-    VALUES (NULL, 'samsung', NULL,  '', '', 'coree', 'admin', 'rh', 'rh@yahoo.fr', NULL, NULL,  NULL, NULL);");
+$link->query("INSERT INTO `frenchhub2`.`entreprises` (`id`, `name`, `siren`,  `adress`, `Ville`, `Pays`, `contactNom`, `fonction`, `emailcontact`, `tel`, `activity`,  `date_created`, `date_modif`,`NbreSalarier`) 
+    VALUES (NULL, 'samsung', NULL,  '', '', 'coree', 'admin', 'rh', 'rh@yahoo.fr', NULL, NULL,  NULL, NULL,3);");
 
 $link->query("INSERT INTO `frenchhub2`.`users` (`id`, `entreprises_id`, `username`, `password`, `email`, `salt`, `token`, `date_created`, `date_modif`, `isActif`, `role`) 
         VALUES (NULL, '1', 'entreprise', '23dfe5c957cad2f7fce71d865d3db05ad3621b99','','EvGg8gCO3EtLJ7km2EMkiIVRmgmGzN', '', '2015-02-27 00:00:00', '2015-02-27 00:00:00', '1', 'entreprise');");

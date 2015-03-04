@@ -10,12 +10,12 @@ return [
         'connect' => 'controller\DefaultController:affiche'
     ],
     'DefaultController_relocation' => [
-        'pattern' => '\/relocation\/(?P<titre>[a-zA-Z0-9\-_\.*]+)',
+        'pattern' => '\/mobilite\/(?P<titre>[a-zA-Z0-9\-_\.*]+)',
         'connect' => 'controller\DefaultController:relocation',
           'params' =>'titre'
     ],
     'DefaultController_formation' => [
-        'pattern' => '\/formation\/(?P<titre>[a-zA-Z0-9\-_\.*]+[1-9][0-9]*)',
+        'pattern' => '\/services\/(?P<titre>[a-zA-Z0-9\-_\.*]+[1-9][0-9]*)',
         'connect' => 'controller\DefaultController:formation',
           'params' =>'titre'
     ],
