@@ -31,7 +31,7 @@ class DefaultController extends \controller\modelController
     {
           $template = $this->twig->loadTemplate('index.html.twig');
     
-          echo $template->render(array('nomPays'=>$this->paysfr));
+          echo $template->render(array());
          
        }
        

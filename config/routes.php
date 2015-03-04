@@ -66,6 +66,10 @@ return [
         'pattern' => '\/homeEntreprise',
         'connect' => 'controller\EntrepriseController:homeEntreprise'
      ],
+     'EntrepriseController_ajoutSalarie' => [
+        'pattern' => '\/ajoutSalarie',
+        'connect' => 'controller\EntrepriseController:ajoutSalarie'
+       ],
      'MembreController_homeMembre' => [
         'pattern' => '\/homeMembre',
         'connect' => 'controller\MembreController:homeMembre'

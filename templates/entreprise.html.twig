@@ -1,68 +1,99 @@
 {# empty Twig template #}
 {% extends 'base.html.twig' %}
         {% block stylesheets %}
-            {{parent()}}|  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css " /> 
+            {{parent()}}| 
+
         {% endblock %}
 {% block body %}
     
+    <div id="petitlogo">
+        <a href="/accueil" ><img src="img/logo-beige-grand.png" alt="Logo de MyFrenchHub"></a>
+        </div> 
+    <section id="formEnt" class="content">
+        <br>
+        <form >
     {% for item in donnee %}
-        <h2>espace  {{item.name|upper}} </h2>
-    
-    <div class="col-md-1"></div>
-        <div class="col-md-4">
-            
-          <div class="form-group">
-                      <label for='societe'>Dénomination :</label>  <input type='text' name='societe'  value="{{item.name}}"  class="form-control" required>
-            </div>
-                    <div class="form-group">
-                        <label for="adress">Adresse</label> :   <input type="text" name="adress" value="{{item.adress}}" class="form-control" required >   
-                    </div>
-                    <div class="form-group">
-                        <label for="ville">Ville:</label>  <input type="text"  name="ville" value="{{item.Ville}}"  class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="pays">Pays :</label>  <input type="text"  name="pays" value="{{item.Pays}}"  class="form-control">
-                    </div>
-                                          
-                          <div class="form-group">
-                               <label for="siren">Siren</label> :   <input type="text" name="siren" value="{{item.siren}}" class="form-control" >   
-                          </div>
-                              <div class="form-group">
-                                  <label for="siret">Siret</label> :   <input type="number" name="siret"  value="{{item.siret}}" class="form-control"  > 
-                              </div>
-                          <div class="form-group">
-                             <label for="description">Activité</label> : <input type="text"  name="description"  value="{{item.description}}"class="form-control" > 
-                          </div>
-                         <div class="form-group">
-                              <label for="contact">Contact principal</label> :   <input type="text" name="contact"  value="{{item.contact}}" class="form-control" required >   
-                        </div>
-                        <div class="form-group">
-                               <label for="fonction">Fonction</label> :   <input type="text" name="fonction"  value="{{item.fonction}}" class="form-control" required> 
-                        </div>
-                       <div class="form-group">
-                             <label for="email">Email</label> :   <input type="email" name="email"  value="{{item.emailContact}}" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="Tel">Tel</label> :   <input type="tel" name="tel"   value="{{item.tel}}" class="form-control"required>   
-                        </div>
-                    <label for="pays"class="col-xs-8 control-label">Nombres de salariés concernées :</label> 
-                    <div class="col-xs-4 selectContainer">
-                        <select name="select" class="form-control">
-                            <option value="value1">0 à 50</option> 
-                            <option value="value1">50 à 250</option> 
-                            <option value="value1">plus de 250</option> 
-                        </select>
-                    </div>
+        <h1>Espace  {{item.name|upper}} </h1>
+               <label for='societe'>Nom de l'entreprise :</label>  
+          
+           <input type='text' name='societe'  value="{{item.name}}"  class="form-control"  readonly="readonly"><br>
+          <label for="activite">Activité</label> <input type="text"  name="activite"  value="{{item.activity}}"class="form-control" readonly="readonly"> <br>
+             <label for="adress">Adresse</label>  <input type="text" name="adress" value="{{item.adress}}" class="form-control" readonly="readonly" >  <br> 
+               <label for="cp">Code postal</label> <input type="text" name="cp" value="{{item.cp}}" class="form-control" readonly="readonly">   <br>
+                <label for="ville">Ville:</label>  <input type="text"  name="ville" value="{{item.Ville}}"  class="form-control" readonly="readonly"><br>
+            <label for="pays">Pays :</label>  <input type="text"  name="pays" value="{{item.Pays}}"  class="form-control" readonly="readonly"><br>
+             <label for="siren">Siren</label> <input type="text" name="siren" value="{{item.siren}}" class="form-control" readonly="readonly" >   <br>
+        
+                   <h4>Contact</h4>
+                       <label>Civilite</label>
+                        {%  if(item.civilite==0) %}
+                            <label for="opt1">Mr</label><input required type="radio" name="opt" id="opt1" readonly="readonly" checked /><br>
+                                 <label for="opt2">Mme</label> <input required type="radio" name="opt" id="opt2" readonly="readonly"/>
+                        {% else %}
+                            <label for="opt1">Mr</label><input required type="radio" name="opt" id="opt1" readonly="readonly"/><br>
+                                <label for="opt2">Mme</label>  <input required type="radio" name="opt" id="opt2"  readonly="readonly"checked />   
+                       {% endif %}
+                 <br>
+                       <label for="contactNom"> Nom </label> <input type="text" name="contactNom"  value="{{item.contactNom}}" readonly="readonly" >   <br>
+                       
+                        <label for="contactPrenom">Prenom </label>    <input type="text" name="contactPrenom"  value="{{item.contactPrenom}}" readonly="readonly">   <br>
+                        
+                        <label for="fonction">Fonction </label> :   <input type="text" name="fonction"  value="{{item.fonction}}"  readonly="readonly"> <br>
+                        
+                        <label for="email">Email </label> :   <input type="email" name="email"  value="{{item.emailContact}}"  readonly="readonly"><br>
                     
-                   </div>
-                </div>     
-                {% endfor %}         
-                <div class="col-md-1"></div>
-                <div class="col-md-4"> 
+                            <label for="Tel">Telephone </label> :   <input type="tel" name="tel"   value="{{item.tel}}" readonly="readonly">   <br>
+                        
+                    <label for="pays">Nombres de salariés </label> 
+                        <select name="salarier"  >
+                            {%  if(item.NbreSalarier==1) %}
+                                 <option value="1" selected >1 à 49</option> 
+                                <option value="2" >50 à 249</option> 
+                              <option value="3">250 à 1000</option> 
+                             <option value="4">plus de 1000</option>
+                            {% endif %}
+                            {%  if(item.NbreSalarier==2) %}
+                                 <option value="1" >1 à 49</option> 
+                                <option value="2" selected >50 à 249</option> 
+                              <option value="3">250 à 1000</option> 
+                             <option value="4">plus de 1000</option>
+                            {% endif %}
+                            {%  if(item.NbreSalarier==3) %}
+                                 <option value="1" >1 à 49</option> 
+                                <option value="2" >50 à 249</option> 
+                              <option value="3" selected  >250 à 1000</option> 
+                             <option value="4">plus de 1000</option>
+                            {% endif %}
+                             {%  if(item.NbreSalarier==4) %}
+                                 <option value="1" >1 à 49</option> 
+                                <option value="2" >50 à 249</option> 
+                              <option value="3" >250 à 1000</option> 
+                             <option value="4" selected  >plus de 1000</option>
+                            {% endif %}
+                            
+                       </select><br>
+                  
+                     {% endfor %}    
+        </form>
+          </section>   
+          <section  id="mobility" class="content">
                     <h2>Liste des salariés</h2>
+                    <h2>Ajouter un salarié</h2>
+                    <form action="/ajoutSalarie" method="post">
+                          {% for item in donnee %}
+                        <input type="text" name="ident" value='{{item.id}}'  hidden>
+                        {% endfor %}
+                            <label for="Nom"> Nom </label> <input type="text" name="Nom"  >   <br>
+                       
+                        <label for="Prenom">Prenom </label>    <input type="text" name="Prenom" >   <br>
+                        
+                        <label for="fonction">Fonction </label> :   <input type="text" name="fonction" > <br>
+                        
+                        <label for="email">Email </label> :   <input type="email" name="email" ><br>
+                          <input type="submit" name="valider" value="valider">
+                    </form>
                     
-                    <h2>Ajouter un salarie</h2>
-                </div>
-           
+              
+        </section>
                           
     {% endblock %}
