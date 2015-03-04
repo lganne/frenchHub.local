@@ -1,5 +1,13 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+       {{parent()}}| <link rel="stylesheet" type="text/css" href="css/formulaire.css " />          
+{% endblock %}
  {% block body %}
-    <h2>espace Salarier</h2>
+      <div class="content standard" >
+         <a href="/accueil" id="logo_top"><img src="../img/logo-french.png" alt="Logo de MyFrenchHub"></a>
+    </div>
+      <section class="content standard" >
+             <h1>Espace Salarier</h1>
+             <span class="mess">En travaux</span>
+      </section>
     {% endblock %}

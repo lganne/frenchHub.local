@@ -6,6 +6,10 @@
 
     <section id="sign_up" class="content standard" data-id="active_content">
         <a href="/accueil" id="logo_top"><img src="../img/logo-french.png" alt="Logo de MyFrenchHub"></a>
+        {% if (message2 !=null ) %}
+          <span class="mess">{{ message2 }}</span>
+        {% endif %}
+        
         <h1><a href="/accueil" class="return"><</a>La mobilité en toute tranquilité !</h1>
         <div id="sign_up_content">
             <h2>Abonnez-vous et bénéficiez de tous les avantages My French Hub !</h2>
@@ -76,9 +80,7 @@
         </div>
         <input type="submit" name="valider" value="valider">
         </form>
-        {% if (message2 !=null ) %}
-          <p>{{ message2 }}</p>
-        {% endif %}
+        
     </section>
 
 {% endblock %}

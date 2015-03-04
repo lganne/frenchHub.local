@@ -3,7 +3,10 @@
        <link rel="stylesheet" type="text/css" href="../../css/style.css " />       
    {% endblock %}
 {% block body %}
- <section id="relocation" class="content" data-id="active_content">
+    <div class="content standard" >
+         <a href="/accueil" id="logo_top"><img src="../img/logo-french.png" alt="Logo de MyFrenchHub"></a>
+    </div>
+ <section id="{{ titre }}" class="content details standard" data-id="active_content">
     <h2>{{ titre}}</h2>
     <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -18,7 +21,7 @@
             </p>
             
             <a href="/recontacter">être recontacter</a>
-           </section>
+   </section>
  {% endblock %}
  {% block javascripts %}
          <script type="text/javascript" src="../../js/jquery-1.11.2.min.js"></script>

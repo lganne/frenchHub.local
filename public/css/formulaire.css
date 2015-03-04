@@ -1,0 +1,42 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 4 mars 2015, 20:49:34
+    Author     : lganne
+*/
+#siren
+{
+    visibility:hidden;
+}
+#sirenFr
+{
+    visibility: visible;
+}
+.mess
+{
+   width:80%;
+   margin:  auto;
+   padding:1%;
+   background-color: rgba(197,188,163,0.8);
+   font-size: 16px;
+   text-align: center;
+    display: inline-block;   
+}
+
+.milieu
+{
+    width: 40%;
+     margin: auto;
+    text-align: center;
+}
+.milieu form
+{
+    border: solid 1px #717070;
+    padding: 4%;
+    width:80%;
+    margin: auto;
+    text-align: center;
+}
