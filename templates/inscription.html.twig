@@ -4,14 +4,14 @@
 
 {% block body %}
 
-    <section class="content register standard" data-id="active_content">
+    <section class="form register standard" data-id="active_content">
         <a href="/accueil" id="logo_top"><img src="../img/logo-french.png" alt="Logo de MyFrenchHub"></a>
         {% if (message2 !=null ) %}
           <span class="mess">{{ message2 }}</span>
         {% endif %}
         
         <h1><a href="/accueil" class="return"><</a>La mobilité en toute tranquilité !</h1>
-        <div id="sign_up_content">
+        <div id="sign_up_content" class="left">
             <h2>Abonnez-vous et bénéficiez de tous les avantages My French Hub !</h2>
             <p>Des efforts et des investissements importants sont consentis afin d’assurer à sa structure une politique d’attractivité des talents et d’ouverture à l’international qui impacte directement votre image de marque et la performance de votre structure</p>
             <p>Derrière la mobilité internationale, se trouvent des Hommes et des Femmes à forte valeur ajoutée, elle nécessite des services dédiés et des process d’accueil et d’intégration performants.</p>
@@ -70,7 +70,7 @@
                 </table>
         </div>
     </section>
-    <section class="form standard register">
+    <section class="form content standard register">
         <h1>Je crée mon compte</h1>
         <table class="left">
             <tr>
@@ -137,7 +137,7 @@
      --><table class="right">
             <tr>
                 <td>
-                    <p>Civilité*<p>
+                    <p>Civilité*</p>
                 </td><!--
              --><td>
                     <input type="radio" name="civilite" id="titre2" value="1"/><label for="titre2">Mme</label>
