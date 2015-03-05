@@ -124,7 +124,7 @@ section .scroll_down, #scroll_up { background: url(../img/picto/fleche-scroll.pn
 #mobility ul li:nth-child(3) { background: url(../img/picto/home_mobility/picto-administratif.png) no-repeat;}
 #mobility ul li:nth-child(4) { background: url(../img/picto/home_mobility/picto-immigre.png) no-repeat;}
 #mobility ul li:nth-child(5) { background: url(../img/picto/home_mobility/picto-famille.png) no-repeat;}
-#community img { display: inline-block; max-width: 60%;}
+#community img { display: inline-block; max-width: 100%;}
 
 /* FOOTER */
 #footer_info, #footer_mention, #footer_society, #footer_newsletter, #footer_hub, #footer_partner { display: inline-block; vertical-align: top; height: 33%; padding: 20px; text-align: center;}
