@@ -62,7 +62,7 @@ nav img { display: block; margin: 0 auto;}
 #header_crossbar > a, #search, #lang { display: inline-block;}
 #header_crossbar > a { height: 25px; padding: 0 8px; line-height: 25px; text-decoration: none; color: #717070;}
 #search input[name=search] { padding-left: 5px; border: none; border-radius: 20px; -webkit-box-shadow: inset 2px 2px 1px 0px #c0c0c0; box-shadow: inset 2px 2px 1px 0px #c0c0c0; filter:progid:DXImageTransform.Microsoft.Shadow(color=#c0c0c0, Direction=134, Strength=1);}
-#search input[type=submit] { width: 24px; height: 24px; border: none; background-color: inherit; background: url(../img/search.png) no-repeat; text-indent: -9999px; cursor: pointer;}
+#search input[type=submit] { width: 22px; height: 17px; border: none; background-color: inherit; background: url(../img/picto/picto-loupe.png) no-repeat; text-indent: -9999px; cursor: pointer;}
 #lang select { border: none; background-color: inherit;}
 #login_content { display: none; position: absolute; top: 36px; left: 0; z-index: 999; width: 100%; padding: 15px 15px 0; background: #c5bca3;}
 #login_content label, #login_content input[type=submit] { display: block;}
@@ -124,7 +124,7 @@ section .scroll_down, #scroll_up { background: url(../img/picto/fleche-scroll.pn
 #mobility ul li:nth-child(3) { background: url(../img/picto/home_mobility/picto-administratif.png) no-repeat;}
 #mobility ul li:nth-child(4) { background: url(../img/picto/home_mobility/picto-immigre.png) no-repeat;}
 #mobility ul li:nth-child(5) { background: url(../img/picto/home_mobility/picto-famille.png) no-repeat;}
-#community img { display: inline-block; max-width: 100%;}
+#community img { display: block; max-width: 100%; margin: auto;}
 
 /* FOOTER */
 #footer_info, #footer_mention, #footer_society, #footer_newsletter, #footer_hub, #footer_partner { display: inline-block; vertical-align: top; height: 33%; padding: 20px; text-align: center;}
@@ -194,6 +194,7 @@ section .scroll_down, #scroll_up { background: url(../img/picto/fleche-scroll.pn
 
 /* FORM */
 .form p, .form h3 { text-align: center;}
+.form table tbody, .form table tr { display: block; width: 100%;}
 .form table th { margin-bottom: 10px; font-family: 'y2k_neophyteregular', verdana, sans-serif; color: #f1696b;}
 .form table tr td p { text-align: left;}
 .form .left, .form .right { display: inline-block; vertical-align: top; width: 50%; margin: 20px 0;}
@@ -207,43 +208,16 @@ section .scroll_down, #scroll_up { background: url(../img/picto/fleche-scroll.pn
 .form .full { width: 100%; padding: 20px;}
 .form input[type="submit"] { position: absolute; bottom: 20px; right: 20px;; padding: 10px 50px; box-shadow: none; background-color: #f1696b; color: #fff; cursor: pointer; transition: all 1s;}
 .form input[type="submit"]:hover { background-color: #7d7d7d;}
+.form input[type="text"], .form input[type="email"], .form input[type="tel"] { width: 80%;}
 .form input, .form textarea { padding: 5px 15px; border: 1px solid #eee;  background: none; border-radius: 5px; -webkit-box-shadow: inset 2px 2px 1px 0px #c0c0c0; box-shadow: inset 2px 2px 1px 0px #c0c0c0; filter:progid:DXImageTransform.Microsoft.Shadow(color=#c0c0c0, Direction=134, Strength=1);}
-.form select { max-width: 100%;}
+.form select, .form textarea[id="description"] { max-width: 80%;}
 .form label[for="description"] { display: block; margin-bottom: 10px;}
-.form textarea[id="description"] { max-width: 80%; min-height: 100px; border-radius: 20px;}
+.form textarea[id="description"] { min-height: 100px; border-radius: 20px;}
 .form .champs { text-align: left;}
 
 /* MESSAGE */
-#siren
-{
-    visibility:hidden;
-}
-#sirenFr
-{
-    visibility: visible;
-}
-.mess
-{
-   width:80%;
-   margin:  auto;
-   padding:1%;
-   background-color: rgba(197,188,163,0.8);
-   font-size: 16px;
-   text-align: center;
-    display: inline-block;   
-}
-
-.milieu
-{
-    width: 40%;
-     margin: auto;
-    text-align: center;
-}
-.milieu form
-{
-    border: solid 1px #717070;
-    padding: 4%;
-    width:80%;
-    margin: auto;
-    text-align: center;
-}
+#siren { visibility:hidden;}
+#sirenFr { visibility: visible;}
+.mess { display: block; width:80%; margin: auto; padding:1%; background-color: rgba(197,188,163,0.8); font-size: 16px; text-align: center;}
+.milieu { width: 40%; margin: auto; text-align: center;}
+.milieu form { width:80%; margin: auto; padding: 4%; border: solid 1px #717070; text-align: center;}
