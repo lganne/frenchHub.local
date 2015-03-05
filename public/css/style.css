@@ -186,6 +186,12 @@ section .scroll_down, #scroll_up { background: url(../img/picto/fleche-scroll.pn
 #quotation #part_2 table:nth-child(2) { width: 33.33%;}
 #quotation input[type="submit"] { bottom: 70px;}
 
+/* MEMBER */
+#member h1 strong, #member h3 { color: #f1696b;}
+#member h3 { text-transform: lowercase;}
+#member .listing { max-height: 225px; overflow-y: scroll;}
+#member .listing td { display: inline-block; vertical-align: top; width: 100%;}
+
 /* FORM */
 .form p, .form h3 { text-align: center;}
 .form table th { margin-bottom: 10px; font-family: 'y2k_neophyteregular', verdana, sans-serif; color: #f1696b;}
@@ -195,8 +201,8 @@ section .scroll_down, #scroll_up { background: url(../img/picto/fleche-scroll.pn
 .form .right { padding: 20px 0 20px 20px;}
 .form .left table, .form .right table { width: 100%;}
 .form .left td, .form .right td { display: inline-block; width: 50%; margin: 10px 0;}
-.form_content h3 { position: relative; margin: 40px 0;}
-.form_content h3:after { position: absolute; content: ""; bottom: -20px; left: 0; width: 100%; height: 2px; background-color: #eee;}
+.form_content .underline { position: relative; margin: 40px 0;}
+.form_content .underline:after { position: absolute; content: ""; bottom: -20px; left: 0; width: 100%; height: 2px; background-color: #eee;}
 .form .full table td { display: inline-block; padding-left: 30px; margin: 10px 0;}
 .form .full { width: 100%; padding: 20px;}
 .form input[type="submit"] { position: absolute; bottom: 20px; right: 20px;; padding: 10px 50px; box-shadow: none; background-color: #f1696b; color: #fff; cursor: pointer; transition: all 1s;}
