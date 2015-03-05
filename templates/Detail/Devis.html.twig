@@ -1,81 +1,262 @@
 {# empty Twig template #}
+
 {% extends 'base.html.twig' %}
+
 {% block stylesheets %}
-       {{parent()}}| <link rel="stylesheet" type="text/css" href="css/formulaire.css " />          
+    <link rel="stylesheet" type="text/css" href="../../css/style.css " />             
 {% endblock %}
+
 {% block body %}
-    <div class="content standard" >
-         <a href="/accueil" id="logo_top"><img src="../img/logo-french.png" alt="Logo de MyFrenchHub"></a>
-    </div>
-        <br>
-      
-               <section id="formEnt" class="content">
-                {% if(mess !=null) %}
-                     <span class="mess"> {{mess}}</span>
-               {% endif%}
-        <div id="entr">
-         <form action="/devisEnregistrement" method="post" role="form">
-                          <h2> INFORMATION GENERAL </h2>
-                               
-                        <label for='societe'>Nom de l'entreprise :</label>  <input type='text' name='societe'  required><br>
-                        <label for="activité">Domaine d'activité </label> : <input type="text"  name="activite"  > <br>
-                        <label for="adress">Adresse</label> :   <input type="text" name="adress" required >  <br>
-                        <label for="code postal">Code postal</label> :   <input type="text" name="cp" >  <br>
-                        <label for="ville">Ville</label> :   <input type="text" name="ville" required >  <br>
-                                     <label for="pays">Pays :</label> 
-                                     <select name="pays" >
-                                                    {% for pays in nomPays %}
-                                                                     <option value="{{pays.nom_fr_fr}}">{{pays.nom_fr_fr}}</option> 
-                                                    {% endfor%}
-                                     </select> <br>
-                                     <div id="siren">
-                                         <label for="siren">Siren</label> :   <input type="text" name="siren" class="form-control"  >   <br><br>
-                                     </div>
-                                      <h2> Contact </h2>
-                                                <label for="opt1">Mr</label><input required type="radio" name="civilite" value="0"  /><br>
-                                             <label for="opt2">Mme</label> <input required type="radio" name="civilite" value="1" />
-                                            <label for="nom">Nom</label> :   <input type="text" name="contactNom"    required >   <br>
-                                            <label for="prenom">prenom</label> :   <input type="text" name="contactPrenom"   required> <br>
-                                           <label for="fonction">Fonction</label> :   <input type="text" name="fonction"    required> <br>
-                                            <label for="Tel">Tel</label> :   <input type="tel" name="tel"   required>  <br>
-                                            <label for="email">Email</label> :   <input type="email" name="email"   required><br>
-                                             <label for="salarier"class="col-xs-8 control-label">Nombres de salariés :</label> <br>
-                                            <select name="salarier" >
-                                                    <option value="1">1 à 49</option> 
-                                                    <option value="2">50 à 249</option> 
-                                                     <option value="3">250 à 1000</option> 
-                                                      <option value="4">plus de 1000</option> 
-                                              </select><br><br>
-            </div>                   
-                           <h2>ASSISTANCE AU DEPART / ARRIVEE</h2>
-                            
-                             <input type="checkbox" name="option1" value="1"> Voyage d'orientation, reconnaissance<br>
-                            <input type="checkbox" name="option2" value="2" > Coordination du déménagement<br>
-                            <input type="checkbox" name="option3" value="3">Assistance au départ<br><br>
-                            
-                            <h2>IMMIGRATION</h2>
-                           <input type="checkbox" name="option4" value="4"> Autorisation de travail<br>
-                            <input type="checkbox" name="option5" value="5" > Titre de séjour<br>
-                            <input type="checkbox" name="option6" value="6">Circulation mineur etranger<br><br>
-                            
-                             <h2>LOGEMENT</h2>
-                           <input type="checkbox" name="option7" value="7"> logement temporaire<br>
-                            <input type="checkbox" name="option8" value="8" > logement permanent<br><br>
-                        
-                             <h2>ADMINISTRATIF</h2>
-                           <input type="checkbox" name="option9" value="9"> Banque/Assurance<br>
-                            <input type="checkbox" name="option10" value="10" > Permis de conduire/véhicule<br>
-                            <input type="checkbox" name="option11" value="11">Protection sociale<br>
-                             <input type="checkbox" name="option12" value="12">Problématiques fiscales<br><br>
-                             
-                             <h2>FAMILLE</h2>
-                           <input type="checkbox" name="option13" value="13"> Conjoint<br>
-                            <input type="checkbox" name="option14" value="14"> Enfants<br>
-                            
-                             <label for="description">Commentaire</label> : <textarea rows="3" cols="50" name="commentaire" > </textarea><br>  <br>
-                              <button type="submit"  name="valider" >Valider</button>
-                            
-                   </form>
-    </section>                       
+<section id="quotation" class="form content form_content standard" data-id="active_content">
+    <a href="/accueil" id="logo_top"><img src="../img/logo-french.png" alt="Logo de MyFrenchHub"></a>
+    <h1><a href="/accueil" class="return"><</a>Votre demande de devis</h1><br />
+    {% if(mess !=null) %}
+         <span class="mess"> {{mess}}</span>
+    {% endif%}
+    <form action="/devisEnregistrement" method="post" role="form">
+        <table class="left">
+            <tr>
+                <td>
+                    <label for='societe'>Nom entreprise*</label>
+                </td><!--
+             --><td>
+                    <input type='text' name='societe' id="societe" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="activite">Domaine d'activitée*</label>
+                </td><!--
+             --><td>
+                    <input type='text' name='activite' id="activite" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="adress">Adresse*</label> 
+                </td><!--
+             --><td>
+                    <input type="text" name="adress" id="adress" required >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="codepostal">Code postal*</label> 
+                </td><!--
+             --><td>
+                    <input type="text" name="cp" id="codepostal" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="ville">Ville*</label> 
+                </td><!--
+             --><td>
+                    <input type="text" name="ville" id="ville" required >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="pays">Pays*</label> 
+                </td><!--
+             --><td>
+                    <select name="pays" id="pays">
+                        {% for pays in nomPays %}
+                            <option value="{{pays.nom_fr_fr}}">{{pays.nom_fr_fr}}</option> 
+                        {% endfor%}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="siren">Siren*</label> 
+                </td><!--
+             --><td>
+                    <input type="text" name="siren" id="siren">
+                </td>
+            </tr>
+        </table><!--
+     --><table class="right">
+            <tr>
+                <td>
+                    <p>Civilité*</p>
+                </td><!--
+             --><td>
+                    <input type="radio" name="civilite" id="titre2" value="1"/><label for="titre2">Mme</label>
+                    <input type="radio" name="civilite" id="titre1" value="0"/><label for="titre1">Mr</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="nom">Nom*</label> 
+                </td><!--
+             --><td>
+                    <input type="text" name="nom" id="nom" required >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="prenom">Prénom*</label>
+                </td><!--
+             --><td>
+                    <input type="text" name="prenom" id="prenom" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="fonction">Fonction*</label>
+                </td><!--
+             --><td>
+                    <input type="text" name="fonction" id="fonction" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">Email*</label>
+                </td><!--
+             --><td>
+                    <input type="email" name="email" id="email" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Tel">Tel*</label>
+                </td><!--
+             --><td>
+                    <input type="tel" name="tel" id="Tel" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="salarier">Nombres de salariés*</label> 
+                </td><!--
+             --><td>
+                    <select name="salarier" id="salarier">
+                        <option value="1">1 à 49</option> 
+                        <option value="2">50 à 249</option> 
+                        <option value="3"> 250 à 1000</option> 
+                        <option value="4"> plus de 1000</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <p class="champs">* Champs obligatoires</p>
+        <h3>Sélectionner vos besoins</h3>
+        <div class="full">
+            <div id="part_1">
+                <table>
+                    <tr>
+                        <th>Assistance<br />départ / Arrivée</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="option1" id="voyage" value="1">
+                            <label for="voyage">Voyage d'orientation/reconnaissance</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="option2" id="demenagement" value="2" >
+                            <label for="demenagement">Coordination du déménagement</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="option3" id="depart" value="3">
+                            <label for="depart">Assistance au départ</label>
+                        </td>
+                    </tr>
+                </table><!--
+             --><table>
+                    <tr>
+                        <th>Immigration</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="option4" id="autorisation" value="4">
+                            <label for="autorisation">Autorisation de travail</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="option5" id="sejour" value="5" >
+                            <label for="sejour">Titre de séjour</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="option6" id="mineur" value="6">
+                            <label for="mineur">Circulation mineur etranger</label>
+                        </td>
+                    </tr>
+                </table><!--
+             --><table>
+                    <tr>
+                        <th>Logement</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="option7" id="temporaire" value="7">
+                            <label for="temporaire">Logement temporaire</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="option8" id="permanent" value="8" >
+                            <label for="permanent">Logement permanent</label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="part_2">
+                <table>
+                    <tr>
+                        <th colspan="2">Administratif</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="option9" id="banque" value="9">
+                            <label for="banque">Banque/Assurance</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="option10" id="permis" value="10" >
+                            <label for="permis">Permis de conduire/véhicule</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="option11" id="protection" value="11">
+                            <label for="protection">Protection sociale</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="option12" id="fiscales" value="12">
+                            <label for="fiscales">Problématiques fiscales</label>
+                        </td>
+                    </tr>
+                </table><!--
+             --><table>
+                    <tr>
+                        <th>Famille</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="option13" id="conjoint" value="13">
+                            <label for="conjoint">Conjoint</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="option14" id="enfants" value="14">
+                            <label for="enfants">Enfants</label>
+                        </td>
+                    </tr>
+                </table>
+            </div>               
+            <label for="description">Une requête particulière ?</label>
+            <textarea rows="3" cols="50" name="commentaire" id="description"></textarea>
+            <input type="submit" name="valider" value="Valider"> 
+        </div>           
+    </form>
+</section>                       
  
  {% endblock %}
