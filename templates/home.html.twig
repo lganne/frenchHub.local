@@ -1,3 +1,32 @@
-{# empty Twig template #}
+{% extends 'base.html.twig' %}
 
-<a href="/accueil">accueil</a>
+{% block body %}
+
+	<section id="home" class="content" data-id="active_content">
+        <div class="home_top">
+            <p>Attirer<br />les talents</p><!--
+         --><p>S'ouvrir à<br />l'internationale</p><!--
+         --><p>Limiter<br />les risques</p><!--
+         --><p>Atteindre<br />vos objectifs</p>
+        </div>
+        <div class="home_middle">
+     		<img src="../img/logo-french.png" alt="Logo myFrenchHub" />
+            <h1>Solution <strong>to move</strong> to France</h1>
+        </div>
+        <div class="home_bottom">
+            <div>
+            	<p>Vous êtes une</p>
+            	<div>
+            		<a href="/accueil"><span>Entreprise<br />ou organisme</span></a>
+            	</div>
+            </div><!--
+         --><div>
+            	<p>Vous êtes une</p>
+            	<div>
+            		<a href="/accueil">Particulier</a>
+            	</div>
+            </div>
+        </div>
+	</section>
+
+{% endblock %}
