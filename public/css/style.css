@@ -103,8 +103,8 @@ section .scroll_down, #scroll_up { background: url(../img/picto/fleche-scroll.pn
 #services { background-color: #c5bca3;}
 
 /* HOME */
-#services > div, #mobility > div, #community > div, #services ul, #mobility ul { display: inline-block; vertical-align: top; max-height: 100%; padding: 20px;}
-#services > div, #mobility > div, #community > div { width: 40%;}
+#services > div, #mobility > div, #community > div, #services ul, #mobility ul { display: inline-block; vertical-align: middle; max-height: 100%; padding: 50px;}
+#services > div, #mobility > div, #community > div { width: 40%; height: 100%;}
 #services h1, #mobility h1, #community h1, #services li, #mobility li { margin-bottom: 50px;}
 #services ul, #mobility ul { width: 60%;}
 #services li, #mobility li { min-height: 104px; padding-left: 123px;}
