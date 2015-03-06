@@ -32,7 +32,7 @@ h1 { font-size: 2em;}
 h2 { font-size: 1em;}
 p { font-size: 1em;}
 ul { list-style: none;}
-a { text-decoration: none; transition: all 500ms;}
+a { text-decoration: none; -webkit-transition: all 500ms; -moz-transition: all 500ms; transition: all 500ms;}
 a:hover { color: #7d7d7d !important;}
 input, textarea, select { color: #7d7d7d;}
 
@@ -41,14 +41,14 @@ input, textarea, select { color: #7d7d7d;}
 .menu-btn, .menu-btn-active { position: fixed; top: 25px; z-index: 9999; color: #fff0d9; font-size: 3em; cursor: pointer}
 nav { position: fixed; top: 0; left: -250px; z-index: 1000; width: 250px; height: 100%; background-color: rgba(255,240,217,0.4); overflow: auto; font-size: 1em;}
 nav,
-.container { -webkit-transition: all 0.3s ease; -moz-transition: all 0.3s ease; transition: all 0.3s ease;}
+.container { -webkit-transition: all 300ms ease; -moz-transition: all 300ms ease; transition: all 300ms ease;}
 nav.menu-open { left: 0px;}
 .menu-push { left: 250px;}
 nav img { display: block; margin: 0 auto;}
 .menu { width: auto; height: auto;}
 .menu a { text-decoration: none; color: #717070;}
-.menu > li > a { background-color: rgba(255,240,217,1); border-bottom: 1px solid #33373d; width: 100%;height: 3em; line-height: 3em; text-indent: 3em; display: block;position: relative;transition: all 500ms;}
-.menu ul li a { background-color: rgba(255,240,217,0.4); border-bottom: 1px solid #efeff0; width: 100%; padding-left: 2.50em; line-height: 2.50em; display: block; position: relative; font-size: 0.9em; transition: all 500ms;}
+.menu > li > a { background-color: rgba(255,240,217,1); border-bottom: 1px solid #33373d; width: 100%;height: 3em; line-height: 3em; text-indent: 3em; display: block;position: relative; -webkit-transition: all 500ms; -moz-transition: all 500ms; transition: all 500ms}
+.menu ul li a { background-color: rgba(255,240,217,0.4); border-bottom: 1px solid #efeff0; width: 100%; padding-left: 2.50em; line-height: 2.50em; display: block; position: relative; font-size: 0.9em; -webkit-transition: all 500ms; -moz-transition: all 500ms; transition: all 500ms}
 .menu > li > a:hover, .menu > li > a.active { background-color: #cfa783;}
 .menu > li > ul li:hover a { color: #32373D;}
 
@@ -67,7 +67,7 @@ nav img { display: block; margin: 0 auto;}
 #login_content { display: none; position: absolute; top: 36px; left: 0; z-index: 999; width: 100%; padding: 15px 15px 0; background: #c5bca3;}
 #login_content label, #login_content input[type=submit] { display: block;}
 #login_content input[type=text], #login_content input[type=password] { width: 100%;}
-#login_content input[type=submit] { margin: 15px auto 0; padding: 10px; border:none; border-radius: 50% 50% 0px 0px; background-color: #f1696b; color: #fff; text-align: center; cursor: pointer; transition: all 500ms;}
+#login_content input[type=submit] { margin: 15px auto 0; padding: 10px; border:none; border-radius: 50% 50% 0px 0px; background-color: #f1696b; color: #fff; text-align: center; cursor: pointer; -webkit-transition: all 500ms; -moz-transition: all 500ms; transition: all 500ms}
 #login_content input[type=submit]:hover { color: #32373D;}
 
 /* HOME */
@@ -83,15 +83,15 @@ nav img { display: block; margin: 0 auto;}
 .home_bottom div p { color: #fff;}
 .home_bottom div div { width: 300px; height: 150px; border-radius: 15px;}
 .home_bottom div div a { display: block; width: 100%; height: 100%; line-height: 150px; font-size: 2em;}
-.home_bottom div:nth-child(1) div { background-color: #fff; transition: all 500ms;}
+.home_bottom div:nth-child(1) div { background-color: #fff; -webkit-transition: all 500ms; -moz-transition: all 500ms; transition: all 500ms}
 .home_bottom div:nth-child(1) div:hover { background-color: rgba(255,255,255,0.5);}
 .home_bottom div:nth-child(1) a span { vertical-align: middle; display:inline-block; line-height:normal;}
 .home_bottom div + div { float: right;}
-.home_bottom div:nth-child(2) div { border: 3px solid #fff; transition: all 500ms;}
+.home_bottom div:nth-child(2) div { border: 3px solid #fff; -webkit-transition: all 500ms; -moz-transition: all 500ms; transition: all 500ms}
 .home_bottom div:nth-child(2) div:hover { background-color: rgba(255,255,255,0.5);}
 
 /* bubble */
-.sign_up, .services, .mobility, .community { display: block; position: absolute; text-align: center; text-decoration: none; font-size: 1.2em; color: #686560; text-transform: uppercase; transition: all 500ms;}
+.sign_up, .services, .mobility, .community { display: block; position: absolute; text-align: center; text-decoration: none; font-size: 1.2em; color: #686560; text-transform: uppercase; -webkit-transition: all 500ms; -moz-transition: all 500ms; transition: all 500ms}
 .services, .mobility, .community { top: 60%; width: 200px; height: 200px; line-height: 200px; border-radius: 50%; background-color: rgba(255,255,255,0.5);}
 .services:hover, .mobility:hover, .community:hover { background-color: rgba(255,255,255,1);}
 .sign_up span, .services span, .mobility span, .community span { vertical-align: bottom; display:inline-block; line-height:normal;}
@@ -183,7 +183,7 @@ section .scroll_down, #scroll_up { background: url(../img/picto/fleche-scroll.pn
 .details h2 { padding-top: 100px; margin-bottom: 20px; background: url(../img/picto/picto-logement.png) no-repeat 50% 0; color: #f1696b;}
 .details .devis { position: relative; width: 100%; height: 100px; text-align: right;}
 .details .devis p { position: absolute; bottom: 50px; right: 87px;}
-.details .devis a { position: absolute; bottom: 0; right: 20px; padding: 10px 50px; border-radius: 5px; box-shadow: none; background-color: #f1696b; color: #fff; cursor: pointer; transition: all 1s;}
+.details .devis a { position: absolute; bottom: 0; right: 20px; padding: 10px 50px; border-radius: 5px; box-shadow: none; background-color: #f1696b; color: #fff; cursor: pointer; -webkit-transition: all 1s; -moz-transition: all 1s; transition: all 1s}
 .details .devis a:hover { background-color: #7d7d7d; color: #fff !important;}
 
 /* SIGN_UP PAGE */
@@ -226,7 +226,7 @@ section .scroll_down, #scroll_up { background: url(../img/picto/fleche-scroll.pn
 .form_content .underline:after { position: absolute; content: ""; bottom: -20px; left: 0; width: 100%; height: 2px; background-color: #eee;}
 .form .full table td { display: inline-block; padding-left: 30px; margin: 10px 0;}
 .form .full { width: 100%; padding: 20px;}
-.form input[type="submit"] { position: absolute; bottom: 20px; right: 20px;; padding: 10px 50px; box-shadow: none; background-color: #f1696b; color: #fff; cursor: pointer; transition: all 1s;}
+.form input[type="submit"] { position: absolute; bottom: 20px; right: 20px;; padding: 10px 50px; box-shadow: none; background-color: #f1696b; color: #fff; cursor: pointer; -webkit-transition: all 1s; -moz-transition: all 1s; transition: all 1s}
 .form input[type="submit"]:hover { background-color: #7d7d7d;}
 .form input[type="text"], .form input[type="email"], .form input[type="tel"] { width: 80%;}
 .form input, .form textarea { padding: 5px 15px; border: 1px solid #eee;  background: none; border-radius: 5px; -webkit-box-shadow: inset 2px 2px 1px 0px #c0c0c0; box-shadow: inset 2px 2px 1px 0px #c0c0c0; filter:progid:DXImageTransform.Microsoft.Shadow(color=#c0c0c0, Direction=134, Strength=1);}
