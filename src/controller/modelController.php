@@ -11,8 +11,8 @@ abstract class modelController {
      public function __construct() 
     {
         
-         $var=new \service\DiverService();
-        $this->twig=$var->twig();
+       //  $var=new \service\DiverService();
+        $this->twig=  \service\DiverService::twig();
     }
     
 }

@@ -4,11 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/wamp/www/FrenchHub.local/src/controller/EntrepriseController.php</file>
-            <file>file:/C:/wamp/www/FrenchHub.local/templates/inscription.html.twig</file>
-            <file>file:/C:/wamp/www/FrenchHub.local/config/routes.php</file>
+            <file>file:/C:/wamp/www/FrenchHub.local/src/service/Router.php</file>
+            <file>file:/C:/wamp/www/FrenchHub.local/src/service/Connect.php</file>
+            <file>file:/C:/wamp/www/FrenchHub.local/bootstrap.php</file>
             <file>file:/C:/wamp/www/FrenchHub.local/templates/entreprise.html.twig</file>
-            <file>file:/C:/wamp/www/FrenchHub.local/src/modele/EntrepriseManager.php</file>
-            <file>file:/C:/wamp/www/FrenchHub.local/src/modele/EmployeeManager.php</file>
+            <file>file:/C:/wamp/www/FrenchHub.local/src/controller/DefaultController.php</file>
+            <file>file:/C:/wamp/www/FrenchHub.local/src/modele/EntiteManager.php</file>
+            <file>file:/C:/wamp/www/FrenchHub.local/src/service/DiverService.php</file>
+            <file>file:/C:/wamp/www/FrenchHub.local/src/controller/FormController.php</file>
         </group>
     </open-files>
 </project-private>

@@ -25,10 +25,10 @@ public function save($tabDonne)
                    return  $req=$this->pdo->query($sql);
 }
 
-    public function query1arg($nom,$password)
+    public function query1arg($nom,$login)
     {
         $results = [];
-        $query = sprintf("SELECT * FROM `users` WHERE $nom='%s'", $password);
+        $query = sprintf("SELECT * FROM `users` WHERE $nom='%s'", $login);
 
         $stmt = $this->pdo->query($query);
         while ($data = $stmt->fetch(\PDO::FETCH_OBJ)) {

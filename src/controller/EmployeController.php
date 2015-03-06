@@ -6,7 +6,7 @@ namespace controller;
  *
  * @author lganne
  */
-class MembreController  extends modelController
+class EmployeController  extends modelController
 {
     public function __construct() 
   {
@@ -26,7 +26,7 @@ class MembreController  extends modelController
       }
       
    }
-    public function homeMembre()
+    public function homeEmploye()
     {
        $template = $this->twig->loadTemplate('salarier.html.twig');
          echo $template->render(array( 'session'   => $_SESSION['user'][1] ) );

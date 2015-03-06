@@ -26,13 +26,12 @@ class UserController extends \controller\modelController
            if (!empty($data['name']) && !empty($data['email']) && !empty($data['password'])  )
           {
               
-               $var=new \service\DiverService();
-               $salt=$var->generateRandomString(30);
+                $salt= \service\DiverService::generateRandomString(30);
                $token=$var->generateRandomString(50);
                // on rajoute le salt au mot de passe
                $password=$salt.$data['password'].$salt;
                // on crypte le mot de passe
-               $pwd=$var->codepassword($password);
+               $pwd= \service\DiverService::codepassword($password);
                $role='visitor';
              
                if(isset($_POST['role']))
@@ -43,14 +42,9 @@ class UserController extends \controller\modelController
                $rep=$this->user->save($donne);
            }
            return $rep;
-         //  $this->login();
-    }
-    
-//    public function login()
-//    {
-//        $this->vue->formLogin();
-//    }
-    
+     }
+ 
+   
     public function loginValidation()
     {
          $log=$_POST['login'];
@@ -74,7 +68,7 @@ class UserController extends \controller\modelController
             }
             else
             {
-                   header('location:/homeMembre');
+                   header('location:/homeEmploye');
             }
           }
         else

@@ -32,11 +32,13 @@ class EntrepriseController extends modelController
     {
         $template = $this->twig->loadTemplate('Entreprise.html.twig');
        $res=$this->ent->find($_SESSION['user'][2]);
-       $mess=(!empty($_SESSION['message']))? $_SESSION['message'][0]:"";
+       $mess=(!empty($_SESSION['message'])) ?  $_SESSION['message'][0] : array();
+       //var_dump($mess);
+       
         $sal=new \modele\EmployeeManager();
          $listeSal= $sal->ListeEnt($_SESSION['user'][2]);
          $_SESSION['message']=[];
-         echo $template->render(array( 'session'   => $_SESSION['user'][1] , "donnee"=>$res,"message"=>$mess,"listeSal"=>$listeSal));
+         echo $template->render(array( 'session'   => $_SESSION['user'][1] , "donnee"=>$res,"mess"=>$mess,"listeSal"=>$listeSal));
     }
     
       public function ajoutSalarie()
@@ -46,8 +48,8 @@ class EntrepriseController extends modelController
             
           if($idsalarie!=false)
           {
-              $log=new \service\DiverService();
-             $identifiant=   $log->generationLogin("membre", $_POST['Nom'], $_POST['email'], $_POST['ident'],$idsalarie);
+             
+             $identifiant= \service\DiverService::generationLogin("membre", $_POST['Nom'], $_POST['email'], $_POST['ident'],$idsalarie);
                array_push($_SESSION['message'],$identifiant);
           
            }

@@ -10,12 +10,14 @@
     </div>
     
      <section id="formEnt" class="content">
-      {% if( message is not empty)  %}
+ 
+      {% if( mess  |  length > 0)  %}
                 <span class="mess">Le nouveau salarié a bien été enregistré<br>
-                             Le login : {{message.username}} <br>
-                              le mot de passe est : {{message.motpass}}
+                         
+                          Le login : {{ mess.username }} <br>
+                          Le mot de passe est : {{ mess.motpass }}
                 </span><br>
-                              
+                               
          {% endif %}
         <br>
         <form >

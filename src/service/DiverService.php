@@ -69,16 +69,16 @@ class DiverService {
                 return $twig;
          }
        
-    public function generationLogin($role,$nom,$email,$ident,$idSalarier=NULL)
+      static function generationLogin($role,$nom,$email,$ident,$idSalarier=NULL)
     {
-                  $motPass= $this->generateRandomString(8);
-                 $salt=$this->generateRandomString(30);
-               $token=$this->generateRandomString(50);
+                  $motPass=self ::generateRandomString(8);
+                 $salt=  self::generateRandomString(30);
+               $token=self::generateRandomString(50);
                 $password=$salt.$motPass.$salt;
                // on crypte le mot de passe
-               $pwd=$this->codepassword($password);
+               $pwd=self::codepassword($password);
                 $user=new \modele\UserManager();
-                $nom=$this->existeLog($nom, $user);
+                $nom=self::existeLog($nom, $user);
                  
                  $donne=array('ident'=>$ident,'idSalarier'=>$idSalarier,'username'=>$nom,'password'=>$pwd,'email'=>$email,'salt'=>$salt,'token'=>$token,'role'=>$role);    
                  $rep=$user->save($donne);
@@ -92,7 +92,7 @@ class DiverService {
                }
     }
     
-    public function existeLog($nom,$user)
+     static function  existeLog($nom,$user)
     {
          $existe=$user->query1arg("username", $nom);
                // on verif que l'username n'existe pas deja, si oui on en créer un nouveau en rajoutant une incrementation au nom

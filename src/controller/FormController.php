@@ -61,8 +61,7 @@ class FormController extends \controller\modelController
                  {
                       $this->newsletter($res);
                  }
-                  $var=new \service\DiverService();
-               $retour= $var->generationLogin("entreprise", $_POST['nom'], $_POST['email'],$res);
+                  $retour= \service\DiverService::generationLogin("entreprise", $_POST['nom'], $_POST['email'],$res);
                if ($retour!=false)
                {
                     $mess.="votre login est ".$_POST['nom']."  votre mot de passe est ".$retour.PHP_EOL

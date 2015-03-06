@@ -70,9 +70,9 @@ return [
         'pattern' => '\/ajoutSalarie',
         'connect' => 'controller\EntrepriseController:ajoutSalarie'
        ],
-     'MembreController_homeMembre' => [
-        'pattern' => '\/homeMembre',
-        'connect' => 'controller\MembreController:homeMembre'
+     'EmployeController_homeEmploye' => [
+        'pattern' => '\/homeEmploye',
+        'connect' => 'controller\EmployeController:homeEmploye'
      ]
        
     
