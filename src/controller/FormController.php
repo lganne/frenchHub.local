@@ -28,6 +28,7 @@ class FormController extends \controller\modelController
       {
           $ent=new \modele\EntrepriseManager;
         $res=$ent->insert($_POST);
+        
        // $res contient l'id de l'entreprise qu'on vient d'enregistrer si faux =0
           if ($res!=0)
           { // enregistrement de la formule choisit
@@ -49,35 +50,39 @@ class FormController extends \controller\modelController
                       break;
                   }
               $rep =$sub->insert($tabSub);
+           
               if($rep==false)
                   {
-                        $mess="votre inscription n'a pas été enregistré";
+                        $mess[]="votre inscription n'a pas été enregistré";
                         $ent->delete($rep); // si la formule n'a pas été enregistrer, on supprime l'enregistrement de l'entreprise
                         goto sort;
                   }
-                 $mess="Votre adhesion a bien été enregistré ".PHP_EOL;
+                 $mess[]="Votre adhesion a bien été enregistré ".PHP_EOL;
                   // si la newsletter general a été cocher, on enregistre l'entreprise dans la table newsletter
                  if (isset($_POST['newsLetter']))
                  {
                       $this->newsletter($res);
+                   
                  }
-                  $retour= \service\DiverService::generationLogin("entreprise", $_POST['nom'], $_POST['email'],$res);
+              var_dump($res);
+                  $retour= \service\DiverService::generationLogin("entreprise", $_POST['nom'], $_POST['email'],$res,NULL);
+                
                if ($retour!=false)
                {
-                    $mess.="votre login est ".$_POST['nom']."  votre mot de passe est ".$retour.PHP_EOL
-                       ."\n Vous allez recevoir un mail de confirmation de vos indentifiant ainsi que votre facture";
+                    $mess[]="votre login est ".$retour['username']."  votre mot de passe est ".$retour['motpass'];
+                        $mess[]=" Vous allez recevoir un mail de confirmation de vos indentifiant ainsi que votre facture";
                }    
                else
-               {   $mess= " Un probleme est survenue lors de la generation du mot de passe. Veuillez contacter votre conseiller";}
+               {   $mess[]= " Un probleme est survenue lors de la generation du mot de passe. Veuillez contacter votre conseiller";}
            }
         else
          {
-                 $mess="un probleme est survenue lors de l'enregistrement du formulaire.<br>Veuillez recommencer";
+                 $mess[]="un probleme est survenue lors de l'enregistrement du formulaire.<br>Veuillez recommencer";
           }
       }
       else
       {
-          $mess="le formulaire est vide";
+          $mess[]="le formulaire est vide";
       }
       sort:
         echo $template->render(array("message2"=>$mess,'nomPays'=>$this->paysfr));

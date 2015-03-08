@@ -1,13 +1,15 @@
+{# empty Twig template #}
+
 {% extends 'base.html.twig' %}
+
 {% block stylesheets %}
-       {{parent()}}| <link rel="stylesheet" type="text/css" href="css/formulaire.css " />          
+    <link rel="stylesheet" type="text/css" href="../../css/style.css " />             
 {% endblock %}
- {% block body %}
-      <div class="content standard" >
-         <a href="/accueil" id="logo_top"><img src="../img/logo-french.png" alt="Logo de MyFrenchHub"></a>
-    </div>
-      <section class="content standard" >
-             <h1>Espace Salarier</h1>
-             <span class="mess">En travaux</span>
-      </section>
-    {% endblock %}
+
+{% block body %}
+	<section id="member" class="form content form_content standard" data-id="active_content">
+	    <a href="/accueil" id="logo_top"><img src="../img/logo-french.png" alt="Logo de MyFrenchHub"></a>
+        <h1><a href="/accueil" class="return"><</a>Espace <strong>salarié</strong></h1><br />
+        <span class="mess">En travaux</span>
+    </section>
+{% endblock %}

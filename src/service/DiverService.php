@@ -69,8 +69,9 @@ class DiverService {
                 return $twig;
          }
        
-      static function generationLogin($role,$nom,$email,$ident,$idSalarier=NULL)
+      static function generationLogin($role,$nom,$email,$ident=null,$idSalarier=null)
     {
+       
                   $motPass=self ::generateRandomString(8);
                  $salt=  self::generateRandomString(30);
                $token=self::generateRandomString(50);

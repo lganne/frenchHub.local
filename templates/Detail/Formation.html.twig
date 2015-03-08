@@ -1,29 +1,40 @@
+{# empty Twig template #}
+
 {% extends 'base.html.twig' %}
+
 {% block stylesheets %}
-       <link rel="stylesheet" type="text/css" href="../../css/style.css " />       
-   {% endblock %}
+    <link rel="stylesheet" type="text/css" href="../../css/style.css " />             
+{% endblock %}
+
 {% block body %}
-    <div class="content standard" >
-         <a href="/accueil" id="logo_top"><img src="../img/logo-french.png" alt="Logo de MyFrenchHub"></a>
+
+<section id="{{ titre }}" class="content details standard" data-id="active_content">
+    <a href="/accueil" id="logo_top"><img src="../img/logo-french.png" alt="Logo de MyFrenchHub"></a>
+    <h1><a href="/accueil" class="return"><</a>{{ titre }}</h1>
+    <div class="details_content">
+        <h2 class="{{ titre }}">{{ titre}}</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Quisque elementum nulla commodo posuere faucibus. <br>
+            Morbi ante risus, malesuada nec efficitur vitae, dignissim sit amet nunc. 
+            Cras at purus hendrerit, hendrerit ipsum eu, laoreet tortor. <br>
+            Sed condimentum sapien a tempor elementum. Suspendisse nisi est, tempus et sagittis eget, ornare ac urna. 
+            Nunc aliquam ornare orci, eu ultricies sapien interdum ac. <br>
+            Praesent et elementum dui. Sed efficitur porta augue, tempus consectetur nulla.
+            Fusce et venenatis diam. <br>
+            Etiam non interdum quam. Vivamus fermentum ligula lacinia nunc porttitor, nec hendrerit tellus convallis. 
+        </p>
     </div>
- <section id="{{ titre }}" class="content details standard" data-id="active_content">
-    <h2>{{ titre}}</h2>
-    <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Quisque elementum nulla commodo posuere faucibus. <br>
-                Morbi ante risus, malesuada nec efficitur vitae, dignissim sit amet nunc. 
-                Cras at purus hendrerit, hendrerit ipsum eu, laoreet tortor. <br>
-                Sed condimentum sapien a tempor elementum. Suspendisse nisi est, tempus et sagittis eget, ornare ac urna. 
-                Nunc aliquam ornare orci, eu ultricies sapien interdum ac. <br>
-                Praesent et elementum dui. Sed efficitur porta augue, tempus consectetur nulla.
-                Fusce et venenatis diam. <br>
-                Etiam non interdum quam. Vivamus fermentum ligula lacinia nunc porttitor, nec hendrerit tellus convallis. 
-            </p>
-            
-            <a href="/recontacter">être recontacter</a>
-   </section>
- {% endblock %}
- {% block javascripts %}
-         <script type="text/javascript" src="../../js/jquery-1.11.2.min.js"></script>
-         <script type="text/javascript" src="../../js/frenchHub.js"></script>
+    <div class="devis">
+        <a href="/recontacter">Être recontacté</a>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block javascripts %}
+
+    <script type="text/javascript" src="../../js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../../js/frenchHub.js"></script>
+
 {% endblock %}
