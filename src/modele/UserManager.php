@@ -17,7 +17,7 @@ public function save($tabDonne)
              
         if ($idSal >0 && $idENT >0)
          {
-            var_dump("passer1");
+          
             $sql=sprintf("insert into ".$this->table.
              " (entreprises_id,employee_id,username,password,email,salt,token,date_created,date_modif,role) "
                       . "values ('%d','%d','%s','%s','%s','%s','%s',NOW(),NOW(),'%s')",

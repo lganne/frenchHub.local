@@ -64,7 +64,7 @@ class FormController extends \controller\modelController
                       $this->newsletter($res);
                    
                  }
-              var_dump($res);
+        
                   $retour= \service\DiverService::generationLogin("entreprise", $_POST['nom'], $_POST['email'],$res,NULL);
                 
                if ($retour!=false)

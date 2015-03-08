@@ -55,4 +55,21 @@ $(document).ready(function () {
         $('a.menu-btn').toggle('fast');
         $('a.menu-btn-active').toggle('fast');
     });
+    // affichage champs siren
+     $('#pays').change(function(){
+      
+       if ($( '#pays').val() =="France" )
+       {          
+            $('#sirenLabel').addClass("sirenFR").removeClass("siren");
+             $('#sirenInput').addClass("sirenFR").removeClass("siren");
+       }
+       else
+       {
+          $('#sirenLabel').addClass("siren").removeClass("sirenFR");
+             $('#sirenInput').addClass("siren").removeClass("sirenFR");
+       }
+         
+    });
+    
+   
 });

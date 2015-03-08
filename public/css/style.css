@@ -236,8 +236,11 @@ section .scroll_down, #scroll_up { background: url(../img/picto/fleche-scroll.pn
 .form .champs { text-align: left;}
 
 /* MESSAGE */
-#siren { visibility:hidden;}
-#sirenFr { visibility: visible;}
+.siren { visibility:hidden;}
+.sirenFr { visibility: visible;}
 .mess { display: block; width:80%; margin: auto; padding:1%; background-color: rgba(197,188,163,0.8); font-size: 16px; text-align: center;}
 .milieu { width: 40%; margin: auto; text-align: center;}
 .milieu form { width:80%; margin: auto; padding: 4%; border: solid 1px #717070; text-align: center;}
+
+
+

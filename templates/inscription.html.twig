@@ -37,7 +37,7 @@
                             199€ / an
                         </td><!--
                      --><td>
-                            <input type="checkbox" name="option" id="option_1" value="1" />
+                            <input type="checkbox" name="option" id="option1" value="1" checked />
                         </td>
                     </tr>
                     <tr>
@@ -48,7 +48,7 @@
                             399€ / an
                         </td><!--
                      --><td>
-                            <input type="checkbox" name="option" id="option_2" value="2" />
+                            <input type="checkbox" name="option" id="option2" value="2" />
                         </td>
                     </tr>
                     <tr>
@@ -59,7 +59,7 @@
                             599€ / an
                         </td><!--
                      --><td>
-                            <input type="checkbox" name="option" id="option_3" value="3" />
+                            <input type="checkbox" name="option" id="option3" value="3" />
                         </td>
                     </tr>
                     <tr>
@@ -70,7 +70,7 @@
                             1099€ / an
                         </td><!--
                      --><td>
-                            <input type="checkbox" name="option" id="option_4" value="4" />
+                            <input type="checkbox" name="option" id="option4" value="4" />
                         </td>
                     </tr>
                 </table>
@@ -131,12 +131,12 @@
                     </select>
                 </td>
             </tr>
-            <tr>
+            <tr >
                 <td>
-                    <label for="siren" id="siren">Siren</label> 
+                    <label for="siren" class="siren" id="sirenLabel">Siren</label> 
                 </td><!--
              --><td>
-                    <input type="text" name="siren" id="siren">
+                    <input type="text" name="siren" class="siren"  id="sirenInput">
                 </td>
             </tr>
         </table><!--
@@ -146,7 +146,7 @@
                     <p>Civilité*</p>
                 </td><!--
              --><td>
-                    <input type="radio" name="civilite" id="titre2" value="1"/><label for="titre2">Mme</label>
+                    <input type="radio" name="civilite" id="titre2"  required value="1"/><label for="titre2">Mme</label>
                     <input type="radio" name="civilite" id="titre1" value="0"/><label for="titre1">Mr</label>
                 </td>
             </tr>
@@ -204,7 +204,7 @@
                 </td>
             </tr>
         </table>
-        <p><label for="newsLetter">Je souhaite recevoir la newsletter de MyFrenchHub</label><input type="checkbox" name="newsLetter" id="newsLetter" value="Oui"></p>
+        <p><label for="newsLetter">Je souhaite recevoir la newsletter de MyFrenchHub</label><input type="checkbox" name="newsLetter" id="newsLetter" value="Oui" checked></p>
         <h3 class="underline">Les thèmes</h3>
         <p>En supplément de la newsletter générale, vous pouvez choisir des thèmes sur lesquels vous aimeriez recevoir plus d’informations</p>
         <div class="full">
@@ -251,7 +251,7 @@
                 </tr>
             </table>
         </div>
-        <input type="submit" name="valider" value="Valider">
+        <input type="submit" name="valider" value="Valider" id="validInscript">
         </form>
         <p class="champs">* Champs obligatoires</p>
     </section>
