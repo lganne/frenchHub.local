@@ -5,6 +5,7 @@
 
     <section class="form content register standard" data-id="active_content">
         <a href="/accueil" id="logo_top"><img src="../img/logo-french.png" alt="Logo de MyFrenchHub"></a>
+        <h1><a href="/accueil" class="return"><</a>La mobilité en toute tranquilité !</h1>
         {% if (message2  |  length > 0)   %}
         <span class="mess">
             {{ message2[0] }}<BR>
@@ -12,10 +13,8 @@
                     {{ message2[1] }}<BR> 
                  {{ message2[2] }}<BR>
                {% endif %}
-               </span>
+       </span>
         {% endif %}
-        
-        <h1><a href="/accueil" class="return"><</a>La mobilité en toute tranquilité !</h1>
         <div id="sign_up_content" class="left">
             <h2>Abonnez-vous et bénéficiez de tous les avantages My French Hub !</h2>
             <p>Des efforts et des investissements importants sont consentis afin d’assurer à sa structure une politique d’attractivité des talents et d’ouverture à l’international qui impacte directement votre image de marque et la performance de votre structure</p>
