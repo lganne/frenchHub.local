@@ -58,13 +58,7 @@
             {% else %}
                 <p >Bonjour, {{ session}} ! <a href="/logout">Deconnexion</a>
             {% endif%}
-             
-            {% if (message !=null ) %}
-                <div>
-                    {{ message }}
-                </div>
-            {% endif %}
-
+            
             <div id="search">
                 <form action="search.php" method="Post">
                     <input type="text" name="search" size="10" />
@@ -77,6 +71,12 @@
                     <option value="en">en</option>
                 </select>
             </div>
+            
+            {% if (message !=null ) %}
+                <div class="error">
+                    {{ message }}
+                </div>
+            {% endif %}
         </div>
         
     	{% block body %}
