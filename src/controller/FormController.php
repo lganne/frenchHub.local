@@ -23,9 +23,18 @@ class FormController extends \controller\modelController
     
   public function adhesion()
   {
+      
        $template = $this->twig->loadTemplate('inscription.html.twig');
        if (isset($_POST))
       {
+           $test=$this->verifFormEnt();
+           
+           if( !empty($test))
+           {
+               $mess[]=$test;
+               goto sort;
+           }
+               
           $ent=new \modele\EntrepriseManager;
         $res=$ent->insert($_POST);
         
@@ -135,8 +144,13 @@ class FormController extends \controller\modelController
   
   public function verifFormEnt()
   {
-      $mess="";
-   //   if($data[])
+          $mess="";
+     if(!isset($_POST['option']))
+     {
+                $mess="Vous devez sélectionné une formule";
+      }
+     
+      return $mess;
       
   }
   
