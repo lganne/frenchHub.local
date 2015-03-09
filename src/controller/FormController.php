@@ -23,12 +23,12 @@ class FormController extends \controller\modelController
     
   public function adhesion()
   {
-      
+      $data="";
        $template = $this->twig->loadTemplate('inscription.html.twig');
        if (isset($_POST))
       {
            $test=$this->verifFormEnt();
-           
+           $data=$_POST;
            if( !empty($test))
            {
                $mess[]=$test;
@@ -79,7 +79,7 @@ class FormController extends \controller\modelController
                if ($retour!=false)
                {
                     $mess[]="votre login est ".$retour['username']."  votre mot de passe est ".$retour['motpass'];
-                        $mess[]=" Vous allez recevoir un mail de confirmation de vos indentifiant ainsi que votre facture";
+                        $mess[]=" Vous allez recevoir un mail de confirmation avec vos indentifiants ainsi que votre facture";
                }    
                else
                {   $mess[]= " Un probleme est survenue lors de la generation du mot de passe. Veuillez contacter votre conseiller";}
@@ -94,7 +94,8 @@ class FormController extends \controller\modelController
           $mess[]="le formulaire est vide";
       }
       sort:
-        echo $template->render(array("message2"=>$mess,'nomPays'=>$this->paysfr));
+         
+        echo $template->render(array("message2"=>$mess,'nomPays'=>$this->paysfr,'data'=>$data));
   }
   
   public function newsletter($ident)
@@ -121,14 +122,14 @@ class FormController extends \controller\modelController
   public function contact()
   {
         
-      $template = $this->twig->loadTemplate('index.html.twig');
+      $template = $this->twig->loadTemplate('detail/recontacter.html.twig');
        if (isset($_POST))
       {
           $info=new \modele\informationManager();
           $res=$info->insert($_POST);
           if ($res==true)
           {
-              $mess="Votre demande a bien été enregistré";
+              $mess="Votre demande a bien été enregistré.Vous serez recontacté dans les 24 heures.";
           }
         else
          {
@@ -166,6 +167,7 @@ class FormController extends \controller\modelController
   {
         $template = $this->twig->loadTemplate('Detail/Devis.html.twig');
         $mess=null;
+    
       if(empty($_POST))
       {
           $mess="Le formulaire est vide.recommencez";

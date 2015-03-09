@@ -36,7 +36,7 @@
                             199€ / an
                         </td><!--
                      --><td>
-                            <input type="checkbox" name="option" id="option1" value="1" />
+                            <input type="radio" name="option" id="option1" value="1" />
                         </td>
                     </tr>
                     <tr>
@@ -47,7 +47,7 @@
                             399€ / an
                         </td><!--
                      --><td>
-                            <input type="checkbox" name="option" id="option2" value="2" />
+                            <input type="radio" name="option" id="option2" value="2" />
                         </td>
                     </tr>
                     <tr>
@@ -58,7 +58,7 @@
                             599€ / an
                         </td><!--
                      --><td>
-                            <input type="checkbox" name="option" id="option3" value="3" />
+                            <input type="radio" name="option" id="option3" value="3" />
                         </td>
                     </tr>
                     <tr>
@@ -69,7 +69,7 @@
                             1099€ / an
                         </td><!--
                      --><td>
-                            <input type="checkbox" name="option" id="option4" value="4" />
+                            <input type="radio" name="option" id="option4" value="4" />
                         </td>
                     </tr>
                 </table>
@@ -84,7 +84,7 @@
                     <label for='societe'>Nom entreprise*</label>
                 </td><!--
              --><td>
-                    <input type='text' name='societe' id="societe" required>
+                    <input type='text' name='societe' id="societe" value ="{{data['societe']}}" required>
                 </td>
             </tr>
             <tr>
@@ -92,7 +92,7 @@
                     <label for="activite">Domaine d'activitée*</label>
                 </td><!--
              --><td>
-                    <input type='text' name='activite' id="activite" >
+                    <input type='text' name='activite' id="activite" value ="{{data['activite']}}">
                 </td>
             </tr>
             <tr>
@@ -100,7 +100,7 @@
                     <label for="adress">Adresse*</label> 
                 </td><!--
              --><td>
-                    <input type="text" name="adress" id="adress" required >
+                    <input type="text" name="adress" id="adress"   value ="{{data['adress']}}"  required >
                 </td>
             </tr>
             <tr>
@@ -108,7 +108,7 @@
                     <label for="codepostal">Code postal</label> 
                 </td><!--
              --><td>
-                    <input type="text" name="cp" id="codepostal" >
+                    <input type="text" name="cp" id="codepostal"  value ="{{data['cp']}}" >
                 </td>
             </tr>
             <tr>
@@ -116,7 +116,7 @@
                     <label for="ville">Ville*</label> 
                 </td><!--
              --><td>
-                    <input type="text" name="ville" id="ville" required >
+                    <input type="text" name="ville" id="ville" value ="{{data['ville']}}" required >
                 </td>
             </tr>
             <tr>
@@ -126,17 +126,21 @@
              --><td>
                     <select name="pays" id="pays">
                         {% for pays in nomPays %}
-                            <option value="{{pays.nom_fr_fr}}">{{pays.nom_fr_fr}}</option> 
+                            {% if (data is not empty) and ( data['pays']== pays.nom_fr_fr)  %}
+                                  <option value="{{pays.nom_fr_fr}}" selected>{{pays.nom_fr_fr}}  </option> 
+                             {% else %}
+                                     <option value="{{pays.nom_fr_fr}}">{{pays.nom_fr_fr}}  </option> 
+                             {% endif %}
                         {% endfor%}
                     </select>
                 </td>
             </tr>
             <tr >
                 <td>
-                    <label for="siren" class="siren" id="sirenLabel">Siren</label> 
+                    <label for="siren" class="siren" id="sirenLabel"  >Siren</label> 
                 </td><!--
              --><td>
-                    <input type="text" name="siren" class="siren"  id="sirenInput">
+                    <input type="text" name="siren" class="siren"  id="sirenInput" value ="{{data['siren']}}" >
                 </td>
             </tr>
         </table><!--
@@ -146,8 +150,13 @@
                     <p>Civilité*</p>
                 </td><!--
              --><td>
-                    <input type="radio" name="civilite" id="titre2"  required value="1"/><label for="titre2">Mme</label>
-                    <input type="radio" name="civilite" id="titre1" value="0"/><label for="titre1">Mr</label>
+                     {% if (data is not empty) and ( data['civilite']== 0 ) %}
+                          <input type="radio" name="civilite" id="titre2"  required value="1" /><label for="titre2">Mme</label>
+                          <input type="radio" name="civilite" id="titre1" value="0" checked /><label for="titre1">Mr</label>
+                       {% else %}
+                                     <input type="radio" name="civilite" id="titre2"  required value="1" checked  /><label for="titre2">Mme</label>
+                                    <input type="radio" name="civilite" id="titre1" value="0" /><label for="titre1">Mr</label>
+                       {% endif %}
                 </td>
             </tr>
             <tr>
@@ -155,7 +164,7 @@
                     <label for="nom">Nom*</label> 
                 </td><!--
              --><td>
-                    <input type="text" name="nom" id="nom" required >
+                    <input type="text" name="nom" id="nom"  value ="{{data['nom']}}"  required >
                 </td>
             </tr>
             <tr>
@@ -163,7 +172,7 @@
                     <label for="prenom">Prénom*</label>
                 </td><!--
              --><td>
-                    <input type="text" name="prenom" id="prenom" >
+                    <input type="text" name="prenom" id="prenom" value ="{{data['prenom']}}"  >
                 </td>
             </tr>
             <tr>
@@ -171,7 +180,7 @@
                     <label for="fonction">Fonction*</label>
                 </td><!--
              --><td>
-                    <input type="text" name="fonction" id="fonction" required>
+                    <input type="text" name="fonction" id="fonction"  value ="{{data['fonction']}}"  required>
                 </td>
             </tr>
             <tr>
@@ -179,7 +188,7 @@
                     <label for="email">Email*</label>
                 </td><!--
              --><td>
-                    <input type="email" name="email" id="email" required>
+                    <input type="email" name="email" id="email"  value ="{{data['email']}}"  required>
                 </td>
             </tr>
             <tr>
@@ -187,7 +196,7 @@
                     <label for="Tel">Tel*</label>
                 </td><!--
              --><td>
-                    <input type="tel" name="tel" id="tel" required>
+                    <input type="tel" name="tel" id="tel" value ="{{data['tel']}}"  required>
                 </td>
             </tr>
             <tr>
@@ -195,11 +204,39 @@
                     <label for="salarier">Nombres de salariés*</label> 
                 </td><!--
              --><td>
-                    <select name="salarier" id="salarier">
-                        <option value="1">1 à 49</option> 
-                        <option value="2">50 à 249</option> 
-                        <option value="3"> 250 à 1000</option> 
-                        <option value="4"> plus de 1000</option>
+                  
+                    </select>
+                   <select name="salarier" id="salarier">
+                       {%  if(data is empty) %}
+                            <option value="1" >1 à 49</option> 
+                            <option value="2" >50 à 249</option> 
+                            <option value="3">250 à 1000</option> 
+                            <option value="4" >plus de 1000</option>
+                        {% endif %}
+                        {%  if(data['salarier']==1) %}
+                            <option value="1" selected >1 à 49</option> 
+                            <option value="2" >50 à 249</option> 
+                            <option value="3">250 à 1000</option> 
+                            <option value="4" >plus de 1000</option>
+                        {% endif %}
+                        {%  if(data['salarier']==2) %}
+                            <option value="1" >1 à 49</option> 
+                            <option value="2" selected >50 à 249</option> 
+                            <option value="3" >250 à 1000</option> 
+                            <option value="4" >plus de 1000</option>
+                        {% endif %}
+                        {%  if(data['salarier']==3) %}
+                            <option value="1" >1 à 49</option> 
+                            <option value="2" >50 à 249</option> 
+                            <option value="3" selected >250 à 1000</option> 
+                            <option value="4" >plus de 1000</option>
+                        {% endif %}
+                        {%  if(data['salarier']==4) %}
+                            <option value="1" >1 à 49</option> 
+                            <option value="2" >50 à 249</option> 
+                            <option value="3" >250 à 1000</option> 
+                            <option value="4" selected  >plus de 1000</option>
+                        {% endif %}
                     </select>
                 </td>
             </tr>
