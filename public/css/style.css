@@ -64,7 +64,9 @@ nav img { display: block; margin: 0 auto;}
 #search input[name=search] { padding-left: 5px; border: none; border-radius: 20px; -webkit-box-shadow: inset 2px 2px 1px 0px #c0c0c0; box-shadow: inset 2px 2px 1px 0px #c0c0c0; filter:progid:DXImageTransform.Microsoft.Shadow(color=#c0c0c0, Direction=134, Strength=1);}
 #search input[type=submit] { width: 22px; height: 17px; border: none; background-color: inherit; background: url(../img/picto/picto-loupe.png) no-repeat; text-indent: -9999px; cursor: pointer;}
 #lang select { border: none; background-color: inherit;}
-#login_content { display: none; position: absolute; top: 36px; left: 0; z-index: 999; width: 100%; padding: 15px 15px 0; background: #c5bca3;}
+#login_content { display: none; z-index: 999;}
+#login_content, .error { position: absolute; top: 36px; left: 0; width: 100%; padding: 15px 15px 0; background: #c5bca3;}
+.error { z-index: 998; padding-bottom: 15px;}
 #login_content label, #login_content input[type=submit] { display: block;}
 #login_content input[type=text], #login_content input[type=password] { width: 100%;}
 #login_content input[type=submit] { margin: 15px auto 0; padding: 10px; border:none; border-radius: 50% 50% 0px 0px; background-color: #f1696b; color: #fff; text-align: center; cursor: pointer; -webkit-transition: all 500ms; -moz-transition: all 500ms; transition: all 500ms}
@@ -239,8 +241,4 @@ section .scroll_down, #scroll_up { background: url(../img/picto/fleche-scroll.pn
 .siren { visibility:hidden;}
 .sirenFr { visibility: visible;}
 .mess { display: block; width:80%; margin: auto; padding:1%; background-color: rgba(197,188,163,0.8); font-size: 16px; text-align: center;}
-.milieu { width: 40%; margin: auto; text-align: center;}
-.milieu form { width:80%; margin: auto; padding: 4%; border: solid 1px #717070; text-align: center;}
-
-
-
+.milieu { margin: 0 auto;}
