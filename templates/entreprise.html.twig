@@ -22,7 +22,7 @@
   
     <form>
         {% for item in donnee %}
-        <h1><a href="/accueil" class="return"><</a>Espace <strong>{{item.name|upper}}</strong></h1><br />
+        <h1><a href="/accueil" class="return"><</a>Espace <strong>Entreprise</strong></h1><br />
         <h2 class="underline">Retrouver  toutes vos informations personnelles</h2>
         <h3>Renseignements</h3>
             <table class="left">
@@ -42,7 +42,7 @@
                         <input type="text"  name="activite"  value="{{item.activity}}"class="form-control" readonly="readonly">
                     </td>
                 </tr>
-                <tr
+                <tr>
                     <td>
                         <label for="adress">Adresse</label> 
                     </td><!--
