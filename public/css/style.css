@@ -96,7 +96,7 @@ nav img { display: block; margin: 0 auto;}
 .services:hover, .mobility:hover, .community:hover { background-color: rgba(255,255,255,1);}
 .sign_up span, .services span, .mobility span, .community span { vertical-align: bottom; display:inline-block; line-height:normal;}
 .services span, .mobility span, .community span { padding-bottom: 50px;}
-.sign_up { top: 9%; left: 11%; width: 276px; height: 275px; background: url(../img/logo-french-bulle.png) no-repeat; line-height: 200px;
+.sign_up { top: 9%; left: 11%; width: 276px; height: 275px; border-radius: 50%; background: url(../img/logo-french-bulle.png) no-repeat; line-height: 200px;
 }
 .sign_up:after { position: absolute; content: ""; background: url(../img/picto/home/picto-membre.png) no-repeat; bottom: 80px; right: 20px; width: 72px; height: 81px;}
 .sign_up span { vertical-align: bottom;}
